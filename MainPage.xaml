@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             x:Class="TMS_APP.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <Image
+                Source="kam_logo.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="The logo of Keolis Amey Metrolink" />
+
+            <Label
+                Text="Sign Up"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Entry x:Name="Entry_EmployeeID" Placeholder="Employee ID" TextChanged="TextChanged_NumbersOnly" MaxLength="7" Keyboard="Numeric" />
+            <Entry x:Name="Entry_Password" Placeholder="Password" IsPassword="True" />
+            <Entry x:Name="Entry_ConfirmedPassword" Placeholder="Confirm Password" IsPassword="True" TextChanged="TextChanged_PasswordMatch" Unfocused="Unfocused_PasswordMatch" />
+            <Button
+                Text="Login" 
+                Clicked="Clicked_HandleLoginButton"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
