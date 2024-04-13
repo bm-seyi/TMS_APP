@@ -18,12 +18,13 @@
                 Style="{StaticResource Headline}"
                 SemanticProperties.HeadingLevel="Level1" />
 
-            <Entry x:Name="Entry_EmployeeID" Placeholder="Employee ID" TextChanged="TextChanged_NumbersOnly" MaxLength="7" Keyboard="Numeric" />
+            <Entry x:Name="Entry_Email" Placeholder="Email Address"/>
             <Entry x:Name="Entry_Password" Placeholder="Password" IsPassword="True" />
             <Entry x:Name="Entry_ConfirmedPassword" Placeholder="Confirm Password" IsPassword="True" TextChanged="TextChanged_PasswordMatch" Unfocused="Unfocused_PasswordMatch" />
+            
             <Button
-                Text="Login" 
-                Clicked="Clicked_HandleLoginButton"
+                Text="Sign Up" 
+                Clicked="Clicked_SignUpButton"
                 HorizontalOptions="Fill" />
         </VerticalStackLayout>
     </ScrollView>
