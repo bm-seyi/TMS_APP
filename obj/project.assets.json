@@ -32930,20 +32930,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\TAdeyemi\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\TAdeyemi\\OneDrive - Keolis UK\\Code\\Projects\\Tram Management System\\TMS_APP\\TMS_APP.csproj",
+      "projectUniqueName": "C:\\Users\\User\\OneDrive\\Code\\Tram Management System\\TMS_APP\\TMS_APP.csproj",
       "projectName": "TMS_APP",
-      "projectPath": "C:\\Users\\TAdeyemi\\OneDrive - Keolis UK\\Code\\Projects\\Tram Management System\\TMS_APP\\TMS_APP.csproj",
-      "packagesPath": "C:\\Users\\TAdeyemi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\TAdeyemi\\OneDrive - Keolis UK\\Code\\Projects\\Tram Management System\\TMS_APP\\obj\\",
+      "projectPath": "C:\\Users\\User\\OneDrive\\Code\\Tram Management System\\TMS_APP\\TMS_APP.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\OneDrive\\Code\\Tram Management System\\TMS_APP\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
-        "C:\\Users\\TAdeyemi\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0-android",
@@ -32977,6 +32977,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -33021,7 +33026,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       },
       "net8.0-ios17.2": {
         "targetAlias": "net8.0-ios",
@@ -33064,7 +33069,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       },
       "net8.0-maccatalyst17.2": {
         "targetAlias": "net8.0-maccatalyst",
@@ -33108,7 +33113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       },
       "net8.0-windows10.0.19041": {
         "targetAlias": "net8.0-windows10.0.19041.0",
@@ -33151,7 +33156,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {
