@@ -15,24 +15,48 @@ public partial class MainPage : ContentPage
 
 	private void TextChanged_PasswordMatch(object sender, TextChangedEventArgs e)
 	{
-		((Entry)sender).BackgroundColor = (Entry_Password.Text != e.NewTextValue) ? Color.FromRgb(255, 0, 0) : Color.FromRgb(255, 255, 255);
+		((Entry)sender).BackgroundColor = (Entry_signupPassword.Text != e.NewTextValue) ? Color.FromRgb(255, 0, 0) : Colors.Transparent;
 	}
 
 	private void Unfocused_PasswordMatch(object sender, FocusEventArgs e){
 		if (string.IsNullOrEmpty(Entry_ConfirmedPassword.Text))
 		{
-			((Entry)sender).BackgroundColor = Color.FromRgb(255, 255, 255);
+			((Entry)sender).BackgroundColor = Colors.Transparent;
 		}
 	}
 
-	private void Clicked_SignUpButton(object sender, EventArgs e)
+	private void clicked_signupSubmit(object sender, EventArgs e)
 	{
-		string password = Entry_Password.Text;
+		string password = Entry_signupPassword.Text;
 		string confirmedpassword = Entry_ConfirmedPassword.Text;
 
-		if (IsValidEmailAddress(Entry_Email.Text) && Entry_Password.Text == Entry_ConfirmedPassword.Text)
+		if (IsValidEmailAddress(Entry_signupEmail.Text) && Entry_signupPassword.Text == Entry_ConfirmedPassword.Text)
 		{
-			PostRegistration();
+			PostRegistration(Entry_signupEmail.Text, Entry_ConfirmedPassword.Text);
+		}
+	}
+
+	private void clicked_loginButton(object sender, EventArgs e)
+	{
+		signupStack.IsVisible = false;
+		loginStack.IsVisible = true;
+		loginButton.IsVisible = false;
+		signupButton.IsVisible = false;
+	}
+
+	private void clicked_signupButton(object sender, EventArgs e)
+	{
+		signupStack.IsVisible = true;
+		loginStack.IsVisible = false;
+		loginButton.IsVisible = false;
+		signupButton.IsVisible = false;
+	}
+
+	private void clicked_loginSubmit(object sender, EventArgs e)
+	{
+		if (IsValidEmailAddress(entry_loginEmail.Text))
+		{
+			PostRegistration(entry_loginEmail.Text, entry_loginPassword.Text);
 		}
 	}
 
@@ -42,7 +66,7 @@ public partial class MainPage : ContentPage
 		return regex.IsMatch(email);
 	}
 
-	private async void PostRegistration()
+	private async void PostRegistration(string email, string password)
 	{
 		using (HttpClient client = new HttpClient()) 
 		{
@@ -50,8 +74,8 @@ public partial class MainPage : ContentPage
 
 			var data = new Dictionary<string, string>
 			{
-				{"email", Entry_Email.Text}, 
-				{"Pwd", Entry_ConfirmedPassword.Text},
+				{"email", email}, 
+				{"Pwd", password},
 			};
 
 			var JSON_data = JsonSerializer.Serialize(data);
