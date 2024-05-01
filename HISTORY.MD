@@ -12,3 +12,6 @@ Setup login page, Users can choose between login and signup via buttons. Fixed t
 
 ## 0.0.5
 Created separate folders a scripts to contain some methods that can be used more than once. Login button can now post to the API for authentication. 
+
+## 0.0.6
+Removed unused .env with an API Key that was never used for an API.
