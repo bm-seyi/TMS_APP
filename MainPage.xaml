@@ -29,9 +29,9 @@
                         SemanticProperties.HeadingLevel="Level1"
                         HorizontalOptions="Center" />
 
-                    <Entry x:Name="Entry_signupEmail" Placeholder="Email Address"/>
-                    <Entry x:Name="Entry_signupPassword" Placeholder="Password" IsPassword="True" />
-                    <Entry x:Name="Entry_ConfirmedPassword" Placeholder="Confirm Password" IsPassword="True" TextChanged="TextChanged_PasswordMatch" Unfocused="Unfocused_PasswordMatch" />
+                    <Entry x:Name="entry_signupEmail" Placeholder="Email Address"/>
+                    <Entry x:Name="entry_signupPassword" Placeholder="Password" IsPassword="True" />
+                    <Entry x:Name="entry_signupConPassword" Placeholder="Confirm Password" IsPassword="True" TextChanged="TextChanged_PasswordMatch" Unfocused="Unfocused_PasswordMatch" />
                     
                     <Button
                         Text="Submit" 

@@ -9,3 +9,6 @@ Sign up button can now post the email address and password to the database. Both
 
 ## 0.0.4
 Setup login page, Users can choose between login and signup via buttons. Fixed the error when someone removes any text from the confirm password input field the input field would then turn white. Names changes has been made to some methods to support better readability.
+
+## 0.0.5
+Created separate folders a scripts to contain some methods that can be used more than once. Login button can now post to the API for authentication. 
