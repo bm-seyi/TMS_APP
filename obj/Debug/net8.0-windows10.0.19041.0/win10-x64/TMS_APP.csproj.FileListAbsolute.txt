@@ -797,3 +797,5 @@ C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-wind
 C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\TMS_APP.sourcelink.json
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DotNetEnv.dll
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Sprache.dll
