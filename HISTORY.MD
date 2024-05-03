@@ -15,3 +15,6 @@ Created separate folders a scripts to contain some methods that can be used more
 
 ## 0.0.6
 Removed unused .env with an API Key that was never used for an API.
+
+## 0.0.7
+On boot up local environment variables are loaded. Some methods in the MainPage.xaml.cs have been changed to async to due PostDataToAPI method being async. A new script has been created to contain all current and future methods that will deals with APIs.

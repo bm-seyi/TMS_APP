@@ -22,7 +22,7 @@ public partial class MainPage : ContentPage
 		}
 	}
 
-	private void clicked_signupSubmit(object sender, EventArgs e)
+	private async void clicked_signupSubmit(object sender, EventArgs e)
 	{
 		if (Utils.IsValidEmail(entry_signupEmail.Text) && entry_signupPassword.Text == entry_signupConPassword.Text)
 		{
@@ -31,7 +31,7 @@ public partial class MainPage : ContentPage
 				{"email", entry_signupEmail.Text}, 
 				{"Pwd", entry_signupConPassword.Text},
 			};
-			API_Utilities.PostDataToAPI(data, "Registration/");
+			await apiUtilities.PostDataToAPI(data, "Registration/");
 		}
 	}
 
@@ -51,7 +51,7 @@ public partial class MainPage : ContentPage
 		signupButton.IsVisible = false;
 	}
 
-	private void clicked_loginSubmit(object sender, EventArgs e)
+	private async void clicked_loginSubmit(object sender, EventArgs e)
 	{
 		if (Utils.IsValidEmail(entry_loginEmail.Text))
 		{
@@ -61,7 +61,7 @@ public partial class MainPage : ContentPage
 				{"Pwd", entry_loginPassword.Text},
 			};
 
-			API_Utilities.PostDataToAPI(data, "Authentication/");
+			await apiUtilities.PostDataToAPI(data, "Authentication/");
 		}
 	}
 }
