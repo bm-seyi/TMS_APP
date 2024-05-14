@@ -1,11 +1,11 @@
 ﻿using Microsoft.Maui.Controls;
 using TMS_APP.Utilities;
 
-namespace TMS_APP;
+namespace TMS_APP.Pages;
 
-public partial class MainPage : ContentPage
+public partial class AccessPortal : ContentPage
 {
-	public MainPage()
+	public AccessPortal()
 	{
 		InitializeComponent();
 	}
@@ -31,7 +31,13 @@ public partial class MainPage : ContentPage
 				{"email", entry_signupEmail.Text}, 
 				{"Pwd", entry_signupConPassword.Text},
 			};
-			await apiUtilities.PostDataToAPI(data, "Registration/");
+			
+			int signupResponse = await ApiUtilities.PostDataToAPI(data, "Registration/");
+
+			if (signupResponse == 200)
+			{
+				await Navigation.PushAsync(new Hub());
+			}
 		}
 	}
 
@@ -61,7 +67,12 @@ public partial class MainPage : ContentPage
 				{"Pwd", entry_loginPassword.Text},
 			};
 
-			await apiUtilities.PostDataToAPI(data, "Authentication/");
+			int loginResponse =	await ApiUtilities.PostDataToAPI(data, "Authentication/");
+
+			if(loginResponse == 200)
+			{
+				await Navigation.PushAsync(new Hub());
+			}
 		}
 	}
 }

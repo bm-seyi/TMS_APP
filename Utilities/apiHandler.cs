@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace TMS_APP.Utilities;
 
-public class apiUtilities 
+public class ApiUtilities 
 {
-    public static async Task PostDataToAPI(Dictionary<string, string> data, string endpoint)
+    public static async Task<int> PostDataToAPI(Dictionary<string, string> data, string endpoint)
 	{	
 		string url = "http://localhost:5188/";
 		string JSON_data = JsonSerializer.Serialize(data);
@@ -32,11 +32,9 @@ public class apiUtilities
 				if (response.IsSuccessStatusCode)
 				{
 					var response_content = await response.Content.ReadAsStringAsync();
-					Console.WriteLine(response_content);
-				} else 
-				{
-					Console.WriteLine(response.StatusCode);
+					return (int)response.StatusCode;
 				}
+
 			} catch (Exception ex)
 			{
 				Console.WriteLine($"Exception: {ex.Message}");
@@ -46,6 +44,8 @@ public class apiUtilities
 					Console.WriteLine($"Error: {ex.InnerException.Message}");
 				}
 			}
+
+			return -1;
 		}
 	}
 }

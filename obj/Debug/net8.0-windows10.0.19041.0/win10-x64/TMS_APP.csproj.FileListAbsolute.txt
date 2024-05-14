@@ -799,3 +799,8 @@ C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-wind
 C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\TMS_APP.sourcelink.json
 C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DotNetEnv.dll
 C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Sprache.dll
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\RestartAgent.exe
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Maps.dll
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Maps.dll
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Maps.dll
+C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Management.Deployment.Projection.dll
