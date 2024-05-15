@@ -18,3 +18,10 @@ Removed unused .env with an API Key that was never used for an API.
 
 ## 0.0.7
 On boot up local environment variables are loaded. Some methods in the MainPage.xaml.cs have been changed to async to due PostDataToAPI method being async. A new script has been created to contain all current and future methods that will deals with APIs.
+
+## 0.0.8
+Response status code is now returned from the PostDataToAPI method. A new page has been created and can be accesed once the user has be authorised or registered. The new page currently displays a map visual. 
+Couple script and method name changes. 
+
+## 0.0.9
+The bing map API key is stored in a .env file which is now retrieved from. The project has also been cleaned. 
