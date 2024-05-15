@@ -22,3 +22,6 @@ On boot up local environment variables are loaded. Some methods in the MainPage.
 ## 0.0.8
 Response status code is now returned from the PostDataToAPI method. A new page has been created and can be accesed once the user has be authorised or registered. The new page currently displays a map visual. 
 Couple script and method name changes. 
+
+## 0.0.9
+The bing map API key is stored in a .env file which is now retrieved from. The project has also been cleaned. 

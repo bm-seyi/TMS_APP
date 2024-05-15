@@ -2,6 +2,7 @@
 using DotNetEnv;
 using System;
 using CommunityToolkit.Maui.Maps;
+
 namespace TMS_APP;
 
 public static class MauiProgram
@@ -18,7 +19,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 		
-		builder.UseMauiCommunityToolkitMaps("");
+		string? BingKey = Environment.GetEnvironmentVariable("bingKey");
+		if (!string.IsNullOrWhiteSpace(BingKey))
+		{
+			builder.UseMauiCommunityToolkitMaps(BingKey);
+		}
 
 #if DEBUG
 		builder.Logging.AddDebug();

@@ -43,25 +43,3 @@ C:\Users\TAdeyemi\OneDrive - Keolis UK\Code\Projects\Tram Management System\TMS_
 C:\Users\TAdeyemi\OneDrive - Keolis UK\Code\Projects\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.AssemblyInfoInputs.cache
 C:\Users\TAdeyemi\OneDrive - Keolis UK\Code\Projects\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.AssemblyInfo.cs
 C:\Users\TAdeyemi\OneDrive - Keolis UK\Code\Projects\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.inputs
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.inputs
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.inputs
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\mauisplash.stamp
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\mauiimage.stamp
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\mauifont.stamp
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\actool\_PartialAppManifest.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\actool\_BundleResourceWithLogicalName.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\actool\_ProcessedImageAssetsPath.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\ibtool\_BundleResourceWithLogicalName.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\ibtool\_ProcessedInterfaceDefinitionsPath.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_PartialAppManifest.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_BundleResourceWithLogicalName.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\coremlc\_ProcessedCoreMLModelsPath.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedBundleResourcesPath.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\_ProcessedContentPath.items
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.csproj.AssemblyReference.cache
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.AssemblyInfoInputs.cache
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.AssemblyInfo.cs
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.csproj.CoreCompileInputs.cache
-C:\Users\User\OneDrive\Code\Tram Management System\TMS_APP\obj\Debug\net8.0-ios\iossimulator-x64\TMS_APP.sourcelink.json
