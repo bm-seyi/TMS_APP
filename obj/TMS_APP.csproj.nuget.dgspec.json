@@ -60,13 +60,13 @@
         "net8.0-android34.0": {
           "targetAlias": "net8.0-android",
           "dependencies": {
-            "CommunityToolkit.Maui.Maps": {
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Esri.ArcGISRuntime.Maui": {
+              "target": "Package",
+              "version": "[200.4.0, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -77,14 +77,6 @@
               "version": "[8.0.21, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Controls.Maps": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Maps": {
               "target": "Package",
               "version": "[8.0.21, )"
             },
@@ -119,13 +111,13 @@
         "net8.0-ios17.2": {
           "targetAlias": "net8.0-ios",
           "dependencies": {
-            "CommunityToolkit.Maui.Maps": {
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Esri.ArcGISRuntime.Maui": {
+              "target": "Package",
+              "version": "[200.4.0, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -136,14 +128,6 @@
               "version": "[8.0.21, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Controls.Maps": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Maps": {
               "target": "Package",
               "version": "[8.0.21, )"
             },
@@ -178,13 +162,13 @@
         "net8.0-maccatalyst17.2": {
           "targetAlias": "net8.0-maccatalyst",
           "dependencies": {
-            "CommunityToolkit.Maui.Maps": {
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Esri.ArcGISRuntime.Maui": {
+              "target": "Package",
+              "version": "[200.4.0, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -195,14 +179,6 @@
               "version": "[8.0.21, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Controls.Maps": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Maps": {
               "target": "Package",
               "version": "[8.0.21, )"
             },
@@ -238,13 +214,13 @@
         "net8.0-windows10.0.19041": {
           "targetAlias": "net8.0-windows10.0.19041.0",
           "dependencies": {
-            "CommunityToolkit.Maui.Maps": {
-              "target": "Package",
-              "version": "[2.0.2, )"
-            },
             "DotNetEnv": {
               "target": "Package",
               "version": "[3.0.0, )"
+            },
+            "Esri.ArcGISRuntime.Maui": {
+              "target": "Package",
+              "version": "[200.4.0, )"
             },
             "Microsoft.Extensions.Logging.Debug": {
               "target": "Package",
@@ -255,14 +231,6 @@
               "version": "[8.0.21, )"
             },
             "Microsoft.Maui.Controls.Compatibility": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Controls.Maps": {
-              "target": "Package",
-              "version": "[8.0.21, )"
-            },
-            "Microsoft.Maui.Maps": {
               "target": "Package",
               "version": "[8.0.21, )"
             }

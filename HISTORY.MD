@@ -25,3 +25,6 @@ Couple script and method name changes.
 
 ## 0.0.9
 The bing map API key is stored in a .env file which is now retrieved from. The project has also been cleaned. 
+
+## 0.0.10
+This project now uses ArcGIS maps. The map has a starting point of Manchester and the basemap is Dark Gray. The API key is retrieved from the .env.
