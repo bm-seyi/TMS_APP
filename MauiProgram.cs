@@ -1,7 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
 using DotNetEnv;
 using System;
-using CommunityToolkit.Maui.Maps;
+using Esri.ArcGISRuntime.Maui;
+using Esri.ArcGISRuntime;
 
 namespace TMS_APP;
 
@@ -19,11 +20,15 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 		
-		string? BingKey = Environment.GetEnvironmentVariable("bingKey");
-		if (!string.IsNullOrWhiteSpace(BingKey))
+		string? mapKey = Environment.GetEnvironmentVariable("arcgisKey");
+		if (!string.IsNullOrWhiteSpace(mapKey))
 		{
-			builder.UseMauiCommunityToolkitMaps(BingKey);
+			builder.UseArcGISRuntime(config => 
+			{
+				config.UseApiKey(mapKey);
+			});
 		}
+		
 
 #if DEBUG
 		builder.Logging.AddDebug();

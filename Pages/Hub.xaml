@@ -3,8 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:maps="http://schemas.microsoft.com/dotnet/2021/maui/maps"
-             x:Class="TMS_APP.Pages.Hub">
+             xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
+             xmlns:local="clr-namespace:TMS_APP.ArcgisMap"
+             x:Class="TMS_APP.Pages.Hub">  
 
-        <maps:Map x:Name="NativeMap" WidthRequest="500" HeightRequest="500" />
+    <ContentPage.Resources>
+        <local:MapViewModel x:Key="MapViewModel" />
+    </ContentPage.Resources>
+
+    <esri:MapView x:Name="MainMapView" Map="{Binding TMSMap, Source={StaticResource MapViewModel}}" />
+
 </ContentPage>

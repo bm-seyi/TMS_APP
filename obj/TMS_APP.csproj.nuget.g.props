@@ -13,7 +13,6 @@
     <SourceRoot Include="C:\Users\User\.nuget\packages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(TargetFramework)' == 'net8.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)xamarin.build.download\0.11.4\buildTransitive\Xamarin.Build.Download.props" Condition="Exists('$(NuGetPackageRoot)xamarin.build.download\0.11.4\buildTransitive\Xamarin.Build.Download.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.4\build\Microsoft.NET.ILLink.Tasks.props" Condition="Exists('$(NuGetPackageRoot)microsoft.net.illink.tasks\8.0.4\build\Microsoft.NET.ILLink.Tasks.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.resizetizer\8.0.21\buildTransitive\Microsoft.Maui.Resizetizer.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.resizetizer\8.0.21\buildTransitive\Microsoft.Maui.Resizetizer.props')" />
     <Import Project="$(NuGetPackageRoot)microsoft.maui.core\8.0.21\buildTransitive\Microsoft.Maui.Core.props" Condition="Exists('$(NuGetPackageRoot)microsoft.maui.core\8.0.21\buildTransitive\Microsoft.Maui.Core.props')" />
@@ -40,14 +39,19 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-android' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">C:\Users\User\.nuget\packages\microsoft.net.illink.tasks\8.0.4</PkgMicrosoft_NET_ILLink_Tasks>
+    <PkgEsri_ArcGISRuntime_Maui Condition=" '$(PkgEsri_ArcGISRuntime_Maui)' == '' ">C:\Users\User\.nuget\packages\esri.arcgisruntime.maui\200.4.0</PkgEsri_ArcGISRuntime_Maui>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-ios' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">C:\Users\User\.nuget\packages\microsoft.net.illink.tasks\8.0.4</PkgMicrosoft_NET_ILLink_Tasks>
+    <PkgEsri_ArcGISRuntime_Maui Condition=" '$(PkgEsri_ArcGISRuntime_Maui)' == '' ">C:\Users\User\.nuget\packages\esri.arcgisruntime.maui\200.4.0</PkgEsri_ArcGISRuntime_Maui>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-maccatalyst' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_NET_ILLink_Tasks Condition=" '$(PkgMicrosoft_NET_ILLink_Tasks)' == '' ">C:\Users\User\.nuget\packages\microsoft.net.illink.tasks\8.0.4</PkgMicrosoft_NET_ILLink_Tasks>
+    <PkgEsri_ArcGISRuntime_Maui Condition=" '$(PkgEsri_ArcGISRuntime_Maui)' == '' ">C:\Users\User\.nuget\packages\esri.arcgisruntime.maui\200.4.0</PkgEsri_ArcGISRuntime_Maui>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net8.0-windows10.0.19041.0' AND '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_WindowsAppSDK Condition=" '$(PkgMicrosoft_WindowsAppSDK)' == '' ">C:\Users\User\.nuget\packages\microsoft.windowsappsdk\1.5.240311000</PkgMicrosoft_WindowsAppSDK>
+    <PkgEsri_ArcGISRuntime_WinUI Condition=" '$(PkgEsri_ArcGISRuntime_WinUI)' == '' ">C:\Users\User\.nuget\packages\esri.arcgisruntime.winui\200.4.0</PkgEsri_ArcGISRuntime_WinUI>
+    <PkgEsri_ArcGISRuntime_Maui Condition=" '$(PkgEsri_ArcGISRuntime_Maui)' == '' ">C:\Users\User\.nuget\packages\esri.arcgisruntime.maui\200.4.0</PkgEsri_ArcGISRuntime_Maui>
   </PropertyGroup>
 </Project>
