@@ -34,3 +34,6 @@ This project can load the line and stops from the kml files stored on github.
 
 ## 0.0.12
 The stops have been temporarily removed. The folder containing the map data have been removed due to it being stored on github. Also before sending API requests it checks if the device is connected to the internet. Readability and efficiency have been improved in initializing the map.
+
+## 0.0.13 
+The code behind the AccessPortal.xaml has been redone to improve readability and maintainability. Repetitive code has been removed and replaced with additional methods. 
