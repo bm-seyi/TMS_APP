@@ -31,13 +31,27 @@ public partial class AccessPortal : ContentPage
 				{"email", entry_signupEmail.Text}, 
 				{"Pwd", entry_signupConPassword.Text},
 			};
-			
-			int signupResponse = await ApiUtilities.PostDataToAPI(data, "Registration/");
 
-			if (signupResponse == 200)
+			if (Connectivity.Current.NetworkAccess != NetworkAccess.None)
 			{
-				await Navigation.PushAsync(new Hub());
+				int loginResponse =	await ApiUtilities.PostDataToAPI(data, "Registration/");
+
+				if(loginResponse == 200)
+				{
+					await Navigation.PushAsync(new Hub());
+				} else 
+				{
+					await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
+				}
+			} else 
+			{
+				await DisplayAlert("Device Isn't Connected to the Internet", "Please  reconnect to the internet", "Ok");
 			}
+
+
+		} else 
+		{
+			await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
 		}
 	}
 
@@ -67,12 +81,26 @@ public partial class AccessPortal : ContentPage
 				{"Pwd", entry_loginPassword.Text},
 			};
 
-			int loginResponse =	await ApiUtilities.PostDataToAPI(data, "Authentication/");
-
-			if(loginResponse == 200)
+			if (Connectivity.Current.NetworkAccess != NetworkAccess.None)
 			{
-				await Navigation.PushAsync(new Hub());
+				int loginResponse =	await ApiUtilities.PostDataToAPI(data, "Authentication/");
+
+				if(loginResponse == 200)
+				{
+					await Navigation.PushAsync(new Hub());
+				} else 
+				{
+					await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
+				}
+			} else 
+			{
+				await DisplayAlert("Device Isn't Connected to the Internet", "Please  reconnect to the internet", "Ok");
 			}
+
+
+		} else 
+		{
+			await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
 		}
 	}
 }
