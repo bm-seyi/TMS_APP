@@ -15,92 +15,80 @@ public partial class AccessPortal : ContentPage
 		((Entry)sender).BackgroundColor = (entry_signupPassword.Text != e.NewTextValue) ? Color.FromRgb(255, 0, 0) : Colors.Transparent;
 	}
 
-	private void Unfocused_PasswordMatch(object sender, FocusEventArgs e){
-		if (string.IsNullOrEmpty(entry_signupConPassword.Text))
-		{
-			((Entry)sender).BackgroundColor = Colors.Transparent;
-		}
-	}
+    private void Unfocused_PasswordMatch(object sender, FocusEventArgs e)
+    {
+        var entry = (Entry)sender;
+        entry.BackgroundColor = string.IsNullOrEmpty(entry_signupConPassword.Text) ? Colors.Transparent : entry.BackgroundColor;
+    }
 
 	private async void clicked_signupSubmit(object sender, EventArgs e)
 	{
-		if (Utils.IsValidEmail(entry_signupEmail.Text) && entry_signupPassword.Text == entry_signupConPassword.Text)
+		if (!Utils.IsValidEmail(entry_signupEmail.Text) && entry_signupPassword.Text != entry_signupConPassword.Text)
 		{
-			var data = new Dictionary<string, string>
-			{
-				{"email", entry_signupEmail.Text}, 
-				{"Pwd", entry_signupConPassword.Text},
-			};
-
-			if (Connectivity.Current.NetworkAccess != NetworkAccess.None)
-			{
-				int loginResponse =	await ApiUtilities.PostDataToAPI(data, "Registration/");
-
-				if(loginResponse == 200)
-				{
-					await Navigation.PushAsync(new Hub());
-				} else 
-				{
-					await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
-				}
-			} else 
-			{
-				await DisplayAlert("Device Isn't Connected to the Internet", "Please  reconnect to the internet", "Ok");
-			}
-
-
-		} else 
+			await DisplayAlert("Incorrect Email or Password", "Please try again after a few minutes", "Ok");
+			return;
+		} 
+		
+		var data = new Dictionary<string, string>
 		{
-			await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
-		}
+			{"email", entry_signupEmail.Text}, 
+			{"Pwd", entry_signupConPassword.Text},
+		};
+
+		await ProcessRequest(payload: data, endpoint: "Registration/", action: "Signup");
 	}
 
 	private void clicked_loginButton(object sender, EventArgs e)
 	{
-		signupStack.IsVisible = false;
-		loginStack.IsVisible = true;
-		loginButton.IsVisible = false;
-		signupButton.IsVisible = false;
+		ToggleStack(false);
 	}
 
 	private void clicked_signupButton(object sender, EventArgs e)
 	{
-		signupStack.IsVisible = true;
-		loginStack.IsVisible = false;
-		loginButton.IsVisible = false;
-		signupButton.IsVisible = false;
+		ToggleStack(true);
 	}
 
 	private async void clicked_loginSubmit(object sender, EventArgs e)
 	{
-		if (Utils.IsValidEmail(entry_loginEmail.Text))
+		if (!Utils.IsValidEmail(entry_loginEmail.Text))
 		{
-			var data = new Dictionary<string, string>
-			{
-				{"email", entry_loginEmail.Text}, 
-				{"Pwd", entry_loginPassword.Text},
-			};
+			await DisplayAlert("Incorrect Email or Password", "Please try again after a few minutes", "Ok"); 
+			return;
+		}
 
-			if (Connectivity.Current.NetworkAccess != NetworkAccess.None)
-			{
-				int loginResponse =	await ApiUtilities.PostDataToAPI(data, "Authentication/");
-
-				if(loginResponse == 200)
-				{
-					await Navigation.PushAsync(new Hub());
-				} else 
-				{
-					await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
-				}
-			} else 
-			{
-				await DisplayAlert("Device Isn't Connected to the Internet", "Please  reconnect to the internet", "Ok");
-			}
-
-
-		} else 
+		var data = new Dictionary<string, string>
 		{
-			await DisplayAlert("Incorect Email or Password", "Please try again after a few minutes", "Ok");
+			{"email", entry_loginEmail.Text}, 
+			{"Pwd", entry_loginPassword.Text},
+		};
+		
+		await ProcessRequest(payload: data, endpoint: "Authentication/", action: "Login");
+	}
+	private void ToggleStack(bool isSignup)
+	{
+		signupStack.IsVisible = isSignup;
+		loginStack.IsVisible = !isSignup;
+		loginButton.IsVisible = false;
+		signupButton.IsVisible = false;
+	}
+
+	private async Task ProcessRequest(Dictionary<string, string> payload, string endpoint, string action)
+	{
+		if (Connectivity.Current.NetworkAccess == NetworkAccess.None)
+		{
+			await DisplayAlert("Device Isn't Connected to the Internet", "Please reconnect to the internet", "Ok");
+			return;
+		} 
+		
+		int loginResponse =	await ApiUtilities.PostDataToAPI(payload, endpoint);
+
+		if (loginResponse == 200)
+		{
+			await Navigation.PushAsync(new Hub());
+		} 
+		else 
+		{
+			await DisplayAlert($"{action} Failed", "Incorrect Email or Password. Please try again after a few minutes", "Ok");
 		}
 	}
 }
