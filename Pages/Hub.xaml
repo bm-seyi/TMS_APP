@@ -11,6 +11,6 @@
         <local:MapViewModel x:Key="MapViewModel" />
     </ContentPage.Resources>
 
-    <esri:MapView x:Name="MainMapView" Map="{Binding TMSMap, Source={StaticResource MapViewModel}}" />
+    <esri:MapView x:Name="MainMapView" Map="{Binding tmsMap, Source={StaticResource MapViewModel}}" />
 
 </ContentPage>

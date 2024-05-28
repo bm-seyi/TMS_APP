@@ -20,7 +20,7 @@ Removed unused .env with an API Key that was never used for an API.
 On boot up local environment variables are loaded. Some methods in the MainPage.xaml.cs have been changed to async to due PostDataToAPI method being async. A new script has been created to contain all current and future methods that will deals with APIs.
 
 ## 0.0.8
-Response status code is now returned from the PostDataToAPI method. A new page has been created and can be accesed once the user has be authorised or registered. The new page currently displays a map visual. 
+Response status code is now returned from the PostDataToAPI method. A new page has been created and can be accessed once the user has be authorized or registered. The new page currently displays a map visual. 
 Couple script and method name changes. 
 
 ## 0.0.9
@@ -31,3 +31,6 @@ This project now uses ArcGIS maps. The map has a starting point of Manchester an
 
 ## 0.0.11 
 This project can load the line and stops from the kml files stored on github.
+
+## 0.0.12
+The stops have been temporarily removed. The folder containing the map data have been removed due to it being stored on github. Also before sending API requests it checks if the device is connected to the internet. Readability and efficiency have been improved in initializing the map.
