@@ -37,3 +37,6 @@ The stops have been temporarily removed. The folder containing the map data have
 
 ## 0.0.13 
 The code behind the AccessPortal.xaml has been redone to improve readability and maintainability. Repetitive code has been removed and replaced with additional methods. 
+
+## 0.0.14
+Dependency Injection is now used to send requests to the API. The relevant scripts have been updated to support this. 
