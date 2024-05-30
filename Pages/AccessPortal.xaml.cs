@@ -5,10 +5,13 @@ namespace TMS_APP.Pages;
 
 public partial class AccessPortal : ContentPage
 {
-	public AccessPortal()
-	{
-		InitializeComponent();
-	}
+	private readonly ApiUtilities _apiUtilities;
+
+    public AccessPortal(ApiUtilities apiUtilities)
+    {
+        InitializeComponent();
+        _apiUtilities = apiUtilities ?? throw new ArgumentNullException(nameof(apiUtilities));
+    }
 
 	private void TextChanged_PasswordMatch(object sender, TextChangedEventArgs e)
 	{
@@ -80,7 +83,7 @@ public partial class AccessPortal : ContentPage
 			return;
 		} 
 		
-		int loginResponse =	await ApiUtilities.PostDataToAPI(payload, endpoint);
+		int loginResponse =	await _apiUtilities.PostDataToAPI(payload, endpoint);
 
 		if (loginResponse == 200)
 		{
