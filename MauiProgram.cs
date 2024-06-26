@@ -4,7 +4,7 @@ using DotNetEnv;
 using System;
 using Esri.ArcGISRuntime.Maui;
 using Esri.ArcGISRuntime;
-using TMS_APP.Utilities;
+using TMS_APP.Utilities.API;
 using TMS_APP.Pages;
 
 namespace TMS_APP;

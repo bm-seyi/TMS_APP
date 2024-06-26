@@ -40,3 +40,6 @@ The code behind the AccessPortal.xaml has been redone to improve readability and
 
 ## 0.0.14
 Dependency Injection is now used to send requests to the API. The relevant scripts have been updated to support this. 
+
+## 0.0.15
+ArcgisMap.cs has been removed as the map is now generated from the code behind file. The metrolink network is displayed via a kmllayer and the stops is now clustered and displayed via graphical overlays. 
