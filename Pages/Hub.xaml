@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:esri="http://schemas.esri.com/arcgis/runtime/2013"
-             xmlns:local="clr-namespace:TMS_APP.ArcgisMap"
-             x:Class="TMS_APP.Pages.Hub">  
+             xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Maui;assembly=Esri.ArcGISRuntime.Maui"
+             xmlns:local="clr-namespace:TMS_APP.Pages"
+             x:Class="TMS_APP.Pages.Hub">
 
-    <ContentPage.Resources>
-        <local:MapViewModel x:Key="MapViewModel" />
-    </ContentPage.Resources>
-
-    <esri:MapView x:Name="MainMapView" Map="{Binding tmsMap, Source={StaticResource MapViewModel}}" />
+    <esriUI:MapView x:Name="mapView"/>
 
 </ContentPage>
