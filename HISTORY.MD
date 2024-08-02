@@ -43,3 +43,6 @@ Dependency Injection is now used to send requests to the API. The relevant scrip
 
 ## 0.0.15
 ArcgisMap.cs has been removed as the map is now generated from the code behind file. The metrolink network is displayed via a kmllayer and the stops is now clustered and displayed via graphical overlays. 
+
+## 0.0.16
+Traffic incident data is now requested from the Tom Tom API and loaded onto the map via graphical overlays. Also the stops data is now retrieved locally, additional files have been added to support this. The apiutilities class now use an interface which has been registered in the mauiprogram.cs. Additional logging has been added to the Access Portal. Unnecessary registered services have been removed from mauiprogram.cs.

@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls;
+﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.Controls;
 using TMS_APP.Utilities;
 using TMS_APP.Utilities.API;
 
@@ -6,12 +7,16 @@ namespace TMS_APP.Pages;
 
 public partial class AccessPortal : ContentPage
 {
-	private readonly ApiUtilities _apiUtilities;
+	private readonly IApiUtilities _apiUtilities;
+	private readonly ILogger<AccessPortal> _logger;
+	private readonly IServiceProvider _serviceProvider;
 
-    public AccessPortal(ApiUtilities apiUtilities)
+    public AccessPortal(IApiUtilities apiUtilities, ILogger<AccessPortal> logger, IServiceProvider serviceProvider)
     {
         InitializeComponent();
+		_logger = logger;
         _apiUtilities = apiUtilities ?? throw new ArgumentNullException(nameof(apiUtilities));
+		_serviceProvider = serviceProvider;
     }
 
 	private void TextChanged_PasswordMatch(object sender, TextChangedEventArgs e)
@@ -29,6 +34,7 @@ public partial class AccessPortal : ContentPage
 	{
 		if (!Utils.IsValidEmail(entry_signupEmail.Text) && entry_signupPassword.Text != entry_signupConPassword.Text)
 		{
+			_logger.LogWarning("Incorrect Email or Password has been provided");
 			await DisplayAlert("Incorrect Email or Password", "Please try again after a few minutes", "Ok");
 			return;
 		} 
@@ -56,6 +62,7 @@ public partial class AccessPortal : ContentPage
 	{
 		if (!Utils.IsValidEmail(entry_loginEmail.Text))
 		{
+			_logger.LogWarning("Incorrect Email or Password has been provided");
 			await DisplayAlert("Incorrect Email or Password", "Please try again after a few minutes", "Ok"); 
 			return;
 		}
@@ -80,6 +87,7 @@ public partial class AccessPortal : ContentPage
 	{
 		if (Connectivity.Current.NetworkAccess == NetworkAccess.None)
 		{
+			_logger.LogWarning("Internet Connectivity Lost");
 			await DisplayAlert("Device Isn't Connected to the Internet", "Please reconnect to the internet", "Ok");
 			return;
 		} 
@@ -88,7 +96,9 @@ public partial class AccessPortal : ContentPage
 
 		if (loginResponse == 200)
 		{
-			await Navigation.PushAsync(new Hub());
+			_logger.LogInformation("User has been authenticated");
+			Hub hubPage = _serviceProvider.GetRequiredService<Hub>();
+			await Navigation.PushAsync(hubPage);
 		} 
 		else 
 		{

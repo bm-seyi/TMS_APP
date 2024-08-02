@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
 using System.Text.Json.Nodes;
 using System.Net.Http.Json;
+using TMS_APP.Utilities.API;
 
 namespace TMS_APP.Utilities.API
 {
-	public class ApiUtilities 
+	public class ApiUtilities : IApiUtilities
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 		private readonly ILogger<ApiUtilities> _logger;
@@ -52,7 +53,7 @@ namespace TMS_APP.Utilities.API
 
 		public async Task<int> PostDataToAPI(Dictionary<string, string> data, string endpoint)
 		{	
-			HttpClient client = CreateHttpClient("http://localhost:5188/");
+			using HttpClient client = CreateHttpClient("http://localhost:5188/");
 			
 			client.DefaultRequestHeaders.Add("X-API-KEY", _apiKey);
 			string JSON_data = JsonSerializer.Serialize(data);
@@ -102,5 +103,28 @@ namespace TMS_APP.Utilities.API
 			
 		}
 
+		public async Task<T> GetDataFromAPI<T>(string url, string endpoint, Dictionary<string, string> param)
+		{
+
+			if (string.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
+			if (string.IsNullOrWhiteSpace(endpoint)) throw new ArgumentNullException(nameof(endpoint));
+			if (param == null) throw new ArgumentNullException(nameof(param));
+
+			using (var httpClient = CreateHttpClient(url))
+			{
+				string apiQuery = await new FormUrlEncodedContent(param).ReadAsStringAsync();
+				string apiUrl = $"{endpoint}?{apiQuery}";
+
+				return await httpClient.GetFromJsonAsync<T>(apiUrl) ?? throw new Exception("Failed to retrieve data from API");
+			}
+
+		}
 	}
+
+	public interface IApiUtilities
+	{
+		Task<int> PostDataToAPI(Dictionary<string, string> data, string endpoint);
+		Task<T> GetDataFromAPI<T>(string url, string endpoint, Dictionary<string, string> param);
+	}
+
 }
