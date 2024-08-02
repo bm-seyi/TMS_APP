@@ -7,6 +7,7 @@ using Esri.ArcGISRuntime;
 using TMS_APP.Utilities.API;
 using TMS_APP.Pages;
 
+
 namespace TMS_APP;
 
 public static class MauiProgram
@@ -24,8 +25,9 @@ public static class MauiProgram
 			});
 		
 		builder.Services.AddHttpClient();
-		builder.Services.AddSingleton<ApiUtilities>();
+		builder.Services.AddTransient<IApiUtilities, ApiUtilities>();
 		builder.Services.AddSingleton<AccessPortal>();
+		builder.Services.AddTransient<Hub>();
 		builder.Services.AddLogging(configure => configure.AddConsole());
 		
 		string? mapKey = Environment.GetEnvironmentVariable("arcgisKey");
@@ -38,7 +40,7 @@ public static class MauiProgram
 		}
 		
 
-#if DEBUG
+#if DEBU
 		builder.Logging.AddDebug();
 #endif
 

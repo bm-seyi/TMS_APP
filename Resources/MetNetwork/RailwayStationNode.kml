@@ -1,0 +1,3305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>RailwayStationNode</name>
+    <Style id="icon-1718-F9A825-normal">
+      <IconStyle>
+        <scale>1</scale>
+        <Icon>
+          <href>https://github.com/Big-Man-Seyi/metrolinkData/blob/main/MetrolinkResources/Icons/stopIcon_small.png?raw=true</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+    </Style>
+    <Style id="icon-1718-F9A825-highlight">
+      <IconStyle>
+        <scale>1</scale>
+        <Icon>
+          <href>https://github.com/Big-Man-Seyi/metrolinkData/blob/main/MetrolinkResources/Icons/stopIcon_small.png?raw=true</href>
+        </Icon>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+    </Style>
+    <StyleMap id="icon-1718-F9A825">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1718-F9A825-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1718-F9A825-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Heaton Park</name>
+      <description><![CDATA[description: Heaton Park Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: HPK<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Heaton Park Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>HPK</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.267247,53.530505,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bowker Vale</name>
+      <description><![CDATA[description: Bowker Vale Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: BKV<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Bowker Vale Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BKV</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.249895,53.524893,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crumpsall</name>
+      <description><![CDATA[description: Crumpsall Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: CRP<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Crumpsall Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CRP</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.241045,53.517293,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Bury</name>
+      <description><![CDATA[description: Bury Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: BRY<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Bury Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BRY</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.297096,53.590959,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Radcliffe</name>
+      <description><![CDATA[description: Radcliffe Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: RAD<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Radcliffe Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>RAD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.321031,53.56239,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Whitefield</name>
+      <description><![CDATA[description: Whitefield Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: WFD<br>ticketZone: 3/4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Whitefield Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WFD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3/4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.295205,53.551212,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[Besses o' th' Barn]]></name>
+      <description><![CDATA[description: Besses o' th' Barn Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: BOB<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value><![CDATA[Besses o' th' Barn Metrolink stop.]]></value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BOB</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.286123,53.542065,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Prestwich</name>
+      <description><![CDATA[description: Prestwich Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: PRS<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Prestwich Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>PRS</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.281902,53.533318,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Victoria</name>
+      <description><![CDATA[description: Victoria Metrolink stop.<br>type: railwayStop<br>validFrom: 19920406<br>currentStatus: functional<br>stationCode: VIC<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Victoria Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920406</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>VIC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.241717,53.487742,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Market Street</name>
+      <description><![CDATA[description: Market Street Metrolink stop.<br>type: railwayStop<br>validFrom: 19920427<br>currentStatus: functional<br>stationCode: MKT<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Market Street Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920427</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>MKT</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.238836,53.481938,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Piccadilly Gardens</name>
+      <description><![CDATA[description: Piccadilly Gardens Metrolink stop.<br>type: railwayStop<br>validFrom: 19920720<br>currentStatus: functional<br>stationCode: PCG<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Piccadilly Gardens Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920720</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>PCG</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.236988,53.480272,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Piccadilly</name>
+      <description><![CDATA[description: Piccadilly Metrolink stop.<br>type: railwayStop<br>validFrom: 19920720<br>currentStatus: functional<br>stationCode: PIC<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Piccadilly Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920720</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>PIC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.230409,53.47703,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Deansgate-Castlefield</name>
+      <description><![CDATA[description: Deansgate-Castlefield Metrolink stop.<br>type: railwayStop<br>validFrom: 19920427<br>currentStatus: functional<br>stationCode: DCF<br>ticketZone: 1<br>comments: Formerly known as 'G-Mex' until Sep-2010. Some old datasets use stationCode=GMX]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Deansgate-Castlefield Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920427</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>DCF</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value><![CDATA[Formerly known as 'G-Mex' until Sep-2010. Some old datasets use stationCode=GMX]]></value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.250345,53.474724,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Pomona</name>
+      <description><![CDATA[description: Pomona Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: POM<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Pomona Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>POM</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.278029,53.465194,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Trafford Bar</name>
+      <description><![CDATA[description: Trafford Bar Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: TFB<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Trafford Bar Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>TFB</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.277254,53.461759,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Shudehill</name>
+      <description><![CDATA[description: Shudehill Metrolink stop.<br>type: railwayStop<br>validFrom: 20030331<br>currentStatus: functional<br>stationCode: SHL<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Shudehill Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20030331</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SHL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.239107,53.485278,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Firswood</name>
+      <description><![CDATA[description: Firswood Metrolink stop.<br>type: railwayStop<br>validFrom: 20110707<br>currentStatus: functional<br>stationCode: FIR<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Firswood Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20110707</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>FIR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.277676,53.451211,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Chorlton</name>
+      <description><![CDATA[description: Chorlton Metrolink stop.<br>type: railwayStop<br>validFrom: 20110707<br>currentStatus: functional<br>stationCode: CHO<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Chorlton Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20110707</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CHO</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.273508,53.442825,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[St Werburgh's Road]]></name>
+      <description><![CDATA[description: St Werburgh's Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20110707<br>currentStatus: functional<br>stationCode: SWR<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value><![CDATA[St Werburgh's Road Metrolink stop.]]></value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20110707</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SWR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.265715,53.438841,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sale Water Park</name>
+      <description><![CDATA[description: Sale Water Park Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: SWP<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Sale Water Park Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SWP</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.290831,53.428243,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Northern Moor</name>
+      <description><![CDATA[description: Northern Moor Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: NMR<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Northern Moor Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>NMR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.288151,53.414554,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Wythenshawe Park</name>
+      <description><![CDATA[description: Wythenshawe Park Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: WPK<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Wythenshawe Park Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WPK</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.2957,53.407736,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Moor Road</name>
+      <description><![CDATA[description: Moor Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: MRD<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Moor Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>MRD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.295158,53.403311,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Baguley</name>
+      <description><![CDATA[description: Baguley Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: BAG<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Baguley Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BAG</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.292674,53.396849,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Roundthorn</name>
+      <description><![CDATA[description: Roundthorn Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: RTH<br>ticketZone: 3/4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Roundthorn Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>RTH</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3/4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.289172,53.392644,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Martinscroft</name>
+      <description><![CDATA[description: Martinscroft Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: MAR<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Martinscroft Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>MAR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.279779,53.39187,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Benchill</name>
+      <description><![CDATA[description: Benchill Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: BCH<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Benchill Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BCH</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.256215,53.38724,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Crossacres</name>
+      <description><![CDATA[description: Crossacres Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: CRO<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Crossacres Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CRO</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.256264,53.383317,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Robinswood Road</name>
+      <description><![CDATA[description: Robinswood Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: RBN<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Robinswood Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>RBN</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.258691,53.376396,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Peel Hall</name>
+      <description><![CDATA[description: Peel Hall Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: PLH<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Peel Hall Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>PLH</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.250395,53.373713,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Shadowmoss</name>
+      <description><![CDATA[description: Shadowmoss Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: SHD<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Shadowmoss Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SHD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.252445,53.367962,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Manchester Airport</name>
+      <description><![CDATA[description: Manchester Airport Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: AIR<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Manchester Airport Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>AIR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.272256,53.365359,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>New Islington</name>
+      <description><![CDATA[description: New Islington Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: NIS<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>New Islington Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>NIS</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.219815,53.481049,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Holt Town</name>
+      <description><![CDATA[description: Holt Town Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: HOT<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Holt Town Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>HOT</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.212063,53.483281,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Etihad Campus</name>
+      <description><![CDATA[description: Etihad Campus Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: SPC<br>ticketZone: 2<br>comments: Some current datasets use stationCode=ETD]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Etihad Campus Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SPC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value>Some current datasets use stationCode=ETD</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.201383,53.485374,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Velopark</name>
+      <description><![CDATA[description: Velopark Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: VEL<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Velopark Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>VEL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.193015,53.482289,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Clayton Hall</name>
+      <description><![CDATA[description: Clayton Hall Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: CLA<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Clayton Hall Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CLA</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.182351,53.482794,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Edge Lane</name>
+      <description><![CDATA[description: Edge Lane Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: EDL<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Edge Lane Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>EDL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.165293,53.480885,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cemetery Road</name>
+      <description><![CDATA[description: Cemetery Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: CER<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Cemetery Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CER</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.155005,53.47988,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Droylsden</name>
+      <description><![CDATA[description: Droylsden Metrolink stop.<br>type: railwayStop<br>validFrom: 20130211<br>currentStatus: functional<br>stationCode: DYL<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Droylsden Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130211</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>DYL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.144666,53.47947,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Audenshaw</name>
+      <description><![CDATA[description: Audenshaw Metrolink stop.<br>type: railwayStop<br>validFrom: 20131009<br>currentStatus: functional<br>stationCode: AUD<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Audenshaw Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20131009</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>AUD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.130965,53.478209,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ashton Moss</name>
+      <description><![CDATA[description: Ashton Moss Metrolink stop.<br>type: railwayStop<br>validFrom: 20131009<br>currentStatus: functional<br>stationCode: ASM<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Ashton Moss Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20131009</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ASM</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.121923,53.483677,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ashton West</name>
+      <description><![CDATA[description: Ashton West Metrolink stop.<br>type: railwayStop<br>validFrom: 20131009<br>currentStatus: functional<br>stationCode: ASW<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Ashton West Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20131009</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ASW</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.109721,53.49025,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ashton-under-Lyne</name>
+      <description><![CDATA[description: Ashton-under-Lyne Metrolink stop.<br>type: railwayStop<br>validFrom: 20131009<br>currentStatus: functional<br>stationCode: ASH<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Ashton-under-Lyne Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20131009</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ASH</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.098035,53.49035,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Queens Road</name>
+      <description><![CDATA[description: Queens Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20131216<br>currentStatus: functional<br>stationCode: QNS<br>ticketZone: 2<br>comments: Some old datasets use stationCode=QRC]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Queens Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20131216</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>QNS</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value>Some old datasets use stationCode=QRC</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.226649,53.501681,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Monsall</name>
+      <description><![CDATA[description: Monsall Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: MON<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Monsall Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>MON</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.210654,53.501097,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Central Park</name>
+      <description><![CDATA[description: Central Park Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: CEP<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Central Park Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CEP</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.19914,53.501593,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Newton Heath and Moston</name>
+      <description><![CDATA[description: Newton Heath and Moston Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: NHM<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Newton Heath and Moston Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>NHM</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.183723,53.504227,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Failsworth</name>
+      <description><![CDATA[description: Failsworth Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: FAL<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Failsworth Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>FAL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.162924,53.510628,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Hollinwood</name>
+      <description><![CDATA[description: Hollinwood Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: HOL<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Hollinwood Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>HOL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.147326,53.519998,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>South Chadderton</name>
+      <description><![CDATA[description: South Chadderton Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: SOC<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>South Chadderton Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SOC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.145182,53.526719,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Cornbrook</name>
+      <description><![CDATA[description: Cornbrook Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: CNK<br>ticketZone: 1/2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Cornbrook Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>CNK</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1/2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.26755,53.470019,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Abraham Moss</name>
+      <description><![CDATA[description: Abraham Moss Metrolink stop.<br>type: railwayStop<br>validFrom: 20110418<br>currentStatus: functional<br>stationCode: ABM<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Abraham Moss Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20110418</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ABM</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.235719,53.510668,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Dane Road</name>
+      <description><![CDATA[description: Dane Road Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: DAN<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Dane Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>DAN</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.311661,53.430004,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Sale</name>
+      <description><![CDATA[description: Sale Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: SAL<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Sale Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SAL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.319139,53.424185,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Brooklands</name>
+      <description><![CDATA[description: Brooklands Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: BRK<br>ticketZone: 3/4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Brooklands Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BRK</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3/4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.32606,53.417073,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Timperley</name>
+      <description><![CDATA[description: Timperley Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: TMP<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Timperley Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>TMP</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.338404,53.404254,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Navigation Road</name>
+      <description><![CDATA[description: Navigation Road Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: NAV<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Navigation Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>NAV</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.343316,53.395796,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Altrincham</name>
+      <description><![CDATA[description: Altrincham Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: ALT<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Altrincham Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ALT</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.347516,53.387209,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Eccles</name>
+      <description><![CDATA[description: Eccles Metrolink stop.<br>type: railwayStop<br>validFrom: 20000721<br>currentStatus: functional<br>stationCode: ECC<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Eccles Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20000721</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ECC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.335166,53.482984,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Ladywell</name>
+      <description><![CDATA[description: Ladywell Metrolink stop.<br>type: railwayStop<br>validFrom: 20000721<br>currentStatus: functional<br>stationCode: LDW<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Ladywell Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20000721</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>LDW</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.326655,53.484,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Salford Quays</name>
+      <description><![CDATA[description: Salford Quays Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: SFQ<br>ticketZone: 2<br>comments: Some current datasets use stationCode=SAQ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Salford Quays Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SFQ</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value>Some current datasets use stationCode=SAQ</value>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.283967,53.470413,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Exchange Quay</name>
+      <description><![CDATA[description: Exchange Quay Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: EXQ<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Exchange Quay Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>EXQ</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.282343,53.467699,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Harbour City</name>
+      <description><![CDATA[description: Harbour City Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: HBC<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Harbour City Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>HBC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.29062,53.474185,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Anchorage</name>
+      <description><![CDATA[description: Anchorage Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: ANC<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Anchorage Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ANC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.286027,53.474338,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Broadway</name>
+      <description><![CDATA[description: Broadway Metrolink stop.<br>type: railwayStop<br>validFrom: 19991206<br>currentStatus: functional<br>stationCode: BDW<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Broadway Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19991206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BDW</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.294932,53.474795,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Langworthy</name>
+      <description><![CDATA[description: Langworthy Metrolink stop.<br>type: railwayStop<br>validFrom: 20000721<br>currentStatus: functional<br>stationCode: LGW<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Langworthy Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20000721</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>LGW</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.296163,53.480644,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Weaste</name>
+      <description><![CDATA[description: Weaste Metrolink stop.<br>type: railwayStop<br>validFrom: 20000721<br>currentStatus: functional<br>stationCode: WST<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Weaste Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20000721</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WST</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.307515,53.482422,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Old Trafford</name>
+      <description><![CDATA[description: Old Trafford Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: OLD<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Old Trafford Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>OLD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.285007,53.456074,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Stretford</name>
+      <description><![CDATA[description: Stretford Metrolink stop.<br>type: railwayStop<br>validFrom: 19920615<br>currentStatus: functional<br>stationCode: STR<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Stretford Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>19920615</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>STR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.303808,53.446026,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>MediaCityUK</name>
+      <description><![CDATA[description: MediaCityUK Metrolink stop.<br>type: railwayStop<br>validFrom: 20100920<br>currentStatus: functional<br>stationCode: MEC<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>MediaCityUK Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20100920</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>MEC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.297111,53.472172,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Freehold</name>
+      <description><![CDATA[description: Freehold Metrolink stop.<br>type: railwayStop<br>validFrom: 20120613<br>currentStatus: functional<br>stationCode: FRE<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Freehold Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20120613</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>FRE</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.138028,53.537687,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Oldham King Street</name>
+      <description><![CDATA[description: Oldham King Street Metrolink stop.<br>type: railwayStop<br>validFrom: 20140127<br>currentStatus: functional<br>stationCode: OHK<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Oldham King Street Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20140127</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>OHK</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.117432,53.539571,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Oldham Central</name>
+      <description><![CDATA[description: Oldham Central Metrolink stop.<br>type: railwayStop<br>validFrom: 20140127<br>currentStatus: functional<br>stationCode: OHC<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Oldham Central Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20140127</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>OHC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.112135,53.540314,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Oldham Mumps</name>
+      <description><![CDATA[description: Oldham Mumps Metrolink stop.<br>type: railwayStop<br>validFrom: 20140127<br>currentStatus: functional<br>stationCode: OHM<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Oldham Mumps Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20140127</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>OHM</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.10346,53.542403,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Derker</name>
+      <description><![CDATA[description: Derker Metrolink stop.<br>type: railwayStop<br>validFrom: 20121216<br>currentStatus: functional<br>stationCode: DER<br>ticketZone: 3/4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Derker Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20121216</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>DER</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3/4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.101619,53.549824,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Shaw and Crompton</name>
+      <description><![CDATA[description: Shaw and Crompton Metrolink stop.<br>type: railwayStop<br>validFrom: 20121216<br>currentStatus: functional<br>stationCode: SHC<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Shaw and Crompton Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20121216</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SHC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.089548,53.576167,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Newhey</name>
+      <description><![CDATA[description: Newhey Metrolink stop.<br>type: railwayStop<br>validFrom: 20130228<br>currentStatus: functional<br>stationCode: NEH<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Newhey Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130228</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>NEH</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.094659,53.60083,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Milnrow</name>
+      <description><![CDATA[description: Milnrow Metrolink stop.<br>type: railwayStop<br>validFrom: 20130228<br>currentStatus: functional<br>stationCode: MIL<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Milnrow Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130228</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>MIL</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.112074,53.608122,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Kingsway Business Park</name>
+      <description><![CDATA[description: Kingsway Business Park Metrolink stop.<br>type: railwayStop<br>validFrom: 20130228<br>currentStatus: functional<br>stationCode: KIN<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Kingsway Business Park Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130228</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>KIN</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.123705,53.611095,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Newbold</name>
+      <description><![CDATA[description: Newbold Metrolink stop.<br>type: railwayStop<br>validFrom: 20130228<br>currentStatus: functional<br>stationCode: NEB<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Newbold Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130228</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>NEB</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.135499,53.613395,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rochdale Railway Station</name>
+      <description><![CDATA[description: Rochdale Railway Station Metrolink stop.<br>type: railwayStop<br>validFrom: 20130228<br>currentStatus: functional<br>stationCode: ROC<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Rochdale Railway Station Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130228</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>ROC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.154453,53.611025,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Rochdale Town Centre</name>
+      <description><![CDATA[description: Rochdale Town Centre Metrolink stop.<br>type: railwayStop<br>validFrom: 20140331<br>currentStatus: functional<br>stationCode: RTC<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Rochdale Town Centre Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20140331</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>RTC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.15538,53.617334,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Barlow Moor Road</name>
+      <description><![CDATA[description: Barlow Moor Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: BMR<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Barlow Moor Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BMR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.269276,53.432848,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Withington</name>
+      <description><![CDATA[description: Withington Metrolink stop.<br>type: railwayStop<br>validFrom: 20130523<br>currentStatus: functional<br>stationCode: WTH<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Withington Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130523</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WTH</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.249338,53.432782,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Burton Road</name>
+      <description><![CDATA[description: Burton Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20130523<br>currentStatus: functional<br>stationCode: BRT<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Burton Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130523</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>BRT</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.240636,53.429172,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>West Didsbury</name>
+      <description><![CDATA[description: West Didsbury Metrolink stop.<br>type: railwayStop<br>validFrom: 20130523<br>currentStatus: functional<br>stationCode: WDD<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>West Didsbury Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130523</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WDD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.236053,53.424467,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Didsbury Village</name>
+      <description><![CDATA[description: Didsbury Village Metrolink stop.<br>type: railwayStop<br>validFrom: 20130523<br>currentStatus: functional<br>stationCode: DDV<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Didsbury Village Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130523</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>DDV</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.2286,53.416753,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>East Didsbury</name>
+      <description><![CDATA[description: East Didsbury Metrolink stop.<br>type: railwayStop<br>validFrom: 20130523<br>currentStatus: functional<br>stationCode: EDD<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>East Didsbury Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20130523</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>EDD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.217266,53.412075,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Wythenshawe Town Centre</name>
+      <description><![CDATA[description: Wythenshawe Town Centre Metrolink stop.<br>type: railwayStop<br>validFrom: 20141103<br>currentStatus: functional<br>stationCode: WYC<br>ticketZone: 4<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Wythenshawe Town Centre Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20141103</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WYC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>4</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.263751,53.380046,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Westwood</name>
+      <description><![CDATA[description: Westwood Metrolink stop.<br>type: railwayStop<br>validFrom: 20140127<br>currentStatus: functional<br>stationCode: WWD<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Westwood Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20140127</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WWD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.125858,53.542354,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Exchange Square</name>
+      <description><![CDATA[description: Exchange Square Metrolink stop.<br>type: railwayStop<br>validFrom: 20151206<br>currentStatus: functional<br>stationCode: EXS<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Exchange Square Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20151206</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>EXS</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.242674,53.484465,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Trafford Centre</name>
+      <description><![CDATA[description: The Trafford Centre Metrolink stop.<br>type: railwayStop<br>validFrom: 20200322<br>currentStatus: functional<br>stationCode: TRC<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>The Trafford Centre Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20200322</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>TRC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.347794,53.467917,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Wharfside</name>
+      <description><![CDATA[description: Wharfside Metrolink stop.<br>type: railwayStop<br>validFrom: 20200322<br>currentStatus: functional<br>stationCode: WSD<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Wharfside Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20200322</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>WSD</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.287508,53.466237,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Imperial War Museum</name>
+      <description><![CDATA[description: Imperial War Museum Metrolink stop.<br>type: railwayStop<br>validFrom: 20200322<br>currentStatus: functional<br>stationCode: IWM<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Imperial War Museum Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20200322</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>IWM</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.296775,53.468601,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Village</name>
+      <description><![CDATA[description: Village Metrolink stop.<br>type: railwayStop<br>validFrom: 20200322<br>currentStatus: functional<br>stationCode: VLG<br>ticketZone: 2<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Village Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20200322</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>VLG</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.309073,53.46741,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Parkway</name>
+      <description><![CDATA[description: Parkway Metrolink stop.<br>type: railwayStop<br>validFrom: 20200322<br>currentStatus: functional<br>stationCode: PAR<br>ticketZone: 2/3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Parkway Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20200322</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>PAR</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>2/3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.32438,53.468268,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Barton Dock Road</name>
+      <description><![CDATA[description: Barton Dock Road Metrolink stop.<br>type: railwayStop<br>validFrom: 20200322<br>currentStatus: functional<br>stationCode: EVC<br>ticketZone: 3<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value>Barton Dock Road Metrolink stop.</value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20200322</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>EVC</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>3</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.341989,53.465734,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name><![CDATA[St Peter's Square]]></name>
+      <description><![CDATA[description: St Peter's Square Metrolink stop.<br>type: railwayStop<br>validFrom: 20160828<br>currentStatus: functional<br>stationCode: SPS<br>ticketZone: 1<br>comments: ]]></description>
+      <styleUrl>#icon-1718-F9A825</styleUrl>
+      <ExtendedData>
+        <Data name="description">
+          <value><![CDATA[St Peter's Square Metrolink stop.]]></value>
+        </Data>
+        <Data name="type">
+          <value>railwayStop</value>
+        </Data>
+        <Data name="validFrom">
+          <value>20160828</value>
+        </Data>
+        <Data name="currentStatus">
+          <value>functional</value>
+        </Data>
+        <Data name="stationCode">
+          <value>SPS</value>
+        </Data>
+        <Data name="ticketZone">
+          <value>1</value>
+        </Data>
+        <Data name="comments">
+          <value/>
+        </Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>
+          -2.243108,53.478218,0
+        </coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>
