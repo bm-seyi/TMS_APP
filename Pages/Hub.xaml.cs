@@ -3,13 +3,16 @@ using Esri.ArcGISRuntime.Maui;
 using Esri.ArcGISRuntime.UI;
 using Map = Esri.ArcGISRuntime.Mapping.Map;
 using Esri.ArcGISRuntime.Geometry;
-using Esri.ArcGISRuntime.Symbology;
+using Align = Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Ogc;
 using Esri.ArcGISRuntime.Reduction;
 using System.Xml;
 using TMS_APP.Utilities.API;
 using TMS_APP.Utilities.API.Schema;
 using Microsoft.Extensions.Logging;
+using Esri.ArcGISRuntime.Symbology;
+using System.Linq.Expressions;
+
 
 namespace TMS_APP.Pages
 {
@@ -18,22 +21,18 @@ namespace TMS_APP.Pages
         private readonly IApiUtilities _apiUtilities;
         private readonly ILogger<Hub> _logger;
         private readonly GraphicsOverlay _graphicsOverlay = new GraphicsOverlay();
-        private readonly GraphicsOverlay _trafficOverlay = new GraphicsOverlay();
         private readonly GraphicsOverlay _polylinesOverlay = new GraphicsOverlay();
         private readonly string currentDir;
         private readonly string apiKey;
         const string linesUrl = "https://raw.githubusercontent.com/Big-Man-Seyi/metrolinkData/main/MetrolinkResources/Map/Network/Metrolink.kml";
         const string apiUrl = "https://api.tomtom.com/";
         const string endpoint = "/traffic/services/5/incidentDetails";
-       
-
-        // private double _lastZoomLevel = -1;
-        // private bool _isUpdating = false;
-        // private const double _zoomThreshold = 0.1;
+        private bool _isUpdating = false;
+        private HashSet<Graphic> pointGraphics = new HashSet<Graphic>();
 
         public Hub(IApiUtilities apiUtilities, ILogger<Hub> logger)
         {
-            _logger =  logger;
+            _logger = logger;
             _apiUtilities = apiUtilities;
             currentDir = Environment.CurrentDirectory;
             apiKey = Environment.GetEnvironmentVariable("tomtomKey") ?? throw new ArgumentNullException(nameof(apiKey));
@@ -51,23 +50,150 @@ namespace TMS_APP.Pages
             mapView.Map = map;
 
             // Adding Overlays to the Map View
-            mapView.GraphicsOverlays?.Add(_graphicsOverlay);
-            mapView.GraphicsOverlays?.Add(_trafficOverlay);
             mapView.GraphicsOverlays?.Add(_polylinesOverlay);
-            
+            mapView.GraphicsOverlays?.Add(_graphicsOverlay);
             mapView.Map.OperationalLayers.Add(AddLayer(linesUrl));
-            DisplayPoints();
-            DisplayTomTom();
+            LoadKmlPoints();
+            LoadTomTomAPI();
 
             await mapView.Map.LoadAsync();
 
-            mapView.ViewpointChanged += OnExtentChanged;
+            mapView.ViewpointChanged += OnViewPointChanged;
         }
 
         private static KmlLayer AddLayer(string url) => new KmlLayer(new KmlDataset(new Uri(url)));
-        List<MapPoint> points = new List<MapPoint>();
-        private void DisplayPoints()
+
+        private async void OnViewPointChanged(object? sender, EventArgs e)
         {
+            if (!_isUpdating)
+            {
+                _isUpdating = true;
+                try
+                {
+                    await Task.Delay(1000);
+                    DynamicExtent();
+                }
+                finally
+                {
+                    _isUpdating = false;
+                }
+            }
+        }
+        public void DynamicExtent()
+        {
+            if (mapView.VisibleArea != null && mapView.VisibleArea.SpatialReference != null)
+            {
+                _graphicsOverlay.Graphics.Clear();
+
+                foreach (Graphic graphic in pointGraphics)
+                {
+                    if (graphic.Geometry != null)
+                    {
+                        var mapPoint1 = GeometryEngine.Project(graphic.Geometry, mapView.VisibleArea.SpatialReference);
+                        if (mapView.VisibleArea.Extent.Contains(mapPoint1) && mapView.MapScale <= 10000)
+                        {
+                            _graphicsOverlay.Graphics.Add(graphic);
+                        }
+                    }
+
+                }
+            }
+        }
+
+        private async Task<TomTomRoot?> GetTomTomAPIAsync()
+        {
+            Dictionary<string, string> payload =  new Dictionary<string, string>
+            {
+                {"key", apiKey},
+                {"bbox", "-2.334,53.355,-1.925,53.630"},
+                {"categoryFilter", "1,3,8,9,11,14"},
+                {"fields", "{incidents{type,geometry{type,coordinates},properties{id,iconCategory,magnitudeOfDelay,events{description,code,iconCategory},startTime,endTime,from,to,length,delay,roadNumbers,lastReportTime}}}"}
+            };
+
+            try
+            {
+               TomTomRoot tomTomRoot = await _apiUtilities.GetDataFromAPI<TomTomRoot>(apiUrl, endpoint, payload);
+               _logger.LogInformation("Data Successfully Retrieved from Tom Tom API");
+               return tomTomRoot;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                if (ex.InnerException != null)
+                {
+                    _logger.LogError(ex.InnerException.Message);
+                }
+                return null;
+            }
+        }
+
+        private async void LoadTomTomAPI()
+        {
+            TomTomRoot? root = await GetTomTomAPIAsync();
+
+            if (root == null || !root.Incidents.Any()) return;
+
+            SimpleLineSymbol simpleLineSymbol = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.Red, 2);
+
+            HashSet<string> UniqueIncidents = new HashSet<string>();
+
+            foreach (Incidents incident in root.Incidents)
+            {   
+                ProcessIncident(incident, UniqueIncidents, simpleLineSymbol);
+            }
+
+        }
+        
+        private void ProcessIncident(Incidents incidents, HashSet<string> uniqueIncidents, SimpleLineSymbol simpleLineSymbol)
+        {
+            string from = incidents.Properties.from;
+            string to = incidents.Properties.to;
+
+            if (string.IsNullOrEmpty(from) || string.IsNullOrEmpty(to)) return;
+
+            if (!uniqueIncidents.Contains(from) && !uniqueIncidents.Contains(to))
+            {
+                AddTomTomPointsGraphic(incidents);
+                uniqueIncidents.Add(from);
+                uniqueIncidents.Add(to);
+            }
+
+            AddTomTomPolylinesGraphic(incidents, simpleLineSymbol);
+        }
+
+        private void AddTomTomPointsGraphic(Incidents incidents)
+        {
+            List<double> geometry = incidents.Geometry.Coordinates[0];
+
+            MapPoint mapPoint = new MapPoint(geometry[0], geometry[1], SpatialReferences.Wgs84);
+
+            PictureMarkerSymbol pictureMarkerSymbol = new PictureMarkerSymbol(new Uri(IconSelector(incidents.Properties.iconCategory)))
+            {
+                Height = 40,
+                Width = 40
+            };
+
+            LoadGraphicPoints(mapPoint, pictureMarkerSymbol, pointGraphics);
+        }
+
+        private void AddTomTomPolylinesGraphic(Incidents incidents, SimpleLineSymbol simpleLineSymbol)
+        {
+            HashSet<MapPoint> mapPolyLines = new HashSet<MapPoint>();
+            foreach (var geometry in incidents.Geometry.Coordinates)
+            {
+                mapPolyLines.Add(new MapPoint(geometry[0], geometry[1], SpatialReferences.Wgs84));
+            }
+
+            Polyline polyline = new Polyline(mapPolyLines);
+            Graphic polyGraphic = new Graphic(polyline, simpleLineSymbol);
+
+            _polylinesOverlay.Graphics.Add(polyGraphic);
+        }
+
+        private void LoadKmlPoints()
+        {
+            SimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbolStyle.Circle, System.Drawing.Color.Yellow, 10);
+
             string path = DirCombine("TMS_APP/Resources/MetNetwork/RailwayStationNode.kml");
             XmlDocument kmlDocument = new XmlDocument();
             kmlDocument.Load(path);
@@ -79,109 +205,75 @@ namespace TMS_APP.Pages
 
             foreach (XmlNode xmlNode in xmlNodeList)
             {
-                XmlNode pointsNode = xmlNode.SelectSingleNode("kml:Point/kml:coordinates", namespaceManager) ?? throw new ArgumentNullException(nameof(xmlNode));
-                
-                string coordinates = pointsNode.InnerText.Trim();
-                string[] coordparts = coordinates.Split(',');
-
-                if (coordparts.Length >= 2)
+                try
                 {
-                    double lat = double.Parse(coordparts[1]);
-                    double lon = double.Parse(coordparts[0]);
-                    
-                    MapPoint mapPoint = new MapPoint(lon, lat, SpatialReferences.Wgs84);
-                    points.Add(mapPoint);
-                    SimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbolStyle.Circle, System.Drawing.Color.Yellow, 10);
-                    
-                    _graphicsOverlay.Renderer = new SimpleRenderer(simpleMarkerSymbol);
+                    (double, double)? Coordinates = GetCoordinatesPoints(xmlNode, namespaceManager);
+                    if (Coordinates == null)
+                    {
+                        _logger.LogWarning("Coordinates could not be extracted for a Placemark. XML Node details: {XmlNodeDetails}", xmlNode.OuterXml);
+                        continue;
+                    }
 
-                    Graphic graphic = new Graphic(mapPoint, simpleMarkerSymbol);
-                    _graphicsOverlay.Graphics.Add(graphic);
+                    var (lat, lng) = Coordinates.Value;
+
+                    string name = GetCoordinatesName(xmlNode, namespaceManager) ?? "Undefined";
+                    
+
+                    MapPoint mapPoint = new MapPoint(lat, lng, SpatialReferences.Wgs84);
+
+                    TextSymbol textSymbol = new TextSymbol(name, System.Drawing.Color.White, 10, Align.HorizontalAlignment.Center, Align.VerticalAlignment.Bottom)
+                    {
+                        OffsetY = -20
+                    };
+
+                    LoadGraphicPoints(mapPoint, simpleMarkerSymbol, pointGraphics);
+                    LoadGraphicPoints(mapPoint, textSymbol, pointGraphics);
+                }
+                catch (Exception ex)
+                {
+                    _logger.LogError("Error Processing Placemark: {1}", ex.Message);
+
+                    if (ex.InnerException != null)
+                    {
+                        _logger.LogError("Inner Exception: {1}", ex.InnerException.Message);
+                    }
                 }
             }
             
         }
-    
-        public void DynamicExtent()
+
+        private (double lat, double lng)? GetCoordinatesPoints(XmlNode xmlNode, XmlNamespaceManager xmlNamespaceManager)
         {
-            _graphicsOverlay.Graphics.Clear();
-            if(mapView.VisibleArea != null && mapView.VisibleArea.SpatialReference != null)
+            XmlNode? pointsNode = xmlNode.SelectSingleNode("kml:Point/kml:coordinates", xmlNamespaceManager);
+            if (pointsNode == null) return null;
+                
+            string[] coordinates = pointsNode.InnerText.Trim().Split(",");
+
+            if (coordinates.Length >= 2 && double.TryParse(coordinates[0], out double lat) && double.TryParse(coordinates[1], out double lng))
             {
-                foreach (MapPoint mapPoint in points)
-                {
-                    var mapPoint1 = GeometryEngine.Project(mapPoint, mapView.VisibleArea.SpatialReference);
-                    if(mapView.VisibleArea.Extent.Contains(mapPoint1))
-                    {
-                        Graphic graphic = new Graphic(mapPoint);
-                        _graphicsOverlay.Graphics.Add(graphic);
-                    }
-                }
-            }
-        }
-
-        private void OnExtentChanged(object sender, EventArgs e)
-        {
-            DynamicExtent();
-        }
-
-        private async void DisplayTomTom()
-        {
-            Dictionary<string, string> payload =  new Dictionary<string, string>
-            {
-                {"key", apiKey},
-                {"bbox", "-2.334,53.355,-1.925,53.630"},
-                {"categoryFilter", "1,3,8,9,11,14"},
-                {"fields", "{incidents{type,geometry{type,coordinates},properties{id,iconCategory,magnitudeOfDelay,events{description,code,iconCategory},startTime,endTime,from,to,length,delay,roadNumbers,lastReportTime}}}"}
-
-            };
-
-            TomTomRoot root = await _apiUtilities.GetDataFromAPI<TomTomRoot>(apiUrl, endpoint, payload);
-
-            foreach (Incidents incident in root.Incidents)
-            {   
-                List<MapPoint> mapPoints = new List<MapPoint>();
-
-                foreach (var geometry in incident.Geometry.Coordinates)
-                {
-                    mapPoints.Add(new MapPoint(geometry[0], geometry[1], SpatialReferences.Wgs84));
-                }
-
-                Polyline polyline  = new Polyline(mapPoints);
-
-                SimpleLineSymbol simpleLineSymbol = new SimpleLineSymbol(SimpleLineSymbolStyle.Solid, System.Drawing.Color.Red, 2);
-
-                Graphic polyGraphic = new Graphic(polyline, simpleLineSymbol);
-                _polylinesOverlay.Graphics.Add(polyGraphic);
+                return (lat, lng);
             }
 
+            return null;
+        }
 
-        }         
+        private static string? GetCoordinatesName(XmlNode xmlNode, XmlNamespaceManager xmlNamespaceManager) => xmlNode.SelectSingleNode("kml:name", xmlNamespaceManager)?.InnerText.Trim();
         
+        private static void LoadGraphicPoints(MapPoint mapPoint, Symbol symbol, HashSet<Graphic> graphics) => graphics.Add(new Graphic(mapPoint, symbol));
+ 
         private string IconSelector(int type)
         {
             string folderPath = "TMS_APP/Resources/Images/Icons/traffic/";
             switch (type)
             {
-                case 1:
-                return DirCombine(folderPath + "accident.png");
-
-                case 3:
-                return DirCombine(folderPath + "roadWorks.png");
-
                 case 8:
-                return DirCombine(folderPath + "roadClosed.png");
+                return DirCombine(folderPath + "forbidden.png");
 
                 case 9:
-                return DirCombine(folderPath + "roadWorks.png");
-
-                case 11:
-                return DirCombine(folderPath + "roadWorks.png");
-
-                case 14:
-                return DirCombine(folderPath + "roadWorks.png");
+                return DirCombine(folderPath + "road-work.png");
 
                 default:
-                return DirCombine(folderPath + "roadWorks.png");
+                return DirCombine(folderPath + "warning.png");
             }
         }
 
