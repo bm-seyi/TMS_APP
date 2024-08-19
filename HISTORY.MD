@@ -46,3 +46,6 @@ ArcgisMap.cs has been removed as the map is now generated from the code behind f
 
 ## 0.0.16
 Traffic incident data is now requested from the Tom Tom API and loaded onto the map via graphical overlays. Also the stops data is now retrieved locally, additional files have been added to support this. The apiutilities class now use an interface which has been registered in the mauiprogram.cs. Additional logging has been added to the Access Portal. Unnecessary registered services have been removed from mauiprogram.cs.
+
+## 0.0.17
+Removed unnecessary graphical overlay in the backend of the hub. Redone multiple methods within the Hub to support best practice by ensuring each method only has one specific purpose. Also the map now displays proper icons for each incident. The icons have been saved within the resource directory and the old ones have been removed.

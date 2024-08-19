@@ -3,7 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Maui;assembly=Esri.ArcGISRuntime.Maui"
              xmlns:local="clr-namespace:TMS_APP.Pages"
-             x:Class="TMS_APP.Pages.Hub">
+             x:Class="TMS_APP.Pages.Hub"
+             NavigationPage.HasBackButton="False">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior IsVisible="False"/>
+    </Shell.BackButtonBehavior>
 
     <esriUI:MapView x:Name="mapView"/>
 
