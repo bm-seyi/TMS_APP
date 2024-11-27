@@ -53,7 +53,17 @@ Removed unnecessary graphical overlay in the backend of the hub. Redone multiple
 ## 0.0.18
 ### Fixed
 - Updated `env.load` to reference the correct file path in [MauiProgram](./MauiProgram.cs).
-
+l
 ### Removed
 - Deleted unnecessary `obj` and `bin` folders.
 
+## 0.0.19
+### Added
+- Added IdentityModel.OidcClient to the project.
+
+### Fixed
+- Removed unnecessary package reference in [MauiProgram](./MauiProgram.cs) and [AccessPortal](./Pages/AccessPortal.xaml.cs)
+- Relocated the ApiHandler.cs to [here](./Utilities/ApiHandler.cs)
+
+### Removed
+- Removed unnecessary items from the constructor in [AccessPortal](./Pages/AccessPortal.xaml.cs)

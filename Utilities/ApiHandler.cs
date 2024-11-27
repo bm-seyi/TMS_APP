@@ -1,35 +1,26 @@
-using System.Net.Http;
+using Microsoft.Extensions.Logging;
 using System.Text.Json;
 using System.Net.Http.Headers;
-using System;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Logging;
-using System.Text.Json.Nodes;
 using System.Net.Http.Json;
-using TMS_APP.Utilities.API;
 
-namespace TMS_APP.Utilities.API
+namespace TMS_APP.Utilities
 {
+	public interface IApiUtilities
+	{
+		Task<int> PostDataToAPI(Dictionary<string, string> data, string endpoint);
+		Task<T> GetDataFromAPI<T>(string url, string endpoint, Dictionary<string, string> param);
+	}
+
 	public class ApiUtilities : IApiUtilities
 	{
 		private readonly IHttpClientFactory _httpClientFactory;
 		private readonly ILogger<ApiUtilities> _logger;
-		private readonly string _apiKey;
-
+		string apiKey = Environment.GetEnvironmentVariable("apiKey") ?? throw new ArgumentNullException(nameof(apiKey));
 		public ApiUtilities(IHttpClientFactory httpClientFactory, ILogger<ApiUtilities> logger)
 		{
-			if (httpClientFactory == null) throw new ArgumentNullException(nameof(httpClientFactory));
 			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
 
-			_httpClientFactory = httpClientFactory;
-
-			_apiKey = Environment.GetEnvironmentVariable("apiKey") ?? throw new ArgumentNullException(nameof(_apiKey));
-			if (string.IsNullOrWhiteSpace(_apiKey))
-			{
-				const string error_msg = "API Key cannot be null, empty or whitespace";
-				_logger.LogError(error_msg);
-				throw new ArgumentNullException(error_msg);
-			}
+			_httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
 
 		}
 
@@ -48,14 +39,13 @@ namespace TMS_APP.Utilities.API
 			};
 
 			return client;
-
 		}
 
 		public async Task<int> PostDataToAPI(Dictionary<string, string> data, string endpoint)
 		{	
 			using HttpClient client = CreateHttpClient("http://localhost:5188/");
 			
-			client.DefaultRequestHeaders.Add("X-API-KEY", _apiKey);
+			client.DefaultRequestHeaders.Add("X-API-KEY", apiKey);
 			string JSON_data = JsonSerializer.Serialize(data);
 
 			StringContent payload = new StringContent(JSON_data, System.Text.Encoding.UTF8, "application/json");
@@ -120,11 +110,4 @@ namespace TMS_APP.Utilities.API
 
 		}
 	}
-
-	public interface IApiUtilities
-	{
-		Task<int> PostDataToAPI(Dictionary<string, string> data, string endpoint);
-		Task<T> GetDataFromAPI<T>(string url, string endpoint, Dictionary<string, string> param);
-	}
-
 }
