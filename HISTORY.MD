@@ -49,3 +49,11 @@ Traffic incident data is now requested from the Tom Tom API and loaded onto the 
 
 ## 0.0.17
 Removed unnecessary graphical overlay in the backend of the hub. Redone multiple methods within the Hub to support best practice by ensuring each method only has one specific purpose. Also the map now displays proper icons for each incident. The icons have been saved within the resource directory and the old ones have been removed.
+
+## 0.0.18
+### Fixed
+- Updated `env.load` to reference the correct file path in [MauiProgram](./MauiProgram.cs).
+
+### Removed
+- Deleted unnecessary `obj` and `bin` folders.
+
