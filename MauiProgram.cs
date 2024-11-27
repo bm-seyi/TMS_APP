@@ -14,7 +14,8 @@ public static class MauiProgram
 {
 	public static MauiApp CreateMauiApp()
 	{
-		Env.Load(Path.Combine(Environment.CurrentDirectory, "TMS_APP/Resources/EnvironmentVariable/.env"));
+		Env.Load(Path.Combine(Environment.CurrentDirectory, "Resources/EnvironmentVariable/.env"));
+		
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()
