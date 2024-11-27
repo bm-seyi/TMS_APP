@@ -1,10 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.DependencyInjection;
 using DotNetEnv;
-using System;
 using Esri.ArcGISRuntime.Maui;
 using Esri.ArcGISRuntime;
-using TMS_APP.Utilities.API;
+using TMS_APP.Utilities;
 using TMS_APP.Pages;
 
 
@@ -15,7 +13,7 @@ public static class MauiProgram
 	public static MauiApp CreateMauiApp()
 	{
 		Env.Load(Path.Combine(Environment.CurrentDirectory, "Resources/EnvironmentVariable/.env"));
-		
+
 		var builder = MauiApp.CreateBuilder();
 		builder
 			.UseMauiApp<App>()

@@ -1,7 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Maui.Controls;
 using TMS_APP.Utilities;
-using TMS_APP.Utilities.API;
 
 namespace TMS_APP.Pages;
 
@@ -14,9 +12,9 @@ public partial class AccessPortal : ContentPage
     public AccessPortal(IApiUtilities apiUtilities, ILogger<AccessPortal> logger, IServiceProvider serviceProvider)
     {
         InitializeComponent();
-		_logger = logger;
+		_logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _apiUtilities = apiUtilities ?? throw new ArgumentNullException(nameof(apiUtilities));
-		_serviceProvider = serviceProvider;
+		_serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
     }
 
 	private void TextChanged_PasswordMatch(object sender, TextChangedEventArgs e)

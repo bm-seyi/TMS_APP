@@ -7,7 +7,7 @@ using Align = Esri.ArcGISRuntime.Symbology;
 using Esri.ArcGISRuntime.Ogc;
 using Esri.ArcGISRuntime.Reduction;
 using System.Xml;
-using TMS_APP.Utilities.API;
+using TMS_APP.Utilities;
 using TMS_APP.Utilities.API.Schema;
 using Microsoft.Extensions.Logging;
 using Esri.ArcGISRuntime.Symbology;
@@ -22,22 +22,19 @@ namespace TMS_APP.Pages
         private readonly ILogger<Hub> _logger;
         private readonly GraphicsOverlay _graphicsOverlay = new GraphicsOverlay();
         private readonly GraphicsOverlay _polylinesOverlay = new GraphicsOverlay();
-        private readonly string currentDir;
-        private readonly string apiKey;
         const string linesUrl = "https://raw.githubusercontent.com/Big-Man-Seyi/metrolinkData/main/MetrolinkResources/Map/Network/Metrolink.kml";
         const string apiUrl = "https://api.tomtom.com/";
         const string endpoint = "/traffic/services/5/incidentDetails";
         private bool _isUpdating = false;
         private HashSet<Graphic> pointGraphics = new HashSet<Graphic>();
-
+        string currentDir = Environment.CurrentDirectory;
+        string apiKey = Environment.GetEnvironmentVariable("tomtomKey") ?? throw new ArgumentNullException(nameof(apiKey));
         public Hub(IApiUtilities apiUtilities, ILogger<Hub> logger)
-        {
-            _logger = logger;
-            _apiUtilities = apiUtilities;
-            currentDir = Environment.CurrentDirectory;
-            apiKey = Environment.GetEnvironmentVariable("tomtomKey") ?? throw new ArgumentNullException(nameof(apiKey));
+        { 
             InitializeComponent();
             InitializeMap();
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _apiUtilities = apiUtilities ?? throw new ArgumentNullException(nameof(apiUtilities));
         }
 
         private async void InitializeMap()
