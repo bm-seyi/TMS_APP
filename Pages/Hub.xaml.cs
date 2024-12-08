@@ -32,9 +32,9 @@ namespace TMS_APP.Pages
         public Hub(IApiUtilities apiUtilities, ILogger<Hub> logger)
         { 
             InitializeComponent();
-            InitializeMap();
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _apiUtilities = apiUtilities ?? throw new ArgumentNullException(nameof(apiUtilities));
+            InitializeMap();
         }
 
         private async void InitializeMap()
@@ -99,7 +99,7 @@ namespace TMS_APP.Pages
 
         private async Task<TomTomRoot?> GetTomTomAPIAsync()
         {
-            Dictionary<string, string> payload =  new Dictionary<string, string>
+            Dictionary<string, string> payload = new Dictionary<string, string>
             {
                 {"key", apiKey},
                 {"bbox", "-2.334,53.355,-1.925,53.630"},
@@ -191,7 +191,7 @@ namespace TMS_APP.Pages
         {
             SimpleMarkerSymbol simpleMarkerSymbol = new SimpleMarkerSymbol(SimpleMarkerSymbolStyle.Circle, System.Drawing.Color.Yellow, 10);
 
-            string path = DirCombine("TMS_APP/Resources/MetNetwork/RailwayStationNode.kml");
+            string path = DirCombine("Resources/MetNetwork/RailwayStationNode.kml");
             XmlDocument kmlDocument = new XmlDocument();
             kmlDocument.Load(path);
 
@@ -260,7 +260,7 @@ namespace TMS_APP.Pages
  
         private string IconSelector(int type)
         {
-            string folderPath = "TMS_APP/Resources/Images/Icons/traffic/";
+            string folderPath = "Resources/Images/Icons/traffic/";
             switch (type)
             {
                 case 8:
