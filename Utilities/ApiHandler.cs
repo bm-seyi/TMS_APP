@@ -19,9 +19,7 @@ namespace TMS_APP.Utilities
 		public ApiUtilities(IHttpClientFactory httpClientFactory, ILogger<ApiUtilities> logger)
 		{
 			_logger = logger ?? throw new ArgumentNullException(nameof(logger));
-
 			_httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
-
 		}
 
 		private HttpClient CreateHttpClient (string baseAddress)
@@ -95,19 +93,39 @@ namespace TMS_APP.Utilities
 
 		public async Task<T> GetDataFromAPI<T>(string url, string endpoint, Dictionary<string, string> param)
 		{
-
-			if (string.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
-			if (string.IsNullOrWhiteSpace(endpoint)) throw new ArgumentNullException(nameof(endpoint));
-			if (param == null) throw new ArgumentNullException(nameof(param));
-
-			using (var httpClient = CreateHttpClient(url))
+			try
 			{
-				string apiQuery = await new FormUrlEncodedContent(param).ReadAsStringAsync();
-				string apiUrl = $"{endpoint}?{apiQuery}";
+				_logger.LogInformation("Entering GetDataFromAPI method...");
+				
+				if (string.IsNullOrWhiteSpace(url)) throw new ArgumentNullException(nameof(url));
+				if (string.IsNullOrWhiteSpace(endpoint)) throw new ArgumentNullException(nameof(endpoint));
+				if (param == null || param.Count == 0) throw new ArgumentNullException(nameof(param));
 
-				return await httpClient.GetFromJsonAsync<T>(apiUrl) ?? throw new Exception("Failed to retrieve data from API");
+				using (var httpClient = CreateHttpClient(url))
+				{
+					string apiQuery = await new FormUrlEncodedContent(param).ReadAsStringAsync();
+					string apiUrl = $"{endpoint}?{apiQuery}";
+
+					Console.WriteLine($"API URL: {apiUrl}");
+
+					T? result = await httpClient.GetFromJsonAsync<T>(apiUrl);
+
+					if (result == null)
+					{
+						_logger.LogWarning("Received null response from API.");
+						throw new Exception("API response is null.");
+					}
+
+					_logger.LogInformation($"API result: {result}");
+					return result;
+				}
 			}
-
+			catch (Exception ex)
+			{
+				_logger.LogWarning($"Error occurred: {ex.Message}");
+				throw;
+			}
 		}
+
 	}
 }

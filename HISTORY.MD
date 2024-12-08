@@ -67,3 +67,23 @@ l
 
 ### Removed
 - Removed unnecessary items from the constructor in [AccessPortal](./Pages/AccessPortal.xaml.cs)
+
+## 0.1.1
+
+### Added
+- **Custom URIs** added for each platform to implement callbacks.
+- Introduced the [**AuthService**](./Utilities/AuthService.cs) to handle the PCKE flow using IdentityModel.
+- Created a [**BrowserService**](./Utilities/BrowserService.cs) as a workaround for the WebAuthenticator issue on Windows devices due to a bug in the Windows SDK.
+
+### Fixed/Updated
+- Updated navigation method in [**AccessPortal**](./Pages/AccessPortal.xaml.cs) from `Navigation.PushAsync` to `Shell.Current.GoToAsync`.
+- Improved the `GetDataFromAPI` method in [**ApiHandler**](./Utilities/ApiHandler.cs).
+- Moved page route registration to [**AppShell**](./AppShell.xaml.cs) instead of [**MauiProgram**](./MauiProgram.cs).
+- Enhanced dependency registration process in [**MauiProgram**](./MauiProgram.cs).
+
+### Removed
+- Removed the UI code for login fields in [**AccessPortal**](./Pages/AccessPortal.xaml).
+- Eliminated unnecessary dependency on `ServiceProvider` in [**AccessPortal**](./Pages/AccessPortal.xaml.cs) as Shell navigation is now in use.
+
+### Notes
+Further improvements to the code and organization will be made in the upcoming commits.

@@ -7,14 +7,14 @@ public partial class AccessPortal : ContentPage
 {
 	private readonly IApiUtilities _apiUtilities;
 	private readonly ILogger<AccessPortal> _logger;
-	private readonly IServiceProvider _serviceProvider;
+	private readonly IAuthService _authService;
 
-    public AccessPortal(IApiUtilities apiUtilities, ILogger<AccessPortal> logger, IServiceProvider serviceProvider)
+    public AccessPortal(IApiUtilities apiUtilities, ILogger<AccessPortal> logger, IAuthService authService)
     {
         InitializeComponent();
 		_logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _apiUtilities = apiUtilities ?? throw new ArgumentNullException(nameof(apiUtilities));
-		_serviceProvider = serviceProvider ?? throw new ArgumentNullException(nameof(serviceProvider));
+		_authService = authService ?? throw new ArgumentNullException(nameof(authService));
     }
 
 	private void TextChanged_PasswordMatch(object sender, TextChangedEventArgs e)
@@ -46,9 +46,22 @@ public partial class AccessPortal : ContentPage
 		await ProcessRequest(payload: data, endpoint: "Registration/", action: "Signup");
 	}
 
-	private void clicked_loginButton(object sender, EventArgs e)
+	private async void clicked_loginButton(object sender, EventArgs e)
 	{
-		ToggleStack(false);
+		try
+		{
+            await _authService.PerformPCKELogin();
+			await Shell.Current.GoToAsync("Hub");
+		}
+		catch (Exception ex)
+		{
+			_logger.LogWarning(ex.Message);
+			if (ex.InnerException != null)
+			{
+				_logger.LogWarning(ex.InnerException.Message);
+			}
+			await DisplayAlert("Error", ex.Message, "OK");
+		}
 	}
 
 	private void clicked_signupButton(object sender, EventArgs e)
@@ -56,27 +69,9 @@ public partial class AccessPortal : ContentPage
 		ToggleStack(true);
 	}
 
-	private async void clicked_loginSubmit(object sender, EventArgs e)
-	{
-		if (!Utils.IsValidEmail(entry_loginEmail.Text))
-		{
-			_logger.LogWarning("Incorrect Email or Password has been provided");
-			await DisplayAlert("Incorrect Email or Password", "Please try again after a few minutes", "Ok"); 
-			return;
-		}
-
-		var data = new Dictionary<string, string>
-		{
-			{"email", entry_loginEmail.Text}, 
-			{"Pwd", entry_loginPassword.Text},
-		};
-		
-		await ProcessRequest(payload: data, endpoint: "Authentication/", action: "Login");
-	}
 	private void ToggleStack(bool isSignup)
 	{
 		signupStack.IsVisible = isSignup;
-		loginStack.IsVisible = !isSignup;
 		loginButton.IsVisible = false;
 		signupButton.IsVisible = false;
 	}
@@ -95,8 +90,8 @@ public partial class AccessPortal : ContentPage
 		if (loginResponse == 200)
 		{
 			_logger.LogInformation("User has been authenticated");
-			Hub hubPage = _serviceProvider.GetRequiredService<Hub>();
-			await Navigation.PushAsync(hubPage);
+			
+			await Shell.Current.GoToAsync("Hub");
 		} 
 		else 
 		{

@@ -38,24 +38,6 @@
                         Clicked="clicked_signupSubmit"
                         HorizontalOptions="Fill" />
                 </VerticalStackLayout>
-
-                <VerticalStackLayout x:Name="loginStack" IsVisible="false" Spacing="25">
-                    <Label
-                        Text="Login"
-                        Style="{StaticResource Headline}"
-                        SemanticProperties.HeadingLevel="Level1"
-                        HorizontalOptions="Center" />
-
-                    <Entry x:Name="entry_loginEmail" Placeholder="Email Address"/>
-                    <Entry x:Name="entry_loginPassword" Placeholder="Password" IsPassword="True" />
-                    
-                    <Button
-                        Text="Submit" 
-                        Clicked="clicked_loginSubmit"
-                        HorizontalOptions="Fill" />
-                </VerticalStackLayout>
-
-
             </VerticalStackLayout>        
         </Grid>
         
