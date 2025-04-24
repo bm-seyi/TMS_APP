@@ -87,3 +87,15 @@ l
 
 ### Notes
 Further improvements to the code and organization will be made in the upcoming commits.
+
+## 0.2.0
+### Added
+- **Tests Directory**: Created a dedicated `Tests` directory to house all unit tests.
+
+### Fixed/Updated
+- **Project Structure**: Reorganized projects to consolidate all .NET MAUI-related files and folders within the `app` directory for better maintainability.
+
+### Removed
+- **Redundant Models**: Eliminated obsolete models to streamline the codebase.
+- **Sign Up Feature**: Temporarily removed sign-up functionality pending the implementation of the new TMS_IDP authentication system.
+- **Map Resources**: Removed map loading functionality and associated resources in preparation for upcoming SignalR integration refactoring.

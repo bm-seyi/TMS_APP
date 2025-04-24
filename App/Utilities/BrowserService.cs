@@ -1,5 +1,4 @@
 using System.Net;
-using System.Security;
 using IdentityModel.OidcClient.Browser;
 using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 
@@ -26,13 +25,6 @@ namespace TMS_APP.Utilities
                 if (context.Request.Url == null) throw new ArgumentNullException("Callback URL is null");
 
                 string callbackUrl = context.Request.Url.ToString();
-
-                string? returnedState = context.Request.QueryString["state"];
-
-                if (string.IsNullOrWhiteSpace(returnedState))
-                {
-                    throw new SecurityException("State parameter missing in the response.");
-                }
 
                 return new BrowserResult
                 {
