@@ -87,3 +87,32 @@ l
 
 ### Notes
 Further improvements to the code and organization will be made in the upcoming commits.
+
+## 0.2.0
+### Added
+- **Tests Directory**: Created a dedicated `Tests` directory to house all unit tests.
+
+### Fixed/Updated
+- **Project Structure**: Reorganized projects to consolidate all .NET MAUI-related files and folders within the `app` directory for better maintainability.
+
+### Removed
+- **Redundant Models**: Eliminated obsolete models to streamline the codebase.
+- **Sign Up Feature**: Temporarily removed sign-up functionality pending the implementation of the new TMS_IDP authentication system.
+- **Map Resources**: Removed map loading functionality and associated resources in preparation for upcoming SignalR integration refactoring.
+
+## 0.2.1
+### Added
+- Integrated `ILinesHubService` with real-time data display in `Hub.xaml.cs` using SignalR.
+- Added `TMS_APP.HubServices` and related dependency injection services.
+- Implemented new map initialization and polyline rendering logic using ArcGIS SDK.
+
+### Fixed/Updated
+- Improved `.env` file loading logic to include a fallback check and exception handling.
+- Replaced transient `AuthService` with a singleton pattern.
+- Upgraded `DotNetEnv` from version `3.0.0` to `3.1.1`.
+- Added `Microsoft.AspNetCore.SignalR.Client` NuGet package for real-time communication support.
+- Moved `AuthService.cs` and `BrowserService.cs` from `TMS_APP.Utilities` to `TMS_APP.AccessControl`, also refactored logic.
+
+### Removed
+- Removed in-app user signup logic and UI (`signupStack`) from `AccessPortal.xaml` and `AccessPortal.xaml.cs`.
+- Removed unused `Polly` reference and outdated `BaseAddress` configuration from HTTP client setup.
