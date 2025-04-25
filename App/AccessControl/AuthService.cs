@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using TMS_APP.Models;
 using System.Net.Http.Json;
 
-namespace TMS_APP.Utilities
+namespace TMS_APP.AccessControl
 {
     public interface IAuthService
     {
@@ -14,12 +14,10 @@ namespace TMS_APP.Utilities
     {
         private readonly ILogger<AuthService> _logger;
         private readonly IBrowser _browser;
-        private readonly IHttpClientFactory _httpClientFactory;
-        public AuthService(ILogger<AuthService> logger, IBrowser browser, IHttpClientFactory httpClientFactory)
+        public AuthService(ILogger<AuthService> logger, IBrowser browser)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _browser = browser ?? throw new ArgumentNullException(nameof(browser));
-            _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
         }
 
         public async Task LoginAsync()

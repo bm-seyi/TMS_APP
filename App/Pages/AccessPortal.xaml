@@ -22,22 +22,6 @@
                 <Button x:Name="loginButton" Text="Login" Clicked="clicked_loginButton" IsVisible="true"/>
                 <Button x:Name="signupButton" Text="Sign up" Clicked="clicked_signupButton" IsVisible="true"/>
 
-                <VerticalStackLayout x:Name="signupStack" IsVisible="false" Spacing="25">
-                    <Label
-                        Text="Sign Up"
-                        Style="{StaticResource Headline}"
-                        SemanticProperties.HeadingLevel="Level1"
-                        HorizontalOptions="Center" />
-
-                    <Entry x:Name="entry_signupEmail" Placeholder="Email Address"/>
-                    <Entry x:Name="entry_signupPassword" Placeholder="Password" IsPassword="True" />
-                    <Entry x:Name="entry_signupConPassword" Placeholder="Confirm Password" IsPassword="True" TextChanged="TextChanged_PasswordMatch" Unfocused="Unfocused_PasswordMatch" />
-                    
-                    <Button
-                        Text="Submit" 
-                        Clicked="clicked_signupSubmit"
-                        HorizontalOptions="Fill" />
-                </VerticalStackLayout>
             </VerticalStackLayout>        
         </Grid>
         

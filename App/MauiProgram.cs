@@ -5,9 +5,9 @@ using Esri.ArcGISRuntime.Maui;
 using Esri.ArcGISRuntime;
 using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 using DotNetEnv;
-using TMS_APP.Utilities;
 using TMS_APP.Pages;
-using Polly;
+using TMS_APP.AccessControl;
+using TMS_APP.HubServices;
 
 namespace TMS_APP
 {
@@ -18,8 +18,17 @@ namespace TMS_APP
 		{
 			#if DEBUG
 				string parentDirectory = Directory.GetParent(Environment.CurrentDirectory)?.FullName ?? throw new ArgumentNullException(nameof(parentDirectory));
-				Env.Load(Path.Combine(parentDirectory, ".env"));
+				string envFilePath = Path.Combine(parentDirectory, "TMS_APP/.env");
+				if (File.Exists(envFilePath))
+				{
+					Env.Load(envFilePath);
+				}
+				else
+				{
+					throw new FileNotFoundException($"The .env file was not found at {envFilePath}");
+				}
 			#endif
+
 
 			var builder = MauiApp.CreateBuilder();
 			builder
@@ -30,17 +39,14 @@ namespace TMS_APP
 					fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				});
 
-			builder.Services.AddHttpClient<IAuthService, AuthService>(client =>
-			{
-				client.BaseAddress = new Uri("https://localhost:5188/");
-			});
-
 			builder.Services.AddTransient<AppShell>();
 			builder.Services.AddTransient<Hub>();
 			builder.Services.AddTransient<IBrowser, BrowserService>();
+			builder.Services.AddSingleton<IAuthService, AuthService>();
 
 
 			builder.Services.AddSingleton<AccessPortal>();
+			builder.Services.AddSingleton<ILinesHubService, LinesHubService>();
 
 
 			builder.Services.AddLogging(configure =>
@@ -50,10 +56,6 @@ namespace TMS_APP
 			});
 
 			string mapKey = Environment.GetEnvironmentVariable("arcgisKey") ?? throw new ArgumentNullException(nameof(mapKey));
-			if (string.IsNullOrWhiteSpace(mapKey))
-			{
-				throw new ArgumentNullException("ArcGIS API Key is not set in the environment variables.");
-			}
 
 			builder.UseArcGISRuntime(config =>
 			{
@@ -61,11 +63,10 @@ namespace TMS_APP
 			});
 
 
-
-#if DEBUG
-			builder.Logging.SetMinimumLevel(LogLevel.Debug);
-			builder.Logging.AddDebug();
-#endif
+			#if DEBUG
+				builder.Logging.SetMinimumLevel(LogLevel.Debug);
+				builder.Logging.AddDebug();
+			#endif
 
 			var app = builder.Build();
 			app.Services.GetRequiredService<AppShell>();
