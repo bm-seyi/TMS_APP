@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
 using TMS_APP.Models;
-using TMS_APP.Utilities;
+using TMS_APP.AccessControl;
 
 namespace TMS_APP.Pages
 {
@@ -22,9 +22,18 @@ namespace TMS_APP.Pages
 			// TODO: Implement the registration logic here
 		}
 
-		private void clicked_loginButton(object sender, EventArgs e)
+		private async void clicked_loginButton(object sender, EventArgs e)
 		{
-			// TODO: Implement the login logic here
+			try
+			{
+				await _authService.LoginAsync();
+				await Shell.Current.GoToAsync("Hub");
+			}
+			catch (Exception ex)
+			{
+				await DisplayAlert("Login Error", ex.Message, "OK");
+			}
+
 		}
 
 	

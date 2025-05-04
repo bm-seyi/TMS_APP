@@ -31,7 +31,7 @@ namespace TMS_APP.HubServices
             try
             {
                 _hubConnection = new HubConnectionBuilder()
-                    .WithUrl("https://yourserver.com/lineshub", options =>
+                    .WithUrl("https://localhost:/lineshub", options =>
                     {
                         options.AccessTokenProvider = () => Task.FromResult(accessToken);
                     })
