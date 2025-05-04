@@ -1,8 +1,6 @@
 using IdentityModel.OidcClient;
 using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 using Microsoft.Extensions.Logging;
-using TMS_APP.Models;
-using System.Net.Http.Json;
 
 namespace TMS_APP.AccessControl
 {
@@ -26,9 +24,9 @@ namespace TMS_APP.AccessControl
             {
                 Authority = "https://localhost:5188",
                 ClientId = "maui_client",
-                Scope = "openid profile api1.read offline_access",
-                RedirectUri = "http://localhost:5000/callback",
-                PostLogoutRedirectUri = "http://localhost:5000/signout-callback",
+                Scope = "openid profile signalR.read offline_access",
+                RedirectUri = "tmsapp://callback/",
+                PostLogoutRedirectUri = "tmsapp://logout-callback/",
                 Browser = _browser
             };
 
@@ -42,16 +40,17 @@ namespace TMS_APP.AccessControl
                 throw new Exception($"Login failed: {result.ErrorDescription}");
             }
 
-            await SecureStorage.SetAsync("access_token", result.AccessToken);
+            Task accessTokenTask = SecureStorage.SetAsync("access_token", result.AccessToken);
+            Task refreshTokenTask = SecureStorage.SetAsync("refresh_token", result.RefreshToken);
+            Task identityTokenTask = SecureStorage.SetAsync("identity_token", result.IdentityToken);
+
+            await Task.WhenAll(accessTokenTask, refreshTokenTask, identityTokenTask);
+
             _logger.LogInformation("Successfully stored 'access_token' in secure storage.");
-
-            await SecureStorage.SetAsync("refresh_token", result.RefreshToken);
             _logger.LogInformation("Successfully stored 'refresh_token' in secure storage.");
-
-            await SecureStorage.SetAsync("identity_token", result.IdentityToken);
             _logger.LogInformation("Successfully stored 'identity_token' in secure storage.");
         }
 
-        // TODO: Implement the registration logic here
+        //TODO Registration Logic
     }
 }

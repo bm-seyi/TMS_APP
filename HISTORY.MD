@@ -116,3 +116,23 @@ Further improvements to the code and organization will be made in the upcoming c
 ### Removed
 - Removed in-app user signup logic and UI (`signupStack`) from `AccessPortal.xaml` and `AccessPortal.xaml.cs`.
 - Removed unused `Polly` reference and outdated `BaseAddress` configuration from HTTP client setup.
+
+
+## 0.2.2
+### Added
+- Implemented protocol URI handling for Windows platform to support custom URI schemes (tmsapp://)
+- Added CommunityToolkit.Mvvm package for messaging support
+- Added token storage tasks running in parallel in AuthService
+
+### Fixed/Updated
+- Updated AuthService to use new redirect URIs (tmsapp://callback/, tmsapp://logout-callback/)
+- Updated scope from "api1.read" to "signalR.read" in AuthService
+- Refactored BrowserService to use MVVM messaging pattern instead of HttpListener
+- Updated LinesHub URL to use localhost
+- Updated login button implementation in AccessPortal to properly handle auth flow
+- Updated Microsoft.Extensions.Logging.Console package from 8.0.0 to 9.0.4
+
+### Removed
+- Removed HttpListener-based browser implementation
+- Removed unused TMS_APP.Models and System.Net.Http.Json namespaces from AuthService
+- Removed localhost:5000 callback URLs
