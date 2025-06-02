@@ -1,7 +1,7 @@
 using CommunityToolkit.Mvvm.Messaging;
-using IdentityModel.OidcClient.Browser;
+using Duende.IdentityModel.OidcClient.Browser;
 using TMS_APP.InternalMessages;
-using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
+using IBrowser = Duende.IdentityModel.OidcClient.Browser.IBrowser;
 
 namespace TMS_APP.AccessControl
 {

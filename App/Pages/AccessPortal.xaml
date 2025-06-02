@@ -20,8 +20,6 @@
                     HorizontalOptions="Center" />
 
                 <Button x:Name="loginButton" Text="Login" Clicked="clicked_loginButton" IsVisible="true"/>
-                <Button x:Name="signupButton" Text="Sign up" Clicked="clicked_signupButton" IsVisible="true"/>
-
             </VerticalStackLayout>        
         </Grid>
         

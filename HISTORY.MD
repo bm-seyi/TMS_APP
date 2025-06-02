@@ -136,3 +136,29 @@ Further improvements to the code and organization will be made in the upcoming c
 - Removed HttpListener-based browser implementation
 - Removed unused TMS_APP.Models and System.Net.Http.Json namespaces from AuthService
 - Removed localhost:5000 callback URLs
+
+
+## 0.2.3
+### Added
+- Added cancellation token support to `LoginAsync` method in `AuthService`
+- Added `DisablePushedAuthorization` flag to OIDC client configuration
+- Added `Microsoft.Maui.Storage` namespace for secure storage operations
+- Added `Duende.IdentityModel.OidcClient` package (v6.0.1) as replacement
+- Added assembly info generation flags to project file
+
+### Fixed/Updated
+- Updated OIDC client configuration with:
+  - Correct Keycloak authority URL (`https://localhost:8443/realms/maui_realm`)
+  - Updated scope list (removed `openid profile`, kept `signalR.read offline_access`)
+  - Added proper logout redirect URI
+- Updated dependency injection registration for `IAuthService` from Singleton to Transient
+- Updated all OIDC client references from `IdentityModel` to `Duende.IdentityModel` namespace
+- Updated project file with proper Windows target framework spacing
+- Improved error handling in login button click handler
+
+### Removed
+- Removed sign-up button and related UI elements from `AccessPortal.xaml`
+- Removed sign-up button click handler from `AccessPortal.xaml.cs`
+- Removed `IdentityModel.OidcClient` package (v6.0.0)
+- Removed TODO comment about registration logic
+- Removed unused `System.Text.RegularExpressions` and model references

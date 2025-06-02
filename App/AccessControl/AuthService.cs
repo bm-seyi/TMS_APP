@@ -1,12 +1,14 @@
-using IdentityModel.OidcClient;
-using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
 using Microsoft.Extensions.Logging;
+using Duende.IdentityModel.OidcClient;
+using IBrowser = Duende.IdentityModel.OidcClient.Browser.IBrowser;
+using Microsoft.Maui.Storage;
+
 
 namespace TMS_APP.AccessControl
 {
     public interface IAuthService
     {
-        Task LoginAsync();
+        Task LoginAsync(CancellationToken cancellationToken = default);
     }
     public class AuthService : IAuthService
     {
@@ -18,21 +20,22 @@ namespace TMS_APP.AccessControl
             _browser = browser ?? throw new ArgumentNullException(nameof(browser));
         }
 
-        public async Task LoginAsync()
+        public async Task LoginAsync(CancellationToken cancellationToken = default)
         {
             OidcClientOptions oidcClientOptions = new OidcClientOptions
             {
-                Authority = "https://localhost:5188",
+                Authority = "https://localhost:8443/realms/maui_realm",
                 ClientId = "maui_client",
-                Scope = "openid profile signalR.read offline_access",
+                Scope = "signalR.read offline_access",
                 RedirectUri = "tmsapp://callback/",
                 PostLogoutRedirectUri = "tmsapp://logout-callback/",
-                Browser = _browser
+                Browser = _browser,
+                DisablePushedAuthorization = false,
             };
 
             OidcClient oidcClient = new OidcClient(oidcClientOptions);
 
-            LoginResult result = await oidcClient.LoginAsync(new LoginRequest());
+            LoginResult result = await oidcClient.LoginAsync(new LoginRequest(), cancellationToken);
 
             if (result.IsError)
             {
@@ -51,6 +54,5 @@ namespace TMS_APP.AccessControl
             _logger.LogInformation("Successfully stored 'identity_token' in secure storage.");
         }
 
-        //TODO Registration Logic
     }
 }
