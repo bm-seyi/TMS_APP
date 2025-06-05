@@ -162,3 +162,24 @@ Further improvements to the code and organization will be made in the upcoming c
 - Removed `IdentityModel.OidcClient` package (v6.0.0)
 - Removed TODO comment about registration logic
 - Removed unused `System.Text.RegularExpressions` and model references
+
+
+## 0.2.4
+## Added
+- Added net9.0 target framework to support non-platform specific builds
+- Added project reference from Tests to App project
+- Added new `CreateWindow` override in `App.xaml.cs` for better window initialization
+- Added new TMS_APP.slnx solution file with App and Tests project references
+
+## Fixed/Updated
+- Updated MAUI packages from version 8.0.21 to 9.0.70
+- Updated Esri.ArcGISRuntime.Maui from 200.4.0 to 200.7.0
+- Updated test project to target net9.0 and use latest MSTest package (3.6.4)
+- Updated project file to properly handle assembly info generation
+- Fixed spacing in TargetFrameworks property in project file
+- Updated OutputType condition to handle net9.0 target differently
+
+## Removed
+- Removed unused Microsoft.Maui.Storage using in AuthService.cs
+- Removed old solution file (TMS_APP.sln) in favor of new .slnx format
+- Removed redundant test packages (coverlet.collector and old MSTest packages)
