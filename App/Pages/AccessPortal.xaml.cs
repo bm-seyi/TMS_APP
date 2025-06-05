@@ -1,6 +1,4 @@
-﻿using System.Text.RegularExpressions;
-using Microsoft.Extensions.Logging;
-using TMS_APP.Models;
+﻿using Microsoft.Extensions.Logging;
 using TMS_APP.AccessControl;
 
 namespace TMS_APP.Pages
@@ -17,11 +15,6 @@ namespace TMS_APP.Pages
 			_authService = authService ?? throw new ArgumentNullException(nameof(authService));
 		}
 
-		private void clicked_signupButton(object sender, EventArgs e)
-		{
-			// TODO: Implement the registration logic here
-		}
-
 		private async void clicked_loginButton(object sender, EventArgs e)
 		{
 			try
@@ -35,7 +28,5 @@ namespace TMS_APP.Pages
 			}
 
 		}
-
-	
 	}
 }

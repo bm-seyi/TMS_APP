@@ -1,9 +1,8 @@
 ﻿using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
 using System.Diagnostics.CodeAnalysis;
 using Esri.ArcGISRuntime.Maui;
 using Esri.ArcGISRuntime;
-using IBrowser = IdentityModel.OidcClient.Browser.IBrowser;
+using IBrowser = Duende.IdentityModel.OidcClient.Browser.IBrowser;
 using DotNetEnv;
 using TMS_APP.Pages;
 using TMS_APP.AccessControl;
@@ -42,7 +41,7 @@ namespace TMS_APP
 			builder.Services.AddTransient<AppShell>();
 			builder.Services.AddTransient<Hub>();
 			builder.Services.AddTransient<IBrowser, BrowserService>();
-			builder.Services.AddSingleton<IAuthService, AuthService>();
+			builder.Services.AddTransient<IAuthService, AuthService>();
 
 
 			builder.Services.AddSingleton<AccessPortal>();
