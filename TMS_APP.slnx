@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="App/TMS_APP.csproj" />
+  <Project Path="Tests/Tests.csproj" />
+</Solution>
