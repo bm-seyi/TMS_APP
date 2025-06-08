@@ -7,6 +7,8 @@ using DotNetEnv;
 using TMS_APP.Pages;
 using TMS_APP.AccessControl;
 using TMS_APP.HubServices;
+using TMS_APP.MauiProgramExtension;
+using TMS_APP.OIDC;
 
 namespace TMS_APP
 {
@@ -42,10 +44,22 @@ namespace TMS_APP
 			builder.Services.AddTransient<Hub>();
 			builder.Services.AddTransient<IBrowser, BrowserService>();
 			builder.Services.AddTransient<IAuthService, AuthService>();
+			builder.Services.AddTransient<IAuthClient, AuthClient>();
 
 
 			builder.Services.AddSingleton<AccessPortal>();
 			builder.Services.AddSingleton<ILinesHubService, LinesHubService>();
+			builder.Services.AddSingleton<ISecureStorage>(SecureStorage.Default);
+
+			builder.Services.AddOidcAuthentication(options =>
+			{
+				options.Authority = "https://localhost:8443/realms/maui_realm";
+				options.ClientId = "maui_client";
+				options.Scope = "signalR.read offline_access";
+				options.RedirectUri = "tmsapp://callback/";
+				options.PostLogoutRedirectUri = "tmsapp://logout-callback/";
+				options.DisablePushedAuthorization = false;
+			});
 
 
 			builder.Services.AddLogging(configure =>

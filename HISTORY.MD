@@ -165,13 +165,13 @@ Further improvements to the code and organization will be made in the upcoming c
 
 
 ## 0.2.4
-## Added
+### Added
 - Added net9.0 target framework to support non-platform specific builds
 - Added project reference from Tests to App project
 - Added new `CreateWindow` override in `App.xaml.cs` for better window initialization
 - Added new TMS_APP.slnx solution file with App and Tests project references
 
-## Fixed/Updated
+### Fixed/Updated
 - Updated MAUI packages from version 8.0.21 to 9.0.70
 - Updated Esri.ArcGISRuntime.Maui from 200.4.0 to 200.7.0
 - Updated test project to target net9.0 and use latest MSTest package (3.6.4)
@@ -179,7 +179,43 @@ Further improvements to the code and organization will be made in the upcoming c
 - Fixed spacing in TargetFrameworks property in project file
 - Updated OutputType condition to handle net9.0 target differently
 
-## Removed
+### Removed
 - Removed unused Microsoft.Maui.Storage using in AuthService.cs
 - Removed old solution file (TMS_APP.sln) in favor of new .slnx format
 - Removed redundant test packages (coverlet.collector and old MSTest packages)
+
+
+## 0.3.0
+## Added
+- Added `IAuthClient` and `AuthClient` for handling OIDC authentication logic
+- Added `ISecureStorage` dependency for secure token storage
+- Added `AuthResult` model to handle authentication results with properties:
+  - `IsError`, `AccessToken`, `RefreshToken`, `IdentityToken`
+  - `Error`, `ErrorDescription`, `AccessTokenExpiration`
+- Added OIDC authentication configuration in `MauiProgram.cs`
+- Added `AuthExtensions` class with `AddOidcAuthentication` extension method for service configuration
+- Added `IsAuthenticated` property to `IAuthService` interface
+- Added Moq package to Tests project for mocking in unit tests
+- Added GitHub Action for dependency review on pull requests to master
+- Added GitHub Action for running MsTest unit tests on push/pull requests to master
+- Added comprehensive unit test suite for `AuthService` covering:
+  - Constructor validation
+  - Successful login scenarios
+  - Failed authentication cases
+  - Token storage verification
+  - Authentication state checks
+  - Cancellation support
+  - Error handling verification
+- Added `MockBrowser` test helper class for simulating browser interactions
+
+### Fixed/Updated
+- Updated `AuthService` to use `IAuthClient` instead of direct OidcClient implementation
+- Updated `LoginAsync` to return `AuthResult` instead of void
+- Improved error handling and logging in `AuthService`
+- Updated token storage to use injected `ISecureStorage` instead of static `SecureStorage`
+- Updated `MauiProgram.cs` to register new dependencies and use OIDC extension method
+- Enhanced test coverage for all critical authentication scenarios
+
+### Removed
+- Removed direct OidcClientOptions configuration from `AuthService`
+- Removed static usage of `SecureStorage` in favor of injected `ISecureStorage`
