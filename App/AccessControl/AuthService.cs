@@ -1,56 +1,67 @@
 using Microsoft.Extensions.Logging;
 using Duende.IdentityModel.OidcClient;
+using TMS_APP.OIDC;
+using TMS_APP.Models;
 using IBrowser = Duende.IdentityModel.OidcClient.Browser.IBrowser;
+
 
 namespace TMS_APP.AccessControl
 {
     public interface IAuthService
     {
-        Task LoginAsync(CancellationToken cancellationToken = default);
+        Task<AuthResult> LoginAsync(CancellationToken cancellationToken = default);
+        bool IsAuthenticated { get; }
     }
     public class AuthService : IAuthService
     {
         private readonly ILogger<AuthService> _logger;
-        private readonly IBrowser _browser;
-        public AuthService(ILogger<AuthService> logger, IBrowser browser)
+        public readonly IBrowser _browser;
+        private readonly IAuthClient _authClient;
+        private readonly ISecureStorage _secureStorage;
+        private AuthResult? _loginResult;
+        public AuthService(ILogger<AuthService> logger, IAuthClient authClient, IBrowser browser, ISecureStorage secureStorage)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _secureStorage = secureStorage ?? throw new ArgumentNullException(nameof(secureStorage));
+            _authClient = authClient ?? throw new ArgumentNullException(nameof(authClient));
             _browser = browser ?? throw new ArgumentNullException(nameof(browser));
+            _authClient.Browser = _browser;
         }
 
-        public async Task LoginAsync(CancellationToken cancellationToken = default)
+        public async Task<AuthResult> LoginAsync(CancellationToken cancellationToken = default)
         {
-            OidcClientOptions oidcClientOptions = new OidcClientOptions
+            try
             {
-                Authority = "https://localhost:8443/realms/maui_realm",
-                ClientId = "maui_client",
-                Scope = "signalR.read offline_access",
-                RedirectUri = "tmsapp://callback/",
-                PostLogoutRedirectUri = "tmsapp://logout-callback/",
-                Browser = _browser,
-                DisablePushedAuthorization = false,
-            };
+                _loginResult = await _authClient.LoginAsync(new LoginRequest(), cancellationToken);
 
-            OidcClient oidcClient = new OidcClient(oidcClientOptions);
+                if (_loginResult.IsError)
+                {
+                    _logger.LogWarning(_loginResult.Error);
+                    throw new Exception($"Login failed: {_loginResult.ErrorDescription}");
+                }
 
-            LoginResult result = await oidcClient.LoginAsync(new LoginRequest(), cancellationToken);
+                Task accessTokenTask = _secureStorage.SetAsync("access_token", _loginResult.AccessToken);
+                Task refreshTokenTask = _secureStorage.SetAsync("refresh_token", _loginResult.RefreshToken);
+                Task identityTokenTask = _secureStorage.SetAsync("identity_token", _loginResult.IdentityToken);
 
-            if (result.IsError)
+                await Task.WhenAll(accessTokenTask, refreshTokenTask, identityTokenTask);
+
+                _logger.LogInformation("Successfully stored 'access_token' in secure storage.");
+                _logger.LogInformation("Successfully stored 'refresh_token' in secure storage.");
+                _logger.LogInformation("Successfully stored 'identity_token' in secure storage.");
+
+
+                return _loginResult;
+            }
+            catch (Exception ex)
             {
-                _logger.LogWarning(result.Error);
-                throw new Exception($"Login failed: {result.ErrorDescription}");
+                _logger.LogError(ex, "An error occurred during login.");
+                throw;
             }
 
-            Task accessTokenTask = SecureStorage.SetAsync("access_token", result.AccessToken);
-            Task refreshTokenTask = SecureStorage.SetAsync("refresh_token", result.RefreshToken);
-            Task identityTokenTask = SecureStorage.SetAsync("identity_token", result.IdentityToken);
-
-            await Task.WhenAll(accessTokenTask, refreshTokenTask, identityTokenTask);
-
-            _logger.LogInformation("Successfully stored 'access_token' in secure storage.");
-            _logger.LogInformation("Successfully stored 'refresh_token' in secure storage.");
-            _logger.LogInformation("Successfully stored 'identity_token' in secure storage.");
         }
 
+        public bool IsAuthenticated => _loginResult?.AccessToken != null &&
+                                 _loginResult.AccessTokenExpiration > DateTime.UtcNow;
     }
 }
