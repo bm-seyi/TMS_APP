@@ -65,7 +65,6 @@ namespace TMS_APP
 			builder.Services.AddLogging(configure =>
 			{
 				configure.AddConsole();
-				configure.AddDebug();
 			});
 
 			string mapKey = Environment.GetEnvironmentVariable("arcgisKey") ?? throw new ArgumentNullException(nameof(mapKey));
@@ -78,7 +77,6 @@ namespace TMS_APP
 
 			#if DEBUG
 				builder.Logging.SetMinimumLevel(LogLevel.Debug);
-				builder.Logging.AddDebug();
 			#endif
 
 			var app = builder.Build();
