@@ -9,3 +9,4 @@ obj/
 
 # Other Exclustions
 .env
+.vscode/
