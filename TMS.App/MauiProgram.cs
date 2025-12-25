@@ -9,6 +9,8 @@ using TMS_APP.AccessControl;
 using TMS_APP.HubServices;
 using TMS_APP.MauiProgramExtension;
 using TMS_APP.OIDC;
+using Microsoft.Extensions.Configuration;
+
 
 namespace TMS_APP
 {
@@ -17,21 +19,12 @@ namespace TMS_APP
 	{
 		public static MauiApp CreateMauiApp()
 		{
-			#if DEBUG
-				string parentDirectory = Directory.GetParent(Environment.CurrentDirectory)?.FullName ?? throw new ArgumentNullException(nameof(parentDirectory));
-				string envFilePath = Path.Combine(parentDirectory, "TMS_APP/.env");
-				if (File.Exists(envFilePath))
-				{
-					Env.Load(envFilePath);
-				}
-				else
-				{
-					throw new FileNotFoundException($"The .env file was not found at {envFilePath}");
-				}
-			#endif
+			MauiAppBuilder builder = MauiApp.CreateBuilder();
 
-
-			var builder = MauiApp.CreateBuilder();
+			builder.Configuration
+				.AddJsonFile("appsettings.json", optional: false)
+				.AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true);
+				
 			builder
 				.UseMauiApp<App>()
 				.ConfigureFonts(fonts =>
@@ -79,9 +72,8 @@ namespace TMS_APP
 				builder.Logging.SetMinimumLevel(LogLevel.Debug);
 			#endif
 
-			var app = builder.Build();
+			MauiApp app = builder.Build();
 			app.Services.GetRequiredService<AppShell>();
-
 
 			return app;
 		}
