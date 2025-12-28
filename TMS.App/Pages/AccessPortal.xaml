@@ -7,9 +7,9 @@
 
     <ScrollView>
         <Grid ColumnDefinitions="*,*">
-            <Frame Grid.Column="0" BackgroundColor="Teal" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Border Grid.Column="0" BackgroundColor="Teal" HorizontalOptions="Fill" VerticalOptions="Fill">
                 <Label Text="TMS" HorizontalOptions="Center" VerticalOptions="Center" FontSize="65" TextColor="White" />
-            </Frame>
+            </Border>
 
             <VerticalStackLayout Grid.Column="1" Padding="30,0" Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
                 <Image
