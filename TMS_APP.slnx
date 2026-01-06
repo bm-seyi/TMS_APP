@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="TMS.App/TMS.App.csproj" />
+  <Project Path="TMS.Aspire.AppHost/TMS.Aspire.AppHost.csproj" />
+  <Project Path="TMS.Aspire.ServiceDefaults/TMS.Aspire.ServiceDefaults.csproj" />
   <Project Path="TMS.UnitTests/TMS.UnitTests.csproj" />
 </Solution>

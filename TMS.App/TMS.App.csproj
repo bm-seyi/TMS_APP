@@ -82,4 +82,8 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="10.0.1" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\TMS.Aspire.ServiceDefaults\TMS.Aspire.ServiceDefaults.csproj" />
+	</ItemGroup>
+
 </Project>
