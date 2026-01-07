@@ -4,6 +4,7 @@ using Esri.ArcGISRuntime.Maui;
 using Esri.ArcGISRuntime;
 using TMS_APP.Pages;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
 
 
 namespace TMS_APP
@@ -14,6 +15,8 @@ namespace TMS_APP
 		public static MauiApp CreateMauiApp()
 		{
 			MauiAppBuilder builder = MauiApp.CreateBuilder();
+
+			builder.AddServiceDefaults();
 
 			builder.Configuration
 				.AddJsonFile("appsettings.json", optional: false)
