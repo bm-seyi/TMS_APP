@@ -37,7 +37,6 @@ namespace TMS_APP
 			builder.Services.AddSingleton<AccessPortal>();
 			builder.Services.AddSingleton(SecureStorage.Default);
 
-
 			builder.Services.AddLogging(configure =>
 			{
 				configure.AddConsole();
