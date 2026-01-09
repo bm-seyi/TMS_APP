@@ -74,9 +74,8 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
-		<PackageReference Include="DotNetEnv" Version="3.1.1" />
 		<PackageReference Include="Duende.IdentityModel.OidcClient" Version="6.0.1" />
-		<PackageReference Include="Esri.ArcGISRuntime.Maui" Version="200.7.0" />
+		<PackageReference Include="Esri.ArcGISRuntime.Maui" Version="200.8.0" />
 		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.1" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="10.0.1" />

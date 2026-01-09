@@ -42,12 +42,8 @@ namespace TMS_APP
 				configure.AddConsole();
 			});
 
-			string mapKey = Environment.GetEnvironmentVariable("arcgisKey") ?? throw new ArgumentNullException(nameof(mapKey));
 
-			builder.UseArcGISRuntime(config =>
-			{
-				config.UseApiKey(mapKey);
-			});
+			builder.UseArcGISRuntime();
 
 
 			#if DEBUG
