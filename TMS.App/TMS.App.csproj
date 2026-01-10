@@ -49,7 +49,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Update="appsettings*.json">
+		<None Update="appsettings.json">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</None>
+
+		<None Update="appsettings.*.json">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
@@ -88,6 +92,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\TMS.Aspire.ServiceDefaults\TMS.Aspire.ServiceDefaults.csproj" />
+	  <ProjectReference Include="..\TMS.Core\TMS.Core.csproj" />
 	</ItemGroup>
 
 </Project>
