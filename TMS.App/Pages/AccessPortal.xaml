@@ -19,7 +19,7 @@
                     SemanticProperties.Description="The logo of Keolis Amey Metrolink"
                     HorizontalOptions="Center" />
 
-                <Button x:Name="loginButton" Text="Login" Clicked="clicked_loginButton" IsVisible="true"/>
+                <Button x:Name="loginButton" Text="Login" Clicked="ClickedLoginButton" IsVisible="true"/>
             </VerticalStackLayout>        
         </Grid>
         

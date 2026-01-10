@@ -3,7 +3,6 @@ using Microsoft.Extensions.Logging;
 using Map = Esri.ArcGISRuntime.Mapping.Map;
 using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.UI;
-using Esri.ArcGISRuntime.Symbology;
 
 
 namespace TMS_APP.Pages
