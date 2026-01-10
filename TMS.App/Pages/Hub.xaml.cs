@@ -5,7 +5,7 @@ using Esri.ArcGISRuntime.Geometry;
 using Esri.ArcGISRuntime.UI;
 
 
-namespace TMS_APP.Pages
+namespace TMS.App.Pages
 {
     public partial class Hub : ContentPage
     {

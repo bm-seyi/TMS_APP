@@ -1,7 +1,7 @@
 ﻿using ObjCRuntime;
 using UIKit;
 
-namespace TMS_APP;
+namespace TMS.App;
 
 public class Program
 {

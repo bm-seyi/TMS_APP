@@ -1,13 +1,14 @@
 ﻿using Microsoft.Extensions.Logging;
 using System.Diagnostics.CodeAnalysis;
 using Esri.ArcGISRuntime.Maui;
-using TMS_APP.Pages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using TMS.Core.Extensions;
+using TMS.App.Pages;
+using TMS.App.ViewModels;
 
 
-namespace TMS_APP
+namespace TMS.App
 {
 	[ExcludeFromCodeCoverage]
 	public static class MauiProgram
@@ -37,13 +38,19 @@ namespace TMS_APP
 			// Other Services
 			builder.Services.AddPublicClientApplication(builder.Configuration);
 			builder.Services.AddAuthService();
+			builder.Services.AddAlertService();
+			builder.Services.AddNavigationService();
+			
 
 			builder.Services.AddSingleton(SecureStorage.Default);
 
-			// Pages
+			// ViewModels
+			builder.Services.AddTransient<LoginPageViewModel>();
+
+			// Views
 			builder.Services.AddTransient<AppShell>();
 			builder.Services.AddTransient<Hub>();
-			builder.Services.AddSingleton<AccessPortal>();
+			builder.Services.AddSingleton<LoginPage>();
 
 			builder.Services.AddLogging(configure =>
 			{
@@ -54,7 +61,7 @@ namespace TMS_APP
 			builder.UseArcGISRuntime();
 
 			#if DEBUG
-				builder.Logging.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Debug);
+				builder.Logging.SetMinimumLevel(LogLevel.Debug);
 			#endif
 
 			MauiApp app = builder.Build();
