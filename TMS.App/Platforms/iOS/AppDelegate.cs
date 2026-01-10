@@ -1,6 +1,6 @@
 ﻿using Foundation;
 
-namespace TMS_APP;
+namespace TMS.App;
 
 [Register("AppDelegate")]
 public class AppDelegate : MauiUIApplicationDelegate

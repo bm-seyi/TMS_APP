@@ -22,6 +22,8 @@ namespace TMS.Core.Extensions
             }
 
             public IServiceCollection AddAuthService() => services.AddTransient<IAuthService, AuthService>();
+            public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
+            public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
         }
     }
 }

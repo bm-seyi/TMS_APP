@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using Android.Runtime;
 
-namespace TMS_APP;
+namespace TMS.App;
 
 [Application]
 public class MainApplication : MauiApplication

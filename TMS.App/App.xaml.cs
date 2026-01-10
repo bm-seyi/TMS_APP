@@ -1,6 +1,4 @@
-﻿using TMS_APP.Pages;
-
-namespace TMS_APP;
+﻿namespace TMS.App;
 
 public partial class App : Application
 {

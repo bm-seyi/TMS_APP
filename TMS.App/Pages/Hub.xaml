@@ -2,8 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:esriUI="clr-namespace:Esri.ArcGISRuntime.Maui;assembly=Esri.ArcGISRuntime.Maui"
-             xmlns:local="clr-namespace:TMS_APP.Pages"
-             x:Class="TMS_APP.Pages.Hub"
+             xmlns:local="clr-namespace:TMS.App.Pages"
+             x:Class="TMS.App.Pages.Hub"
              NavigationPage.HasBackButton="False">
     <Shell.BackButtonBehavior>
         <BackButtonBehavior IsVisible="False"/>

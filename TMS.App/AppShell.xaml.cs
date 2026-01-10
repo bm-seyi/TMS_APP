@@ -1,13 +1,12 @@
-﻿using TMS_APP.Pages;
-
-namespace TMS_APP;
+﻿using TMS.App.Pages;
+namespace TMS.App;
 
 public partial class AppShell : Shell
 {
 	public AppShell()
 	{
 		InitializeComponent();
-		Routing.RegisterRoute("AccessPortal", typeof(AccessPortal));
+		Routing.RegisterRoute("LoginPage", typeof(LoginPage));
 		Routing.RegisterRoute("Hub", typeof(Hub));
 	}
 }
