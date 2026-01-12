@@ -26,14 +26,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="10.0.1" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="10.0.1" />
-		<PackageReference Include="Microsoft.Identity.Client" Version="4.81.0" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <ProjectReference Include="..\TMS.Models\TMS.Models.csproj" />
 	</ItemGroup>
 
 </Project>

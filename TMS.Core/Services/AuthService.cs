@@ -4,6 +4,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Client;
 using TMS.Core.Interfaces.Services;
 
+
 namespace TMS.Core.Services
 {
     internal sealed class AuthService : IAuthService
