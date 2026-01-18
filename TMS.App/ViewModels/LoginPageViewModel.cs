@@ -13,13 +13,15 @@ namespace TMS.App.ViewModels
         private readonly IAuthService _authService;
         private readonly IAlertService _alertService;
         private readonly INavigationService _navigationService;
+        private readonly IArcgisService _acrgisService;
 
-        public LoginPageViewModel(ILogger<LoginPageViewModel> logger, IAuthService authService, IAlertService alertService, INavigationService navigationService)
+        public LoginPageViewModel(ILogger<LoginPageViewModel> logger, IAuthService authService, IAlertService alertService, INavigationService navigationService, IArcgisService arcgisService)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _authService = authService ?? throw new ArgumentNullException(nameof(authService));
             _alertService = alertService ?? throw new ArgumentNullException(nameof(alertService));
             _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
+            _acrgisService = arcgisService ?? throw new ArgumentNullException(nameof(arcgisService));
         }
         
         [ObservableProperty]
@@ -54,6 +56,7 @@ namespace TMS.App.ViewModels
 				if (result.AccessToken != null)
 				{
                     _logger.LogInformation("Authentication successful. Navigating to Hub.");
+                    await _acrgisService.RegisterAsync(CancellationToken.None);
 					await _navigationService.NavigateToAsync("Hub");
 					return;
 				}

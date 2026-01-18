@@ -40,7 +40,9 @@ namespace TMS.App
 			builder.Services.AddAuthService();
 			builder.Services.AddAlertService();
 			builder.Services.AddNavigationService();
-			
+			builder.Services.AddArcgisService();
+			builder.Services.AddTmsClient(builder.Configuration);	
+			builder.Services.AddTmsAuthHeaderHandler();		
 
 			builder.Services.AddSingleton(SecureStorage.Default);
 
