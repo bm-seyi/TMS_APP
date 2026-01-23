@@ -4,9 +4,8 @@ using TMS.Core.HttpClients;
 using TMS.Core.Interfaces.HttpClients;
 using TMS.Core.Interfaces.Services;
 using TMS.Core.Services;
-using Microsoft.Extensions.DependencyInjection;
-using System.Net.Http.Headers;
 using TMS.Core.Handlers;
+
 
 namespace TMS.Core.Extensions
 {
