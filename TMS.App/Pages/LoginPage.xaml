@@ -7,29 +7,35 @@
 
     <ScrollView>
         <Grid ColumnDefinitions="*,*">
-            <Border Grid.Column="0" BackgroundColor="Teal" HorizontalOptions="Fill" VerticalOptions="Fill">
-                <Label Text="TMS" HorizontalOptions="Center" VerticalOptions="Center" FontSize="65" TextColor="White" />
+            <Border Grid.Column="0"
+                    BackgroundColor="Teal"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill">
+                <Label Text="TMS"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"
+                       FontSize="65"
+                       TextColor="White"/>
             </Border>
+            <VerticalStackLayout
+                Grid.Column="1"
+                Padding="30,0"
+                Spacing="25"
+                HorizontalOptions="Fill"
+                VerticalOptions="Center">
 
-            <VerticalStackLayout Grid.Column="1" Padding="30,0" Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
-                <Image
-                    Source="kam_logo.png"
-                    HeightRequest="185"
+                <ImageButton
+                    Padding="15" 
+                    Source="ms_symbollockup_signin_dark.png"
+                    Command="{Binding LoginCommand}"
+                    BackgroundColor="Transparent"
                     Aspect="AspectFit"
-                    SemanticProperties.Description="The logo of Keolis Amey Metrolink"
-                    HorizontalOptions="Center" />
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"/>
 
-                 <Button Text="Login"
-                        Command="{Binding LoginCommand}"
-                        IsEnabled="{Binding IsNotBusy}" />
-
-                <ActivityIndicator
-                    IsRunning="{Binding IsBusy}"
-                    IsVisible="{Binding IsBusy}" />
-                    
-            </VerticalStackLayout>        
+            </VerticalStackLayout>
         </Grid>
-        
+
     </ScrollView>
 
 </ContentPage>
