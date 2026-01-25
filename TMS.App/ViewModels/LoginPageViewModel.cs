@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
@@ -14,6 +15,7 @@ namespace TMS.App.ViewModels
         private readonly IAlertService _alertService;
         private readonly INavigationService _navigationService;
         private readonly IArcgisService _acrgisService;
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.App.ViewModels.LoginPageViewModel");
 
         public LoginPageViewModel(ILogger<LoginPageViewModel> logger, IAuthService authService, IAlertService alertService, INavigationService navigationService, IArcgisService arcgisService)
         {
@@ -23,32 +25,16 @@ namespace TMS.App.ViewModels
             _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
             _acrgisService = arcgisService ?? throw new ArgumentNullException(nameof(arcgisService));
         }
-        
-        [ObservableProperty]
-        private bool isBusy;
-
-        public bool IsNotBusy => !IsBusy;
-
-        partial void OnIsBusyChanged(bool value)
-        {
-            OnPropertyChanged(nameof(IsNotBusy));
-        }
 
         [RelayCommand]
         private async Task LoginAsync()
         {
-            if (IsBusy)
-            {
-                _logger.LogWarning("LoginAsync called while already busy.");
-                return;
-            }
-
+            using Activity? activity= _activitySource.StartActivity("LoginViewModel.LoginAsync");
+            
             _logger.LogInformation("LoginAsync started.");
                 
             try
             {
-                IsBusy = true;
-
                 _logger.LogInformation("Attempting authentication...");
 
                 AuthenticationResult result = await _authService.LoginAsync(CancellationToken.None);
@@ -71,7 +57,6 @@ namespace TMS.App.ViewModels
             }
             finally
             {
-                IsBusy = false;
                 _logger.LogInformation("LoginAsync finished.");
             }
         }
