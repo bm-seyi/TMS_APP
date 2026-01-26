@@ -1,41 +1,85 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             x:Class="TMS.App.Pages.LoginPage">
+             x:Class="TMS.App.Pages.LoginPage"
+             BackgroundColor="{AppThemeBinding Light='#F7F7F7', Dark='#111315'}">
 
-    <ScrollView>
-        <Grid ColumnDefinitions="*,*">
-            <Border Grid.Column="0"
-                    BackgroundColor="Teal"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill">
+    <Grid RowDefinitions="*"
+          ColumnDefinitions="*,*"
+          ColumnSpacing="0"
+          RowSpacing="0"
+          Padding="0"
+          HorizontalOptions="Fill"
+          VerticalOptions="Fill">
+
+        <Border Grid.Column="0"
+                BackgroundColor="{AppThemeBinding Light='Teal', Dark='#006D6D'}"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
+
+            <Grid>
                 <Label Text="TMS"
+                       FontSize="96"
+                       FontAttributes="Bold"
+                       TextColor="White"
                        HorizontalOptions="Center"
                        VerticalOptions="Center"
-                       FontSize="65"
-                       TextColor="White"/>
-            </Border>
-            <VerticalStackLayout
-                Grid.Column="1"
-                Padding="30,0"
-                Spacing="25"
-                HorizontalOptions="Fill"
-                VerticalOptions="Center">
+                       SemanticProperties.HeadingLevel="Level1"/>
+            </Grid>
+        </Border>
 
-                <ImageButton
-                    Padding="15" 
-                    Source="ms_symbollockup_signin_dark.png"
-                    Command="{Binding LoginCommand}"
-                    BackgroundColor="Transparent"
-                    Aspect="AspectFit"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"/>
+        <ScrollView Grid.Column="1"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand">
+            <Grid Padding="32,24"
+                  HorizontalOptions="Fill"
+                  VerticalOptions="Center">
 
-            </VerticalStackLayout>
-        </Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
 
-    </ScrollView>
+                <Label Grid.Row="0"
+                       Text="Welcome back"
+                       FontSize="32"
+                       FontAttributes="Bold"
+                       HorizontalOptions="Center"
+                       TextColor="{AppThemeBinding Light='#1A1A1A', Dark='#EDEDED'}"/>
 
+                <VerticalStackLayout Grid.Row="1"
+                                     Spacing="14"
+                                     HorizontalOptions="Center">
+                    <ImageButton
+                        Source="ms_symbollockup_signin_dark.png"
+                        Command="{Binding LoginCommand}"
+                        BackgroundColor="Transparent"
+                        Aspect="Fill"
+                        WidthRequest="300"
+                        HorizontalOptions="Center"/>
+
+ 
+                    <HorizontalStackLayout Spacing="25"
+                                           HorizontalOptions="Center">
+                        <Label Text="Forgot password?"
+                               TextDecorations="Underline"
+                               TextColor="{AppThemeBinding Light='#2563EB', Dark='#60A5FA'}"  IsEnabled="False">
+
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+
+                        <Label Text="Need help?"
+                               TextDecorations="Underline"
+                               TextColor="{AppThemeBinding Light='#6B7280', Dark='#9CA3AF'}" IsEnabled="False">
+
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding HelpCommand}"/>
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </ScrollView>
+    </Grid>
 </ContentPage>
