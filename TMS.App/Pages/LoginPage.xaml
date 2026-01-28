@@ -50,19 +50,19 @@
                                      Spacing="14"
                                      HorizontalOptions="Center">
                     <ImageButton
-                        Source="ms_symbollockup_signin_dark.png"
+                        Padding="10"
+                        Source="ms_signin_dark.png"
                         Command="{Binding LoginCommand}"
                         BackgroundColor="Transparent"
-                        Aspect="Fill"
-                        WidthRequest="300"
-                        HorizontalOptions="Center"/>
+                        Aspect="AspectFit" />
 
- 
                     <HorizontalStackLayout Spacing="25"
                                            HorizontalOptions="Center">
+
                         <Label Text="Forgot password?"
                                TextDecorations="Underline"
-                               TextColor="{AppThemeBinding Light='#2563EB', Dark='#60A5FA'}"  IsEnabled="False">
+                               TextColor="{AppThemeBinding Light='#2563EB', Dark='#60A5FA'}"
+                                IsEnabled="False">
 
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding ForgotPasswordCommand}"/>
@@ -71,7 +71,8 @@
 
                         <Label Text="Need help?"
                                TextDecorations="Underline"
-                               TextColor="{AppThemeBinding Light='#6B7280', Dark='#9CA3AF'}" IsEnabled="False">
+                               TextColor="{AppThemeBinding Light='#6B7280', Dark='#9CA3AF'}"
+                                IsEnabled="False">
 
                             <Label.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding HelpCommand}"/>
