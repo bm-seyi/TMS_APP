@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using TMS.Core.Extensions;
 using TMS.App.Pages;
 using TMS.App.ViewModels;
+using TMS.App.Controls;
+using Microsoft.Maui.Handlers;
 
 
 namespace TMS.App
@@ -33,6 +35,28 @@ namespace TMS.App
 					fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 					fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 				});
+
+			
+			EntryHandler.Mapper.AppendToMapping("BorderlessOnly", (handler, view) =>
+			{
+			#if WINDOWS
+				if (view is BorderlessEntry)
+				{
+					var textBox = handler.PlatformView;
+					
+					handler.PlatformView.BorderThickness = new Microsoft.UI.Xaml.Thickness(0);
+					handler.PlatformView.Background = null;
+
+					textBox.Resources["TextControlBorderBrush"] = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Transparent);
+					textBox.Resources["TextControlBorderBrushFocused"] = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Transparent);
+					textBox.Resources["TextControlBorderBrushPointerOver"] = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Transparent);
+					textBox.Resources["TextControlBorderBrushDisabled"] = new Microsoft.UI.Xaml.Media.SolidColorBrush(Microsoft.UI.Colors.Transparent);
+
+					textBox.FocusVisualPrimaryThickness = new Microsoft.UI.Xaml.Thickness(0);
+					textBox.FocusVisualSecondaryThickness = new Microsoft.UI.Xaml.Thickness(0);
+				}
+			#endif
+			});
 			
 
 			// Other Services
