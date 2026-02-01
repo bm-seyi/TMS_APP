@@ -5,6 +5,12 @@ using TMS.Core.Interfaces.HttpClients;
 using TMS.Core.Interfaces.Services;
 using TMS.Core.Services;
 using TMS.Core.Handlers;
+using TMS.Core.Interfaces.AuthenticationProviders;
+using TMS.Core.AuthenticationProviders;
+using TMS.Core.Interfaces.Pipeline;
+using TMS.Models.PipelineContexts;
+using TMS.Core.Pipelines.Login;
+using TMS.Core.Pipelines;
 
 
 namespace TMS.Core.Extensions
@@ -25,7 +31,27 @@ namespace TMS.Core.Extensions
                 });
             }
 
-            public IServiceCollection AddAuthService() => services.AddTransient<IAuthService, AuthService>();
+            public IServiceCollection AddMicrosoftAuthService() => services.AddTransient<IMicrosoftAuthService, MicrosoftAuthService>();
+            public IServiceCollection AddLoginService() => services.AddTransient<ILoginService, LoginService>();
+            public IServiceCollection AddLoginPipeline()
+            {
+                // Providers
+                services.AddTransient<IAuthenticationProvider, MicrosoftAuthProvider>();
+
+                // Steps
+                services.AddTransient<IPipelineStep<LoginContext>, LoginStep>();
+                services.AddTransient<IPipelineStep<LoginContext>, ArcgisStep>();
+
+                //Pipeline
+               services.AddTransient<IPipeline<LoginContext>>(sp =>
+                new Pipeline<LoginContext>(
+                    sp.GetServices<IPipelineStep<LoginContext>>()
+                )
+);
+
+                return services;
+            }
+
             public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
             public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
             public IServiceCollection AddArcgisService() => services.AddTransient<IArcgisService, ArcgisService>();

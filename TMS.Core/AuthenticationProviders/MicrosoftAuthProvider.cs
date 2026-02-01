@@ -1,0 +1,35 @@
+using System.Diagnostics;
+using Microsoft.Extensions.Logging;
+using Microsoft.Identity.Client;
+using TMS.Core.Interfaces.AuthenticationProviders;
+using TMS.Core.Interfaces.Services;
+using TMS.Models;
+using TMS.Models.PipelineContexts;
+
+
+namespace TMS.Core.AuthenticationProviders
+{
+    internal sealed class MicrosoftAuthProvider : IAuthenticationProvider
+    {
+        private readonly ILogger<MicrosoftAuthProvider> _logger;
+        private readonly IMicrosoftAuthService _microsoftAuthService;
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.AuthenticationProviders.MicrosoftProvider");
+
+        public MicrosoftAuthProvider(ILogger<MicrosoftAuthProvider> logger, IMicrosoftAuthService microsoftAuthService)
+        {
+            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _microsoftAuthService  = microsoftAuthService ?? throw new ArgumentNullException(nameof(microsoftAuthService));
+        }
+
+        public AuthenticationProvider AuthenticationProvider => AuthenticationProvider.Microsoft;
+
+        public async Task AuthenticateAsync(LoginContext loginContext, CancellationToken cancellationToken)
+        {
+            using Activity? activity = _activitySource.StartActivity("MicrosoftProvider.AuthenticationAsync");
+
+            AuthenticationResult authenticationResult = await _microsoftAuthService.LoginAsync(cancellationToken);
+
+            loginContext.IsAuthenticated = authenticationResult.AccessToken != null;
+        }
+    }
+}
