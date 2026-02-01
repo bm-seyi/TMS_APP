@@ -110,7 +110,7 @@
                     <ImageButton
                         Padding="10"
                         Source="ms_signin_dark.png"
-                        Command="{Binding LoginCommand}"
+                        Command="{Binding MicrosoftLoginCommand}"
                         BackgroundColor="Transparent"
                         Aspect="AspectFit"/>
 

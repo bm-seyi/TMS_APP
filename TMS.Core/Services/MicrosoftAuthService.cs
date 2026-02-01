@@ -7,13 +7,13 @@ using TMS.Core.Interfaces.Services;
 
 namespace TMS.Core.Services
 {
-    internal sealed class AuthService : IAuthService
+    internal sealed class MicrosoftAuthService : IMicrosoftAuthService
     {
-        private readonly ILogger<AuthService> _logger;
+        private readonly ILogger<MicrosoftAuthService> _logger;
         private readonly IConfiguration _configuration;
         private readonly IPublicClientApplication _publicClientApplication;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Services.AuthService");
-        public AuthService(ILogger<AuthService> logger, IConfiguration configuration, IPublicClientApplication publicClientApplication)
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Services.MicrosoftAuthService");
+        public MicrosoftAuthService(ILogger<MicrosoftAuthService> logger, IConfiguration configuration, IPublicClientApplication publicClientApplication)
         {
            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
@@ -22,7 +22,7 @@ namespace TMS.Core.Services
 
         public async Task<AuthenticationResult> LoginAsync(CancellationToken cancellationToken)
         {
-            using Activity? activity = _activitySource.StartActivity("AuthService.LoginAsync");
+            using Activity? activity = _activitySource.StartActivity("MicrosoftAuthService.LoginAsync");
 
             _logger.LogInformation("Starting interactive login flow");
        

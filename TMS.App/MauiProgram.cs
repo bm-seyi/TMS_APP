@@ -61,7 +61,9 @@ namespace TMS.App
 
 			// Other Services
 			builder.Services.AddPublicClientApplication(builder.Configuration);
-			builder.Services.AddAuthService();
+			builder.Services.AddMicrosoftAuthService();
+			builder.Services.AddLoginService();
+			builder.Services.AddLoginPipeline();
 			builder.Services.AddAlertService();
 			builder.Services.AddNavigationService();
 			builder.Services.AddArcgisService();

@@ -2,8 +2,9 @@ using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
-using Microsoft.Identity.Client;
 using TMS.Core.Interfaces.Services;
+using TMS.Models;
+using TMS.Models.PipelineContexts;
 
 
 namespace TMS.App.ViewModels
@@ -11,23 +12,21 @@ namespace TMS.App.ViewModels
     public partial class LoginPageViewModel : ObservableObject
     {
         private readonly ILogger<LoginPageViewModel> _logger;
-        private readonly IAuthService _authService;
+        private readonly ILoginService _loginService;
         private readonly IAlertService _alertService;
         private readonly INavigationService _navigationService;
-        private readonly IArcgisService _acrgisService;
         private static readonly ActivitySource _activitySource = new ActivitySource("TMS.App.ViewModels.LoginPageViewModel");
 
-        public LoginPageViewModel(ILogger<LoginPageViewModel> logger, IAuthService authService, IAlertService alertService, INavigationService navigationService, IArcgisService arcgisService)
+        public LoginPageViewModel(ILogger<LoginPageViewModel> logger, ILoginService loginService, IAlertService alertService, INavigationService navigationService)
         {
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _authService = authService ?? throw new ArgumentNullException(nameof(authService));
+            _loginService = loginService ?? throw new ArgumentNullException(nameof(loginService));
             _alertService = alertService ?? throw new ArgumentNullException(nameof(alertService));
             _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
-            _acrgisService = arcgisService ?? throw new ArgumentNullException(nameof(arcgisService));
         }
 
         [RelayCommand]
-        private async Task LoginAsync()
+        private async Task MicrosoftLoginAsync()
         {
             using Activity? activity= _activitySource.StartActivity("LoginViewModel.LoginAsync");
             
@@ -37,12 +36,16 @@ namespace TMS.App.ViewModels
             {
                 _logger.LogInformation("Attempting authentication...");
 
-                AuthenticationResult result = await _authService.LoginAsync(CancellationToken.None);
+                LoginContext loginContext = new LoginContext()
+                {
+                    AuthenticationProvider = AuthenticationProvider.Microsoft
+                };
 
-				if (result.AccessToken != null)
+                bool loginSucceeded = await _loginService.LoginAsync(loginContext, CancellationToken.None);
+
+				if (loginSucceeded)
 				{
                     _logger.LogInformation("Authentication successful. Navigating to Hub.");
-                    await _acrgisService.RegisterAsync(CancellationToken.None);
 					await _navigationService.NavigateToAsync("Hub");
 					return;
 				}
