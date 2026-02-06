@@ -7,9 +7,9 @@ using TMS.Core.Services;
 using TMS.Core.Handlers;
 using TMS.Core.Interfaces.AuthenticationProviders;
 using TMS.Core.AuthenticationProviders;
-using TMS.Core.Interfaces.Pipeline;
 using TMS.Models.PipelineContexts;
 using TMS.Core.Pipelines.Login;
+using TMS.Core.Interfaces.Pipelines;
 using TMS.Core.Pipelines;
 
 
@@ -43,8 +43,8 @@ namespace TMS.Core.Extensions
                 services.AddTransient<IPipelineStep<LoginContext>, ArcgisStep>();
 
                 //Pipeline
-               services.AddTransient<IPipeline<LoginContext>>(sp =>
-                new Pipeline<LoginContext>(
+               services.AddTransient<IPipelineEngine<LoginContext>>(sp =>
+                new PipelineEngine<LoginContext>(
                     sp.GetServices<IPipelineStep<LoginContext>>()
                 )
 );

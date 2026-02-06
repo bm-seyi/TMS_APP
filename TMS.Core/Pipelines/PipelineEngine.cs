@@ -1,18 +1,22 @@
-using TMS.Core.Interfaces.Pipeline;
+using System.Diagnostics;
+using TMS.Core.Interfaces.Pipelines;
 
 namespace TMS.Core.Pipelines
 {
-    public class Pipeline<TContext> : IPipeline<TContext>
+    public class PipelineEngine<TContext> : IPipelineEngine<TContext>
     {
         private readonly IReadOnlyList<IPipelineStep<TContext>> _steps;
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Pipelines.PipelineEngine");
 
-        public Pipeline(IEnumerable<IPipelineStep<TContext>> steps)
+        public PipelineEngine(IEnumerable<IPipelineStep<TContext>> steps)
         {
             _steps = [.. steps];
         }
 
         public Task ExecuteAsync(TContext context, CancellationToken cancellationToken)
         {
+            using Activity? _ = _activitySource.StartActivity("PipelineEngine.ExecuteAsync");
+            
             int index = 0;
 
             Task Next()

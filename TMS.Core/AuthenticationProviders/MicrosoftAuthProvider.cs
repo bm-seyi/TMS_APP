@@ -27,9 +27,16 @@ namespace TMS.Core.AuthenticationProviders
         {
             using Activity? activity = _activitySource.StartActivity("MicrosoftProvider.AuthenticationAsync");
 
+            _logger.LogInformation("Starting Microsoft authentication");
+
             AuthenticationResult authenticationResult = await _microsoftAuthService.LoginAsync(cancellationToken);
 
-            loginContext.IsAuthenticated = authenticationResult.AccessToken != null;
+            _logger.LogDebug("Microsoft authentication completed. AccessToken null: {IsNull}", authenticationResult?.AccessToken == null);
+
+            loginContext.IsAuthenticated = authenticationResult?.AccessToken != null;
+
+            _logger.LogInformation("Microsoft authentication result: IsAuthenticated = {IsAuthenticated}", loginContext.IsAuthenticated);
+
         }
     }
 }
