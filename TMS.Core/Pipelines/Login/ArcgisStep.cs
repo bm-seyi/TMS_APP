@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using TMS.Core.Interfaces.Pipeline;
+using TMS.Core.Interfaces.Pipelines;
 using TMS.Core.Interfaces.Services;
 using TMS.Models.PipelineContexts;
 
