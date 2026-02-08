@@ -14,8 +14,7 @@
 
         <Border Grid.Column="0"
                 BackgroundColor="{AppThemeBinding Light='Teal', Dark='#006D6D'}"
-                HorizontalOptions="FillAndExpand"
-                VerticalOptions="FillAndExpand">
+                >
 
             <Grid>
                 <Label Text="TMS"
@@ -28,12 +27,11 @@
             </Grid>
         </Border>
 
-        <ScrollView Grid.Column="1"
-                    HorizontalOptions="FillAndExpand"
-                    VerticalOptions="FillAndExpand">
+        <ScrollView Grid.Column="1">
             <Grid Padding="32,24"
                   HorizontalOptions="Fill"
-                  VerticalOptions="Center">
+                  VerticalOptions="Center"
+                   RowDefinitions="Auto,*">
 
                 <Label Grid.Row="0"
                        Text="Welcome back"
@@ -41,7 +39,7 @@
                        FontAttributes="Bold"
                        HorizontalOptions="Center"
                        TextColor="{AppThemeBinding Light='#1A1A1A', Dark='#EDEDED'}"
-                       Margin="0,0,0,20" />
+                        />
 
                 <VerticalStackLayout Grid.Row="1"
                                      Spacing="18"
