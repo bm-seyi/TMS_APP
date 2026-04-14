@@ -92,7 +92,7 @@
 
 	<ItemGroup>
 	  <ProjectReference Include="..\TMS.Aspire.ServiceDefaults\TMS.Aspire.ServiceDefaults.csproj" />
-	  <ProjectReference Include="..\TMS.Core\TMS.Core.csproj" />
+	  <ProjectReference Include="..\TMS.Application\TMS.Application.csproj" />
 	</ItemGroup>
 
 </Project>
