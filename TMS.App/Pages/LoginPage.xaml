@@ -13,8 +13,7 @@
           VerticalOptions="Fill">
 
         <Border Grid.Column="0"
-                BackgroundColor="{AppThemeBinding Light='Teal', Dark='#006D6D'}"
-                >
+                BackgroundColor="{AppThemeBinding Light='Teal', Dark='#006D6D'}">
 
             <Grid>
                 <Label Text="TMS"
@@ -31,7 +30,7 @@
             <Grid Padding="32,24"
                   HorizontalOptions="Fill"
                   VerticalOptions="Center"
-                   RowDefinitions="Auto,*">
+                  RowDefinitions="Auto,*">
 
                 <Label Grid.Row="0"
                        Text="Welcome back"
@@ -39,7 +38,7 @@
                        FontAttributes="Bold"
                        HorizontalOptions="Center"
                        TextColor="{AppThemeBinding Light='#1A1A1A', Dark='#EDEDED'}"
-                        />
+                       />
 
                 <VerticalStackLayout Grid.Row="1"
                                      Spacing="18"
@@ -55,8 +54,8 @@
                               ColumnSpacing="10">
 
                             <VerticalStackLayout Grid.Column="0"
-                                    Spacing="4" >
-                               
+                                                 Spacing="4">
+
                                 <Label Text="Email"
                                        FontSize="12"
                                        TextColor="{AppThemeBinding Light='#6B7280', Dark='#9CA3AF'}"
@@ -77,8 +76,7 @@
                                     BackgroundColor="#006D6D"
                                     TextColor="White"
                                     FontAttributes="Bold"
-                                    IsEnabled="False"
-                                   />
+                                    IsEnabled="False"/>
                         </Grid>
                     </Border>
 
