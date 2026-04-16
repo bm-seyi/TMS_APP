@@ -55,7 +55,6 @@ namespace TMS.Core.Extensions
             public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
             public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
             public IServiceCollection AddArcgisService() => services.AddTransient<IArcgisService, ArcgisService>();
-            public IServiceCollection AddTmsAuthHeaderHandler() => services.AddTransient<TmsAuthHeaderHandler>();
             public IServiceCollection AddTmsClient(IConfiguration configuration)
             {
                 services.AddHttpClient<ITmsClient, TmsClient>(x =>
