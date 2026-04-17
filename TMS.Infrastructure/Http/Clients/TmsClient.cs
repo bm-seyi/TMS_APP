@@ -1,17 +1,17 @@
 using System.Diagnostics;
 using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
-using TMS.Core.Interfaces.HttpClients;
+using TMS.Application.Interfaces.HttpClients;
 using TMS.Models;
 
 
-namespace TMS.Core.HttpClients
+namespace TMS.Infrastructure.Http.Clients
 {
     internal sealed class TmsClient : ITmsClient
     {
         private readonly ILogger<TmsClient> _logger;
         private readonly HttpClient _httpClient;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.HttpClients.TmsClient");
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Infrastructure");
         
         public TmsClient(ILogger<TmsClient> logger, HttpClient httpClient)
         {
