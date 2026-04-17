@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using TMS.Application.Interfaces.HttpClients;
 using TMS.Core.Interfaces.Services;
-using TMS.Models;
+using TMS.Domain;
 
 
 namespace TMS.Core.Services

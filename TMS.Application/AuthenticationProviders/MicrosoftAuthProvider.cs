@@ -3,8 +3,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Identity.Client;
 using TMS.Core.Interfaces.AuthenticationProviders;
 using TMS.Core.Interfaces.Services;
+using TMS.Domain;
+using TMS.Domain.PipelineContexts;
 using TMS.Models;
-using TMS.Models.PipelineContexts;
 
 
 namespace TMS.Core.AuthenticationProviders

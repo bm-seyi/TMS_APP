@@ -1,4 +1,4 @@
-using TMS.Models.PipelineContexts;
+using TMS.Domain.PipelineContexts;
 
 namespace TMS.Core.Interfaces.Services
 {
