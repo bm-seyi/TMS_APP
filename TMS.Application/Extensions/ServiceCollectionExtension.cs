@@ -28,7 +28,6 @@ namespace TMS.Core.Extensions
                 });
             }
 
-            public IServiceCollection AddMicrosoftAuthService() => services.AddTransient<IMicrosoftAuthService, MicrosoftAuthService>();
             public IServiceCollection AddLoginService() => services.AddTransient<ILoginService, LoginService>();
             public IServiceCollection AddLoginPipeline()
             {

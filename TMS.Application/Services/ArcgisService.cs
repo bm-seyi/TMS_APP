@@ -1,6 +1,6 @@
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using TMS.Core.Interfaces.HttpClients;
+using TMS.Application.Interfaces.HttpClients;
 using TMS.Core.Interfaces.Services;
 using TMS.Models;
 
