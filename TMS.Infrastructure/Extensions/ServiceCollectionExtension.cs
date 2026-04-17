@@ -4,6 +4,9 @@ using TMS.Core.Interfaces.Services;
 using TMS.Infrastructure.Http.Clients;
 using TMS.Infrastructure.Http.DelegatingHandlers;
 using TMS.Infrastructure.Services;
+using Microsoft.Identity.Client;
+using Microsoft.Extensions.Options;
+using TMS.Domain.Configuration;
 
 
 namespace TMS.Infrastructure.Extensions;
@@ -12,6 +15,18 @@ public static class ServiceCollectionExtension
 {
     extension(IServiceCollection services)
     {
+        public IServiceCollection AddPublicClientApplication()
+        {
+            return services.AddSingleton(sp =>
+            {
+                AzureAdOptions azureAdOptions = sp.GetRequiredService<IOptions<AzureAdOptions>>().Value;
+                
+                return PublicClientApplicationBuilder.Create(azureAdOptions.ClientId)
+                .WithRedirectUri(azureAdOptions.RedirectUri)
+                .Build();
+            });
+        }
+
         public IServiceCollection AddTmsAuthHeaderHandler() => services.AddTransient<TmsAuthHeaderDelegatingHandler>();
         public IServiceCollection AddTmsClient(IConfiguration configuration)
         {
@@ -26,6 +41,5 @@ public static class ServiceCollectionExtension
         }
 
         public IServiceCollection AddMicrosoftAuthService() => services.AddTransient<IMicrosoftAuthService, MicrosoftAuthService>();
-
     }
 }

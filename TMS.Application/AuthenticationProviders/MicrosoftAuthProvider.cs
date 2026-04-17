@@ -1,26 +1,18 @@
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using Microsoft.Identity.Client;
 using TMS.Core.Interfaces.AuthenticationProviders;
 using TMS.Core.Interfaces.Services;
 using TMS.Domain;
 using TMS.Domain.PipelineContexts;
-using TMS.Models;
 
 
 namespace TMS.Core.AuthenticationProviders
 {
-    internal sealed class MicrosoftAuthProvider : IAuthenticationProvider
+    internal sealed class MicrosoftAuthProvider(ILogger<MicrosoftAuthProvider> logger, IMicrosoftAuthService microsoftAuthService) : IAuthenticationProvider
     {
-        private readonly ILogger<MicrosoftAuthProvider> _logger;
-        private readonly IMicrosoftAuthService _microsoftAuthService;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.AuthenticationProviders.MicrosoftProvider");
-
-        public MicrosoftAuthProvider(ILogger<MicrosoftAuthProvider> logger, IMicrosoftAuthService microsoftAuthService)
-        {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _microsoftAuthService  = microsoftAuthService ?? throw new ArgumentNullException(nameof(microsoftAuthService));
-        }
+        private readonly ILogger<MicrosoftAuthProvider> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        private readonly IMicrosoftAuthService _microsoftAuthService = microsoftAuthService ?? throw new ArgumentNullException(nameof(microsoftAuthService));
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public AuthenticationProvider AuthenticationProvider => AuthenticationProvider.Microsoft;
 
@@ -30,14 +22,13 @@ namespace TMS.Core.AuthenticationProviders
 
             _logger.LogInformation("Starting Microsoft authentication");
 
-            AuthenticationResult authenticationResult = await _microsoftAuthService.LoginAsync(cancellationToken);
+            AuthenticatedUser authenticatedUser = await _microsoftAuthService.LoginAsync(cancellationToken);
 
-            _logger.LogDebug("Microsoft authentication completed. AccessToken null: {IsNull}", authenticationResult?.AccessToken == null);
+            _logger.LogDebug("Microsoft authentication completed. AccessToken null: {IsNull}", authenticatedUser?.AccessToken == null);
 
-            loginContext.IsAuthenticated = authenticationResult?.AccessToken != null;
+            loginContext.IsAuthenticated = authenticatedUser?.AccessToken != null;
 
             _logger.LogInformation("Microsoft authentication result: IsAuthenticated = {IsAuthenticated}", loginContext.IsAuthenticated);
-
         }
     }
 }

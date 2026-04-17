@@ -1,5 +1,3 @@
-using Microsoft.Extensions.Configuration;
-using Microsoft.Identity.Client;
 using TMS.Core.Interfaces.Services;
 using TMS.Core.Services;
 using TMS.Core.Interfaces.AuthenticationProviders;
@@ -16,18 +14,6 @@ namespace TMS.Core.Extensions
     {
         extension(IServiceCollection services)
         {
-            public IServiceCollection AddPublicClientApplication(IConfiguration configuration)
-            {
-                return services.AddSingleton(sp =>
-                {
-                    string clientId = configuration.GetRequiredValue<string>("AzureAD:ClientId");
-                    
-                    return PublicClientApplicationBuilder.Create(clientId)
-                    .WithRedirectUri(configuration.GetRequiredValue<string>("AzureAD:RedirectUri"))
-                    .Build();
-                });
-            }
-
             public IServiceCollection AddLoginService() => services.AddTransient<ILoginService, LoginService>();
             public IServiceCollection AddLoginPipeline()
             {

@@ -1,9 +1,9 @@
-using Microsoft.Identity.Client;
+using TMS.Domain;
 
 namespace TMS.Core.Interfaces.Services
 {
     public interface IMicrosoftAuthService
     {
-        Task<AuthenticationResult> LoginAsync(CancellationToken cancellationToken);
+        Task<AuthenticatedUser> LoginAsync(CancellationToken cancellationToken);
     }
 }

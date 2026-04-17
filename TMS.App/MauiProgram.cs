@@ -64,7 +64,7 @@ namespace TMS.App
 			
 
 			// Other Services
-			builder.Services.AddPublicClientApplication(builder.Configuration);
+			builder.Services.AddPublicClientApplication();
 			builder.Services.AddMicrosoftAuthService();
 			builder.Services.AddLoginService();
 			builder.Services.AddLoginPipeline();
