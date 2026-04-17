@@ -6,7 +6,6 @@ using Microsoft.Extensions.Hosting;
 using TMS.Core.Extensions;
 using TMS.App.Pages;
 using TMS.App.ViewModels;
-using TMS.App.Controls;
 using Microsoft.Maui.Handlers;
 using TMS.Domain.Configuration;
 using TMS.Infrastructure.Extensions;

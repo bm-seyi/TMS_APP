@@ -1,6 +1,6 @@
 using TMS.Models;
 
-namespace TMS.Core.Interfaces.HttpClients
+namespace TMS.Application.Interfaces.HttpClients
 {
     public interface ITmsClient
     {

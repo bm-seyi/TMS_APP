@@ -1,10 +1,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Identity.Client;
-using TMS.Core.HttpClients;
-using TMS.Core.Interfaces.HttpClients;
 using TMS.Core.Interfaces.Services;
 using TMS.Core.Services;
-using TMS.Core.Handlers;
 using TMS.Core.Interfaces.AuthenticationProviders;
 using TMS.Core.AuthenticationProviders;
 using TMS.Models.PipelineContexts;
@@ -55,16 +52,6 @@ namespace TMS.Core.Extensions
             public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
             public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
             public IServiceCollection AddArcgisService() => services.AddTransient<IArcgisService, ArcgisService>();
-            public IServiceCollection AddTmsClient(IConfiguration configuration)
-            {
-                services.AddHttpClient<ITmsClient, TmsClient>(x =>
-                {
-                    x.BaseAddress = new Uri(configuration.GetRequiredValue<string>("TMS:Url"));
-                })
-                .AddHttpMessageHandler<TmsAuthHeaderHandler>();
-
-                return services;
-            }
         }
     }
 }
