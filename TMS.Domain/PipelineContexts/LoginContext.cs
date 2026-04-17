@@ -1,9 +1,8 @@
 
-namespace TMS.Domain.PipelineContexts
+namespace TMS.Domain.PipelineContexts;
+
+public sealed class LoginContext
 {
-    public sealed class LoginContext
-    {
-        public bool IsAuthenticated { get; set; }
-        public AuthenticationProvider AuthenticationProvider {get; set; }
-    }
+    public bool IsAuthenticated { get; set; }
+    public AuthenticationProvider AuthenticationProvider {get; set; }
 }

@@ -2,7 +2,7 @@ using Microsoft.Extensions.Logging;
 using System.Diagnostics;
 using TMS.Core.Interfaces.Pipelines;
 using TMS.Core.Interfaces.Services;
-using TMS.Models.PipelineContexts;
+using TMS.Domain.PipelineContexts;
 
 
 namespace TMS.Core.Services
