@@ -1,10 +1,10 @@
-using System.Diagnostics;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Identity.Client;
 using TMS.Core.Interfaces.Services;
 using TMS.Domain.Configuration;
+using System.Diagnostics;
+using TMS.Domain;
 
 
 namespace TMS.Infrastructure.Services
@@ -16,7 +16,7 @@ namespace TMS.Infrastructure.Services
         private readonly IPublicClientApplication _publicClientApplication = publicClientApplication ?? throw new ArgumentNullException(nameof(publicClientApplication));
         private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Infrastructure");
 
-        public async Task<AuthenticationResult> LoginAsync(CancellationToken cancellationToken)
+        public async Task<AuthenticatedUser> LoginAsync(CancellationToken cancellationToken)
         {
             using Activity? activity = _activitySource.StartActivity("MicrosoftAuthService.LoginAsync");
 
@@ -27,9 +27,17 @@ namespace TMS.Infrastructure.Services
                 .WithPrompt(Prompt.ForceLogin)
                 .ExecuteAsync(cancellationToken);
 
+            AuthenticatedUser authenticatedUser = new AuthenticatedUser()
+            {
+                UserId = result.Account.HomeAccountId.Identifier,
+                Email = result.Account.Username,
+                AccessToken = result.AccessToken,
+                ExpiresAt = result.ExpiresOn.UtcDateTime,
+            };
+            
             _logger.LogInformation("Login completed successfully for user: {User}", result.Account?.Username);
             
-            return result;
+            return authenticatedUser;
         }
     }
 }
