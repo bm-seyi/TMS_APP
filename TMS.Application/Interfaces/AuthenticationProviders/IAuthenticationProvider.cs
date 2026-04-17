@@ -1,5 +1,6 @@
+using TMS.Domain;
+using TMS.Domain.PipelineContexts;
 using TMS.Models;
-using TMS.Models.PipelineContexts;
 
 namespace TMS.Core.Interfaces.AuthenticationProviders
 {

@@ -1,5 +1,5 @@
 
-namespace TMS.Models.PipelineContexts
+namespace TMS.Domain.PipelineContexts
 {
     public sealed class LoginContext
     {

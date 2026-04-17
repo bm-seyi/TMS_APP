@@ -4,10 +4,10 @@ using TMS.Core.Interfaces.Services;
 using TMS.Core.Services;
 using TMS.Core.Interfaces.AuthenticationProviders;
 using TMS.Core.AuthenticationProviders;
-using TMS.Models.PipelineContexts;
 using TMS.Core.Pipelines.Login;
 using TMS.Core.Interfaces.Pipelines;
 using TMS.Core.Pipelines;
+using TMS.Domain.PipelineContexts;
 
 
 namespace TMS.Core.Extensions

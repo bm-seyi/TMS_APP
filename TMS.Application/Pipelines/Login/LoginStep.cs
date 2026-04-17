@@ -3,8 +3,8 @@ using System.Collections.Frozen;
 using System.Diagnostics;
 using TMS.Core.Interfaces.AuthenticationProviders;
 using TMS.Core.Interfaces.Pipelines;
-using TMS.Models;
-using TMS.Models.PipelineContexts;
+using TMS.Domain;
+using TMS.Domain.PipelineContexts;
 
 
 namespace TMS.Core.Pipelines.Login

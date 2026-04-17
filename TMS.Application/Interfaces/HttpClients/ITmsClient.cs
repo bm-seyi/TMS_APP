@@ -1,4 +1,4 @@
-using TMS.Models;
+using TMS.Domain;
 
 namespace TMS.Application.Interfaces.HttpClients
 {
