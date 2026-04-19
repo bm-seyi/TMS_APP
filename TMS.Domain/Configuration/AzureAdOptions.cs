@@ -1,4 +1,3 @@
-
 namespace TMS.Domain.Configuration
 {
     public record AzureAdOptions

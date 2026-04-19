@@ -1,4 +1,3 @@
-
 namespace TMS.Domain.PipelineContexts;
 
 public sealed class LoginContext
