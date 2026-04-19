@@ -25,18 +25,16 @@ namespace TMS.Core.Extensions
                 services.AddTransient<IPipelineStep<LoginContext>, ArcgisStep>();
 
                 //Pipeline
-               services.AddTransient<IPipelineEngine<LoginContext>>(sp =>
-                new PipelineEngine<LoginContext>(
-                    sp.GetServices<IPipelineStep<LoginContext>>()
-                )
-);
+                services.AddTransient<IPipelineEngine<LoginContext>>(sp =>
+                    new PipelineEngine<LoginContext>(
+                        sp.GetServices<IPipelineStep<LoginContext>>()
+                    ));
 
                 return services;
             }
 
             public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
             public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
-            public IServiceCollection AddArcgisService() => services.AddTransient<IArcgisService, ArcgisService>();
         }
     }
 }

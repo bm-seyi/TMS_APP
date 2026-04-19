@@ -40,6 +40,8 @@ public static class ServiceCollectionExtension
             return services;
         }
 
+        public IServiceCollection AddArcgisService() => services.AddTransient<IArcgisService, ArcgisService>();
+
         public IServiceCollection AddMicrosoftAuthService() => services.AddTransient<IMicrosoftAuthService, MicrosoftAuthService>();
     }
 }
