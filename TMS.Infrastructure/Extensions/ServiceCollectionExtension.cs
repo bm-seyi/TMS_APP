@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using TMS.Application.Interfaces.HttpClients;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Services;
 using TMS.Infrastructure.Http.Clients;
 using TMS.Infrastructure.Http.DelegatingHandlers;
 using TMS.Infrastructure.Services;

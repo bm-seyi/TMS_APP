@@ -1,19 +1,19 @@
 using Microsoft.Extensions.Logging;
 using System.Collections.Frozen;
 using System.Diagnostics;
-using TMS.Core.Interfaces.AuthenticationProviders;
-using TMS.Core.Interfaces.Pipelines;
+using TMS.Application.Interfaces.AuthenticationProviders;
+using TMS.Application.Interfaces.Pipelines;
 using TMS.Domain;
 using TMS.Domain.PipelineContexts;
 
 
-namespace TMS.Core.Pipelines.Login
+namespace TMS.Application.Pipelines.Login
 {
     internal sealed class LoginStep : IPipelineStep<LoginContext>
     {
         private readonly ILogger<LoginStep> _logger;
         private readonly FrozenDictionary<AuthenticationProvider, IAuthenticationProvider> _providers;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Pipelines.LoginStep");
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public LoginStep(ILogger<LoginStep> logger, IEnumerable<IAuthenticationProvider>  providers)
         {

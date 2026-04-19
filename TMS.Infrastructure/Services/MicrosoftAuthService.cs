@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.Identity.Client;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Services;
 using TMS.Domain.Configuration;
 using System.Diagnostics;
 using TMS.Domain;

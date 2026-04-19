@@ -1,12 +1,12 @@
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using TMS.Core.Interfaces.AuthenticationProviders;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.AuthenticationProviders;
+using TMS.Application.Interfaces.Services;
 using TMS.Domain;
 using TMS.Domain.PipelineContexts;
 
 
-namespace TMS.Core.AuthenticationProviders
+namespace TMS.Application.AuthenticationProviders
 {
     internal sealed class MicrosoftAuthProvider(ILogger<MicrosoftAuthProvider> logger, IMicrosoftAuthService microsoftAuthService) : IAuthenticationProvider
     {

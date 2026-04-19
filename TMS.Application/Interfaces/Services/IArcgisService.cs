@@ -1,4 +1,4 @@
-namespace TMS.Core.Interfaces.Services
+namespace TMS.Application.Interfaces.Services
 {
     public interface IArcgisService
     {

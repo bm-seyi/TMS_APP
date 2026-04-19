@@ -2,7 +2,7 @@ using System.Diagnostics;
 using Esri.ArcGISRuntime;
 using Microsoft.Extensions.Logging;
 using TMS.Application.Interfaces.HttpClients;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Services;
 using TMS.Domain;
 
 namespace TMS.Infrastructure.Services;

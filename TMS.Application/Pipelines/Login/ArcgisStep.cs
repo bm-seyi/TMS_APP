@@ -1,17 +1,17 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using TMS.Core.Interfaces.Pipelines;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Pipelines;
+using TMS.Application.Interfaces.Services;
 using TMS.Domain.PipelineContexts;
 
 
-namespace TMS.Core.Pipelines.Login
+namespace TMS.Application.Pipelines.Login
 {
     internal sealed class ArcgisStep : IPipelineStep<LoginContext>
     {
         private readonly ILogger<ArcgisStep> _logger;
         private readonly IArcgisService _arcgisService;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Pipelines.Login.ArcgisStep");
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public ArcgisStep(ILogger<ArcgisStep> logger, IArcgisService arcgisService)
         {

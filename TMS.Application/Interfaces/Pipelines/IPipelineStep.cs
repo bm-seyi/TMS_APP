@@ -1,4 +1,4 @@
-namespace TMS.Core.Interfaces.Pipelines
+namespace TMS.Application.Interfaces.Pipelines
 {
     public interface IPipelineStep<TContext>
     {
