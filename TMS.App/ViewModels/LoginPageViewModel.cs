@@ -15,7 +15,7 @@ public partial class LoginPageViewModel : ObservableObject
     private readonly ILoginService _loginService;
     private readonly IAlertService _alertService;
     private readonly INavigationService _navigationService;
-    private static readonly ActivitySource _activitySource = new ActivitySource("TMS.App.ViewModels.LoginPageViewModel");
+    private static readonly ActivitySource _activitySource = new ActivitySource("TMS.App");
 
     public LoginPageViewModel(ILogger<LoginPageViewModel> logger, ILoginService loginService, IAlertService alertService, INavigationService navigationService)
     {
@@ -25,10 +25,13 @@ public partial class LoginPageViewModel : ObservableObject
         _navigationService = navigationService ?? throw new ArgumentNullException(nameof(navigationService));
     }
 
+    private CancellationTokenSource? CancellationTokenSource { get; set; } 
+
     [RelayCommand]
     private async Task MicrosoftLoginAsync()
     {
         using Activity? activity = _activitySource.StartActivity("LoginViewModel.LoginAsync");
+        CancellationTokenSource = new CancellationTokenSource();
         
         _logger.LogInformation("LoginAsync started.");
             
@@ -41,7 +44,7 @@ public partial class LoginPageViewModel : ObservableObject
                 AuthenticationProvider = AuthenticationProvider.Microsoft
             };
 
-            bool loginSucceeded = await _loginService.LoginAsync(loginContext, CancellationToken.None);
+            bool loginSucceeded = await _loginService.LoginAsync(loginContext, CancellationTokenSource.Token);
 
             if (loginSucceeded)
             {
@@ -60,6 +63,7 @@ public partial class LoginPageViewModel : ObservableObject
         }
         finally
         {
+            CancellationTokenSource?.Dispose();
             _logger.LogInformation("LoginAsync finished.");
         }
     }

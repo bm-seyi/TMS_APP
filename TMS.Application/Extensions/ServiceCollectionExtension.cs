@@ -8,33 +8,32 @@ using TMS.Application.Services;
 using TMS.Application.Pipelines.Login;
 
 
-namespace TMS.Core.Extensions
+namespace TMS.Application.Extensions;
+
+public static class ServiceCollectionExtension
 {
-    public static class ServiceCollectionExtension
+    extension(IServiceCollection services)
     {
-        extension(IServiceCollection services)
+        public IServiceCollection AddLoginService() => services.AddTransient<ILoginService, LoginService>();
+        public IServiceCollection AddLoginPipeline()
         {
-            public IServiceCollection AddLoginService() => services.AddTransient<ILoginService, LoginService>();
-            public IServiceCollection AddLoginPipeline()
-            {
-                // Providers
-                services.AddTransient<IAuthenticationProvider, MicrosoftAuthProvider>();
+            // Providers
+            services.AddTransient<IAuthenticationProvider, MicrosoftAuthProvider>();
 
-                // Steps
-                services.AddTransient<IPipelineStep<LoginContext>, LoginStep>();
-                services.AddTransient<IPipelineStep<LoginContext>, ArcgisStep>();
+            // Steps
+            services.AddTransient<IPipelineStep<LoginContext>, LoginStep>();
+            services.AddTransient<IPipelineStep<LoginContext>, ArcgisStep>();
 
-                //Pipeline
-                services.AddTransient<IPipelineEngine<LoginContext>>(sp =>
-                    new PipelineEngine<LoginContext>(
-                        sp.GetServices<IPipelineStep<LoginContext>>()
-                    ));
+            //Pipeline
+            services.AddTransient<IPipelineEngine<LoginContext>>(sp =>
+                new PipelineEngine<LoginContext>(
+                    sp.GetServices<IPipelineStep<LoginContext>>()
+                ));
 
-                return services;
-            }
-
-            public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
-            public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
+            return services;
         }
+
+        public IServiceCollection AddAlertService() => services.AddSingleton<IAlertService, AlertService>();
+        public IServiceCollection AddNavigationService() => services.AddSingleton<INavigationService, NavigationService>();
     }
 }
