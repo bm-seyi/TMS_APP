@@ -1,11 +1,13 @@
+using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Services;
 
-namespace TMS.Core.Services
+namespace TMS.Application.Services
 {
     internal sealed class NavigationService : INavigationService
     {
         private readonly ILogger<NavigationService> _logger;
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public NavigationService(ILogger<NavigationService> logger)
         {
@@ -14,6 +16,8 @@ namespace TMS.Core.Services
 
         public Task NavigateToAsync(string route)
         {
+            using Activity? _ = _activitySource.StartActivity("NavigationService.NavigateToAsync");
+
             if (string.IsNullOrWhiteSpace(route))
                 throw new ArgumentNullException(nameof(route));
 
@@ -30,6 +34,8 @@ namespace TMS.Core.Services
 
         public Task GoBackAsync()
         {
+            using Activity? _ = _activitySource.StartActivity("NavigationService.GoBackAsync");
+
             _logger.LogInformation("Navigating back");
             return Shell.Current?.GoToAsync("..") ?? Task.CompletedTask;
         }

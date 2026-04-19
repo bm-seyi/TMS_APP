@@ -2,7 +2,7 @@ using System.Diagnostics;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Extensions.Logging;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Services;
 using TMS.Domain;
 using TMS.Domain.PipelineContexts;
 

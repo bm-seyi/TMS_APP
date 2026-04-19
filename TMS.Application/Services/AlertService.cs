@@ -1,13 +1,13 @@
 using System.Diagnostics;
 using Microsoft.Extensions.Logging;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Services;
 
-namespace TMS.Core.Services
+namespace TMS.Application.Services
 {
     internal sealed class AlertService : IAlertService
     {
         private readonly ILogger<AlertService> _logger;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Services.AlertService");
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public AlertService(ILogger<AlertService> logger)
         {

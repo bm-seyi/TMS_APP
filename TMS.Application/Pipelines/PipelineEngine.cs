@@ -1,12 +1,13 @@
 using System.Diagnostics;
-using TMS.Core.Interfaces.Pipelines;
+using TMS.Application.Interfaces.Pipelines;
 
-namespace TMS.Core.Pipelines
+
+namespace TMS.Application.Pipelines
 {
     public class PipelineEngine<TContext> : IPipelineEngine<TContext>
     {
         private readonly IReadOnlyList<IPipelineStep<TContext>> _steps;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Pipelines.PipelineEngine");
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public PipelineEngine(IEnumerable<IPipelineStep<TContext>> steps)
         {

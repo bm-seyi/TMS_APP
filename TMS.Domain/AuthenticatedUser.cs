@@ -1,4 +1,3 @@
-
 namespace TMS.Domain;
 
 public sealed record AuthenticatedUser

@@ -1,11 +1,11 @@
-using TMS.Core.Interfaces.Services;
-using TMS.Core.Services;
-using TMS.Core.Interfaces.AuthenticationProviders;
-using TMS.Core.AuthenticationProviders;
-using TMS.Core.Pipelines.Login;
-using TMS.Core.Interfaces.Pipelines;
-using TMS.Core.Pipelines;
+using TMS.Application.Interfaces.Services;
+using TMS.Application.Interfaces.AuthenticationProviders;
+using TMS.Application.Interfaces.Pipelines;
 using TMS.Domain.PipelineContexts;
+using TMS.Application.AuthenticationProviders;
+using TMS.Application.Pipelines;
+using TMS.Application.Services;
+using TMS.Application.Pipelines.Login;
 
 
 namespace TMS.Core.Extensions

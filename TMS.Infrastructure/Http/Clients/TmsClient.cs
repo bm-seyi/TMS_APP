@@ -3,7 +3,6 @@ using System.Net.Http.Json;
 using Microsoft.Extensions.Logging;
 using TMS.Application.Interfaces.HttpClients;
 using TMS.Domain;
-using TMS.Models;
 
 
 namespace TMS.Infrastructure.Http.Clients

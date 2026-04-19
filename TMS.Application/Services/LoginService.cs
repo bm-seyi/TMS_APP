@@ -1,17 +1,17 @@
 using Microsoft.Extensions.Logging;
 using System.Diagnostics;
-using TMS.Core.Interfaces.Pipelines;
-using TMS.Core.Interfaces.Services;
+using TMS.Application.Interfaces.Pipelines;
+using TMS.Application.Interfaces.Services;
 using TMS.Domain.PipelineContexts;
 
 
-namespace TMS.Core.Services
+namespace TMS.Application.Services
 {
     internal sealed class LoginService : ILoginService
     {
         private readonly ILogger<LoginService> _logger;
         private readonly IPipelineEngine<LoginContext> _pipelineEngine;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Core.Service.LoginService");
+        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
         public LoginService(ILogger<LoginService> logger, IPipelineEngine<LoginContext> pipelineEngine)
         {
