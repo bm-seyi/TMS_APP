@@ -5,31 +5,24 @@ using TMS.Application.Interfaces.Services;
 using TMS.Domain.PipelineContexts;
 
 
-namespace TMS.Application.Services
+namespace TMS.Application.Services;
+
+internal sealed class LoginService(ILogger<LoginService> logger, IPipelineEngine<LoginContext> pipelineEngine) : ILoginService
 {
-    internal sealed class LoginService : ILoginService
+    private readonly ILogger<LoginService> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private readonly IPipelineEngine<LoginContext> _pipelineEngine = pipelineEngine ?? throw new ArgumentNullException(nameof(pipelineEngine));
+    private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
+
+    public async Task<bool> LoginAsync(LoginContext loginContext, CancellationToken cancellationToken)
     {
-        private readonly ILogger<LoginService> _logger;
-        private readonly IPipelineEngine<LoginContext> _pipelineEngine;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
+        using Activity? activity = _activitySource.StartActivity("LoginService.LoginAsync");
 
-        public LoginService(ILogger<LoginService> logger, IPipelineEngine<LoginContext> pipelineEngine)
-        {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-            _pipelineEngine = pipelineEngine ?? throw new ArgumentNullException(nameof(pipelineEngine));
-        }
+        _logger.LogInformation("Login pipeline started");
 
-        public async Task<bool> LoginAsync(LoginContext loginContext, CancellationToken cancellationToken)
-        {
-            using Activity? activity = _activitySource.StartActivity("LoginService.LoginAsync");
+        await _pipelineEngine.ExecuteAsync(loginContext, cancellationToken);
 
-            _logger.LogInformation("Login pipeline started");
+        _logger.LogInformation("Login pipeline completed. IsAuthenticated = {IsAuthenticated}", loginContext.IsAuthenticated);
 
-            await _pipelineEngine.ExecuteAsync(loginContext, cancellationToken);
-
-            _logger.LogInformation("Login pipeline completed. IsAuthenticated = {IsAuthenticated}", loginContext.IsAuthenticated);
-
-            return loginContext.IsAuthenticated;
-        }
+        return loginContext.IsAuthenticated;
     }
 }

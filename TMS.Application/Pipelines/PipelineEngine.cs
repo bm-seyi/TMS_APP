@@ -2,34 +2,34 @@ using System.Diagnostics;
 using TMS.Application.Interfaces.Pipelines;
 
 
-namespace TMS.Application.Pipelines
+namespace TMS.Application.Pipelines;
+
+public sealed class PipelineEngine<TContext> : IPipelineEngine<TContext>
 {
-    public class PipelineEngine<TContext> : IPipelineEngine<TContext>
+    private readonly IReadOnlyList<IPipelineStep<TContext>> _steps;
+    private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
+
+    public PipelineEngine(IEnumerable<IPipelineStep<TContext>> steps)
     {
-        private readonly IReadOnlyList<IPipelineStep<TContext>> _steps;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
+        _steps = [.. steps];
+    }
 
-        public PipelineEngine(IEnumerable<IPipelineStep<TContext>> steps)
+    public Task ExecuteAsync(TContext context, CancellationToken cancellationToken)
+    {
+        using Activity? _ = _activitySource.StartActivity("PipelineEngine.ExecuteAsync");
+        
+        int index = 0;
+
+        Task Next()
         {
-            _steps = [.. steps];
+            if (index >= _steps.Count)
+                return Task.CompletedTask;
+
+            IPipelineStep<TContext> step = _steps[index++];
+            return step.InvokeAsync(context, Next, cancellationToken);
         }
 
-        public Task ExecuteAsync(TContext context, CancellationToken cancellationToken)
-        {
-            using Activity? _ = _activitySource.StartActivity("PipelineEngine.ExecuteAsync");
-            
-            int index = 0;
+        return Next();
+    }
+}   
 
-            Task Next()
-            {
-                if (index >= _steps.Count)
-                    return Task.CompletedTask;
-
-                IPipelineStep<TContext> step = _steps[index++];
-                return step.InvokeAsync(context, Next, cancellationToken);
-            }
-
-            return Next();
-        }
-    }   
-}
