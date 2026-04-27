@@ -4,7 +4,7 @@ using TMS.Application.Interfaces.Pipelines;
 
 namespace TMS.Application.Pipelines;
 
-public sealed class PipelineEngine<TContext> : IPipelineEngine<TContext>
+internal sealed class PipelineEngine<TContext> : IPipelineEngine<TContext>
 {
     private readonly IReadOnlyList<IPipelineStep<TContext>> _steps;
     private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
