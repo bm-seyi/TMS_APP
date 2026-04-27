@@ -18,7 +18,7 @@ public static class ServiceCollectionExtension
         public IServiceCollection AddLoginPipeline()
         {
             // Providers
-            services.AddTransient<IAuthenticationProvider, MicrosoftAuthProvider>();
+            services.AddTransient<IAuthenticationProvider, MicrosoftAuthenticationProvider>();
 
             // Steps
             services.AddTransient<IPipelineStep<LoginContext>, LoginStep>();

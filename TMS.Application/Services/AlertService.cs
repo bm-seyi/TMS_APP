@@ -2,27 +2,21 @@ using System.Diagnostics;
 using Microsoft.Extensions.Logging;
 using TMS.Application.Interfaces.Services;
 
-namespace TMS.Application.Services
+namespace TMS.Application.Services;
+
+internal sealed class AlertService(ILogger<AlertService> logger) : IAlertService
 {
-    internal sealed class AlertService : IAlertService
+    private readonly ILogger<AlertService> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
+
+    public async Task ShowAlertAsync(string title, string message, string cancel)
     {
-        private readonly ILogger<AlertService> _logger;
-        private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
+        using Activity? activity = _activitySource.StartActivity("AlertService.ShowAlertAsync");
+        
+        _logger.LogInformation("Showing alert with title: {Title}", title);
 
-        public AlertService(ILogger<AlertService> logger)
-        {
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
-        }
+        await Shell.Current.DisplayAlertAsync(title, message, cancel);
 
-        public async Task ShowAlertAsync(string title, string message, string cancel)
-        {
-            using Activity? activity = _activitySource.StartActivity("AlertService.ShowAlertAsync");
-            
-            _logger.LogInformation("Showing alert with title: {Title}", title);
-
-            await Shell.Current.DisplayAlertAsync(title, message, cancel);
-
-            _logger.LogInformation("Alert displayed successfully");
-        }
+        _logger.LogInformation("Alert displayed successfully");
     }
 }

@@ -8,9 +8,9 @@ using TMS.Domain.PipelineContexts;
 
 namespace TMS.Application.AuthenticationProviders
 {
-    internal sealed class MicrosoftAuthProvider(ILogger<MicrosoftAuthProvider> logger, IMicrosoftAuthService microsoftAuthService) : IAuthenticationProvider
+    internal sealed class MicrosoftAuthenticationProvider(ILogger<MicrosoftAuthenticationProvider> logger, IMicrosoftAuthService microsoftAuthService) : IAuthenticationProvider
     {
-        private readonly ILogger<MicrosoftAuthProvider> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+        private readonly ILogger<MicrosoftAuthenticationProvider> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         private readonly IMicrosoftAuthService _microsoftAuthService = microsoftAuthService ?? throw new ArgumentNullException(nameof(microsoftAuthService));
         private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Application");
 
@@ -18,13 +18,11 @@ namespace TMS.Application.AuthenticationProviders
 
         public async Task AuthenticateAsync(LoginContext loginContext, CancellationToken cancellationToken)
         {
-            using Activity? activity = _activitySource.StartActivity("MicrosoftProvider.AuthenticationAsync");
+            using Activity? activity = _activitySource.StartActivity("MicrosoftAuthenticationProvider.AuthenticationAsync");
 
             _logger.LogInformation("Starting Microsoft authentication");
 
             AuthenticatedUser authenticatedUser = await _microsoftAuthService.LoginAsync(cancellationToken);
-
-            _logger.LogDebug("Microsoft authentication completed. AccessToken null: {IsNull}", authenticatedUser?.AccessToken == null);
 
             loginContext.IsAuthenticated = authenticatedUser?.AccessToken != null;
 

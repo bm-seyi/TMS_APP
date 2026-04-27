@@ -20,7 +20,6 @@
         <PackageVersion Include="Microsoft.AspNetCore.SignalR.Client" Version="10.0.2" />
         <PackageVersion Include="Microsoft.Identity.Client" Version="4.81.0" />
 
-
         <!-- .NET Aspire-->
         <PackageVersion Include="Aspire.Hosting.Maui" Version="13.1.0-preview.1.25616.3" />
 
