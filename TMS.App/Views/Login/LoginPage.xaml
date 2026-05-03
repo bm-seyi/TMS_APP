@@ -1,7 +1,7 @@
 ﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:TMS.App.Controls"
-             x:Class="TMS.App.Pages.LoginPage"
+             x:Class="TMS.App.Views.Login.LoginPage"
              BackgroundColor="{AppThemeBinding Light='#F7F7F7', Dark='#111315'}">
 
     <Grid RowDefinitions="*"
