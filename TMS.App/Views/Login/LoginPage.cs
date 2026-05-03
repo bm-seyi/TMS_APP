@@ -4,9 +4,9 @@ namespace TMS.App.Views.Login;
 
 public partial class LoginPage : ContentPage
 {
-	public LoginPage(LoginPageViewModel vm)
+	public LoginPage(LoginViewModel loginViewModel)
 	{
 		InitializeComponent();
-		BindingContext = vm ?? throw new ArgumentNullException(nameof(vm));
+		BindingContext = loginViewModel ?? throw new ArgumentNullException(nameof(loginViewModel));
 	}
 }

@@ -3,13 +3,14 @@ using System.Diagnostics.CodeAnalysis;
 using Esri.ArcGISRuntime.Maui;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using TMS.App.Pages;
 using TMS.Application.Extensions;
 using TMS.App.ViewModels;
 using Microsoft.Maui.Handlers;
 using TMS.Domain.Configuration;
 using TMS.Infrastructure.Extensions;
 using TMS.App.Controls;
+using TMS.App.Views.Hub;
+using TMS.App.Views.Login;
 
 
 namespace TMS.App
@@ -78,11 +79,12 @@ namespace TMS.App
 			builder.Services.AddSingleton(SecureStorage.Default);
 
 			// ViewModels
-			builder.Services.AddTransient<LoginPageViewModel>();
+			builder.Services.AddTransient<LoginViewModel>();
+			builder.Services.AddTransient<HubViewModel>();
 
 			// Views
 			builder.Services.AddTransient<AppShell>();
-			builder.Services.AddTransient<Hub>();
+			builder.Services.AddTransient<HubPage>();
 			builder.Services.AddSingleton<LoginPage>();
 
 			builder.Services.AddLogging(configure =>

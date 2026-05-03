@@ -17,7 +17,7 @@ internal abstract class HubClientBase(ILogger logger, ActivitySource activitySou
 
     public async Task ConnectAsync()
     {
-        using Activity? _ = _activitySource.StartActivity(".ConnectAsync");
+        using Activity? _ = _activitySource.StartActivity("HubClientBase.ConnectAsync");
 
         if (Connection != null && IsConnected)
             return;
@@ -34,6 +34,8 @@ internal abstract class HubClientBase(ILogger logger, ActivitySource activitySou
 
     public async Task DisconnectAsync()
     {
+        using Activity? _ = _activitySource.StartActivity("HubClientBase.DisconnectAsync");
+
         if (Connection == null)
             return;
 
@@ -45,6 +47,7 @@ internal abstract class HubClientBase(ILogger logger, ActivitySource activitySou
 
     public async ValueTask DisposeAsync()
     {
+        using Activity? _ = _activitySource.StartActivity("HubClientBase.DisposeAsync");
         if (Connection != null)
         {
             await DisconnectAsync();

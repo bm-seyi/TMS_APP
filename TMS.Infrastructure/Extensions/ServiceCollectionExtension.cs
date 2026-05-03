@@ -7,6 +7,8 @@ using TMS.Infrastructure.Services;
 using Microsoft.Identity.Client;
 using Microsoft.Extensions.Options;
 using TMS.Domain.Configuration;
+using TMS.Application.Interfaces.HubClients;
+using TMS.Infrastructure.SignalR.HubClients;
 
 
 namespace TMS.Infrastructure.Extensions;
@@ -41,7 +43,7 @@ public static class ServiceCollectionExtension
         }
 
         public IServiceCollection AddArcgisService() => services.AddTransient<IArcgisService, ArcgisService>();
-
         public IServiceCollection AddMicrosoftAuthService() => services.AddTransient<IMicrosoftAuthService, MicrosoftAuthService>();
+        public IServiceCollection AddMapHubClient() => services.AddSingleton<IMapHubClient, MapHubClient>();
     }
 }

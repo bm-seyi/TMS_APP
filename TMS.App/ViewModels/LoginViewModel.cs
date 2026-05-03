@@ -9,15 +9,15 @@ using TMS.Domain.PipelineContexts;
 
 namespace TMS.App.ViewModels;
 
-public partial class LoginPageViewModel : ObservableObject
+public sealed class LoginViewModel : ObservableObject
 {
-    private readonly ILogger<LoginPageViewModel> _logger;
+    private readonly ILogger<LoginViewModel> _logger;
     private readonly ILoginService _loginService;
     private readonly IAlertService _alertService;
     private readonly INavigationService _navigationService;
     private static readonly ActivitySource _activitySource = new ActivitySource("TMS.App");
 
-    public LoginPageViewModel(ILogger<LoginPageViewModel> logger, ILoginService loginService, IAlertService alertService, INavigationService navigationService)
+    public LoginViewModel(ILogger<LoginViewModel> logger, ILoginService loginService, IAlertService alertService, INavigationService navigationService)
     {
         _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         _loginService = loginService ?? throw new ArgumentNullException(nameof(loginService));
