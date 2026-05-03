@@ -9,6 +9,6 @@
         <BackButtonBehavior IsVisible="False"/>
     </Shell.BackButtonBehavior>
 
-    <esriUI:MapView x:Name="mapView"/>
+    <esriUI:MapView Map="{Binding Map}"/>
 
 </ContentPage>
