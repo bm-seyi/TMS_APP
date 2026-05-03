@@ -9,7 +9,7 @@ using TMS.Domain.PipelineContexts;
 
 namespace TMS.App.ViewModels;
 
-public sealed class LoginViewModel : ObservableObject
+public sealed partial class LoginViewModel : ObservableObject
 {
     private readonly ILogger<LoginViewModel> _logger;
     private readonly ILoginService _loginService;
