@@ -1,7 +1,6 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.Extensions.Logging;
-using Xamarin.Google.Crypto.Tink.Proto;
 
 namespace TMS.Infrastructure.SignalR;
 

@@ -7,23 +7,22 @@ using TMS.Domain.DTOs;
 
 namespace TMS.Infrastructure.SignalR.HubClients;
 
-internal sealed class LinesDataHubClient(ILogger<LinesDataHubClient> logger, IConfiguration configuration) : HubClientBase(logger, _activitySource) 
+internal sealed class MapHubClient(ILogger<MapHubClient> logger, IConfiguration configuration) : HubClientBase(logger, _activitySource) 
 {
-    private readonly ILogger<LinesDataHubClient> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+    private readonly ILogger<MapHubClient> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     private readonly IConfiguration _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Infrastructure");
-
-    protected override string HubUrl => $"{_configuration.GetRequiredValue<string>("SignalR:Hub")}/linesDataHub";
-
-    public event Action<LinesUpdateDTO>? LineReceived;
+    protected override string HubUrl => $"{_configuration.GetRequiredValue<string>("SignalR:Hub")}/mapHub";
+    
+    public event Action<MapLinesDTO>? MapLinesLoaded;
 
     protected override void RegisterHandlers(HubConnection connection)
     {
         using Activity? _ = _activitySource.StartActivity("LinesDataHubClient.RegisterHandlers");
 
-        connection.On<LinesUpdateDTO>("ReceiveLines", line =>
+        connection.On<MapLinesDTO>("MapLinesLoaded", line =>
         {
-            LineReceived?.Invoke(line);
+            MapLinesLoaded?.Invoke(line);
         });
     }
 }
