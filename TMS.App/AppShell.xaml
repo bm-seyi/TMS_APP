@@ -3,16 +3,17 @@
     x:Class="TMS.App.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:TMS.App.Pages"
+    xmlns:login="clr-namespace:TMS.App.Views.Login"
+    xmlns:hub="clr-namespace:TMS.App.Views.Hub"
     Shell.FlyoutBehavior="Disabled"
     Title="TMS.App">
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:LoginPage}"
-        Route="LoginPage" />
+        ContentTemplate="{DataTemplate login:LoginPage}"
+        Route="Login" />
 
     <ShellContent
-        ContentTemplate="{DataTemplate local:Hub}"
+        ContentTemplate="{DataTemplate hub:HubPage}"
         Route="Hub" />
 
 </Shell>
