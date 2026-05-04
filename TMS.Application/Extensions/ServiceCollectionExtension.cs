@@ -14,9 +14,10 @@ public static class ServiceCollectionExtension
 {
     extension(IServiceCollection services)
     {
-        public IServiceCollection AddLoginService() => services.AddTransient<ILoginService, LoginService>();
-        public IServiceCollection AddLoginPipeline()
+        public IServiceCollection AddLoginService()
         {
+            services.AddTransient<ILoginService, LoginService>();
+
             // Providers
             services.AddTransient<IAuthenticationProvider, MicrosoftAuthenticationProvider>();
 

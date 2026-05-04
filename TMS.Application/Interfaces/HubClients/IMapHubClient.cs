@@ -5,4 +5,6 @@ namespace TMS.Application.Interfaces.HubClients;
 public interface IMapHubClient
 {
     event Action<IEnumerable<MapLinesDTO>>? MapLinesLoaded;
+    Task ConnectAsync();
+    Task DisconnectAsync();
 }

@@ -13,7 +13,7 @@ internal sealed class MapHubClient(ILogger<MapHubClient> logger, IConfiguration 
     private readonly ILogger<MapHubClient> _logger = logger ?? throw new ArgumentNullException(nameof(logger));
     private readonly IConfiguration _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
     private static readonly ActivitySource _activitySource = new ActivitySource("TMS.Infrastructure");
-    protected override string HubUrl => $"{_configuration.GetRequiredValue<string>("SignalR:Hub")}/mapHub";
+    protected override string HubUrl => $"{_configuration.GetRequiredValue<string>("SignalR:TMS:Url")}/mapHub";
     
     public event Action<IEnumerable<MapLinesDTO>>? MapLinesLoaded;
 
