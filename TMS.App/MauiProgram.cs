@@ -69,12 +69,12 @@ namespace TMS.App
 			builder.Services.AddPublicClientApplication();
 			builder.Services.AddMicrosoftAuthService();
 			builder.Services.AddLoginService();
-			builder.Services.AddLoginPipeline();
 			builder.Services.AddAlertService();
 			builder.Services.AddNavigationService();
 			builder.Services.AddArcgisService();
 			builder.Services.AddTmsClient(builder.Configuration);	
-			builder.Services.AddTmsAuthHeaderHandler();		
+			builder.Services.AddTmsAuthHeaderHandler();
+			builder.Services.AddMapHubClient();	
 
 			builder.Services.AddSingleton(SecureStorage.Default);
 
